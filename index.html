@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ruca Tucun | Casa de Semilla • Mar del Plata (Fasta)</title>
+  <meta name="description" content="Sitio oficial de Ruca Tucun (Fasta Mar del Plata). Tienda oficial de indumentaria, actividades comunitarias, campamentos e historia de la Casa de Semilla desde 1989.">
+  
+  <!-- Favicon Oficial -->
+  <link rel="icon" type="image/png" href="assets/logo_ruca_tucun.png">
+  <link rel="apple-touch-icon" href="assets/logo_ruca_tucun.png">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ruca Tucun | Casa de Semilla • Mar del Plata">
+  <meta property="og:description" content="Historia, actividades e indumentaria oficial de la comunidad Ruca Tucun desde 1989.">
+  <meta property="og:type" content="website">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            rucaBlack: '#080c16',
+            rucaDark: '#101726',
+            rucaCard: '#151e32',
+            rucaBorder: '#23304b',
+            rucaGold: '#facc15',
+            rucaGoldHover: '#eab308',
+            rucaGray: '#94a3b8',
+            whatsapp: '#25D366',
+            whatsappDark: '#128C7E'
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-rucaBlack text-slate-100 antialiased min-h-screen flex flex-col selection:bg-rucaGold selection:text-rucaBlack">
+
+  <!-- BARRA SUPERIOR DE ANUNCIOS -->
+  <div class="bg-gradient-to-r from-rucaDark via-rucaBlack to-rucaDark text-rucaGold text-xs py-2 px-4 text-center font-medium border-b border-rucaGold/20">
+    <div class="max-w-7xl mx-auto flex items-center justify-center gap-2">
+      <span class="inline-block w-2 h-2 rounded-full bg-rucaGold animate-pulse"></span>
+      <span>⚜️ <strong>MAR ADENTRO 1989</strong> • Casa de Semilla • Fasta Mar del Plata • Sábados de 15:00 a 18:30 hs</span>
+    </div>
+  </div>
+
+  <!-- NAVBAR CON LOS 3 BOTONES DE NAVEGACIÓN (ORDEN: INFORMACIÓN -> ACTIVIDADES -> TIENDA) -->
+  <header class="sticky top-0 z-40 bg-rucaBlack/95 backdrop-blur-md border-b border-rucaBorder shadow-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- LOGO OFICIAL CON ESCUDO (CLIC REDIRIGE A INFORMACIÓN) -->
+      <div class="flex items-center gap-3 cursor-pointer group" onclick="switchMainTab('info')">
+        <div class="relative w-12 h-12 flex-shrink-0 flex items-center justify-center group-hover:scale-105 transition-transform">
+          <img src="assets/logo_ruca_tucun.png" alt="Escudo Oficial Ruca Tucun" class="w-full h-full object-contain filter drop-shadow-[0_0_8px_rgba(250,204,21,0.5)]">
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="font-black text-xl sm:text-2xl tracking-tight text-white leading-tight">RUCA <span class="text-rucaGold">TUCUN</span></span>
+            <span class="text-[9px] bg-rucaGold/20 text-rucaGold border border-rucaGold/40 font-bold px-1.5 py-0.5 rounded uppercase">Fasta</span>
+          </div>
+          <span class="text-[10px] sm:text-[11px] text-rucaGray font-medium block">Casa de Semilla • Mar del Plata</span>
+        </div>
+      </div>
+
+      <!-- BOTONES DE NAVEGACIÓN PRINCIPALES (DESKTOP) -->
+      <nav class="hidden md:flex items-center gap-1 bg-rucaDark/80 p-1.5 rounded-2xl border border-rucaBorder shadow-inner">
+        <button id="tabBtnInfo" onclick="switchMainTab('info')" 
+                class="nav-tab-btn active px-4 py-2 rounded-xl text-sm font-bold flex items-center gap-2 transition-all">
+          <span>⚜️</span> Información & Origen
+        </button>
+        <button id="tabBtnActividades" onclick="switchMainTab('actividades')" 
+                class="nav-tab-btn px-4 py-2 rounded-xl text-sm font-medium text-slate-300 hover:text-white flex items-center gap-2 transition-all">
+          <span>⛺</span> Actividades
+        </button>
+        <button id="tabBtnTienda" onclick="switchMainTab('tienda')" 
+                class="nav-tab-btn px-4 py-2 rounded-xl text-sm font-medium text-slate-300 hover:text-white flex items-center gap-2 transition-all">
+          <span>🛍️</span> Tienda
+        </button>
+      </nav>
+
+      <!-- BOTÓN WHATSAPP CONTACTO -->
+      <div class="flex items-center gap-2">
+        <a id="navGeneralWaBtn" href="#" target="_blank" rel="noopener noreferrer" 
+           class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#128C7E] text-white px-3.5 sm:px-4 py-2 rounded-full font-bold text-xs sm:text-sm shadow-md transition-all hover:scale-102">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.077-1.78-.396-1.393-.574-2.3-1.987-2.37-2.079-.069-.092-.562-.748-.562-1.424 0-.675.353-1.008.478-1.137.126-.13.275-.162.366-.162.091 0 .183.001.263.005.085.004.198-.032.308.232.114.275.389.948.423 1.017.034.069.057.149.011.239-.045.092-.068.149-.137.229-.068.08-.145.18-.207.241-.069.069-.141.144-.06.284.08.138.358.591.768.956.528.471.975.617 1.113.686.137.069.218.057.299-.035.08-.092.344-.402.436-.539.092-.138.184-.115.309-.069.126.046.797.376.935.445.138.069.229.103.263.161.035.057.035.332-.109.737z"/></svg>
+          <span class="hidden sm:inline">WhatsApp Ruca</span>
+          <span class="sm:hidden">WhatsApp</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- NAVEGACIÓN MÓVIL EN PANTALLAS PEQUEÑAS -->
+    <div class="md:hidden flex items-center justify-around bg-rucaDark border-t border-rucaBorder px-2 py-2">
+      <button onclick="switchMainTab('info')" id="mobileTabBtnInfo" class="text-xs font-bold px-3 py-1.5 rounded-lg text-rucaGold bg-rucaCard">
+        ⚜️ Información
+      </button>
+      <button onclick="switchMainTab('actividades')" id="mobileTabBtnActividades" class="text-xs font-medium px-3 py-1.5 rounded-lg text-slate-300">
+        ⛺ Actividades
+      </button>
+      <button onclick="switchMainTab('tienda')" id="mobileTabBtnTienda" class="text-xs font-medium px-3 py-1.5 rounded-lg text-slate-300">
+        🛍️ Tienda
+      </button>
+    </div>
+  </header>
+
+  <!-- CONTENIDO DE PESTAÑAS -->
+  <main class="flex-grow">
+
+    <!-- ========================================== -->
+    <!-- 3. PESTAÑA: TIENDA OFICIAL                  -->
+    <!-- ========================================== -->
+    <div id="sectionTienda" class="hidden transition-opacity duration-300">
+      
+      <!-- HERO TIENDA -->
+      <section class="relative bg-gradient-to-b from-rucaDark via-rucaBlack to-rucaDark py-12 px-4 sm:px-6 lg:px-8 border-b border-rucaBorder overflow-hidden">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
+          
+          <div class="max-w-2xl text-center md:text-left">
+            <span class="inline-flex items-center gap-1.5 py-1 px-3.5 rounded-full bg-rucaGold/10 text-rucaGold font-bold text-xs tracking-wider uppercase mb-3 border border-rucaGold/30">
+              ⚜️ Indumentaria Oficial Ruca Tucun
+            </span>
+            <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight mb-3">
+              Vestí los Colores de <br>
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-rucaGold via-amber-200 to-yellow-400">Mar Adentro</span>
+            </h1>
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6 font-light">
+              Camperas oficiales, camisetas técnicas de torneo, camisas reglamentarias y gorras con bordado en 3D. Cada prenda refleja la mística de la Casa de Semilla.
+            </p>
+
+            <!-- CATEGORÍAS RÁPIDAS -->
+            <div class="flex flex-wrap items-center justify-center md:justify-start gap-2">
+              <button onclick="setCategoryFilter('all')" class="cat-pill active bg-rucaGold text-rucaBlack font-extrabold text-xs px-4 py-2 rounded-xl shadow-md transition-all" data-cat="all">
+                Todas las Prendas
+              </button>
+              <button onclick="setCategoryFilter('Camperas')" class="cat-pill bg-rucaCard hover:bg-rucaBorder text-slate-200 font-medium text-xs px-4 py-2 rounded-xl border border-rucaBorder transition-all" data-cat="Camperas">
+                🧥 Camperas
+              </button>
+              <button onclick="setCategoryFilter('Remeras')" class="cat-pill bg-rucaCard hover:bg-rucaBorder text-slate-200 font-medium text-xs px-4 py-2 rounded-xl border border-rucaBorder transition-all" data-cat="Remeras">
+                👕 Remeras
+              </button>
+              <button onclick="setCategoryFilter('Uniformes')" class="cat-pill bg-rucaCard hover:bg-rucaBorder text-slate-200 font-medium text-xs px-4 py-2 rounded-xl border border-rucaBorder transition-all" data-cat="Uniformes">
+                🥋 Uniformes
+              </button>
+              <button onclick="setCategoryFilter('Gorras')" class="cat-pill bg-rucaCard hover:bg-rucaBorder text-slate-200 font-medium text-xs px-4 py-2 rounded-xl border border-rucaBorder transition-all" data-cat="Gorras">
+                🧢 Gorras
+              </button>
+            </div>
+          </div>
+
+          <!-- BANNER CON RENDER 3D Y FOTO REAL -->
+          <div class="relative w-full max-w-sm rounded-3xl overflow-hidden border border-rucaGold/40 shadow-2xl bg-rucaCard group">
+            <img src="assets/campera_render_3d.jpg" alt="Render 3D de Campera Oficial Ruca Tucun" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-rucaBlack via-transparent to-transparent flex flex-col justify-end p-5">
+              <span class="text-[10px] font-bold text-rucaGold uppercase tracking-wider">Edición 3D Oficial</span>
+              <p class="text-white font-black text-lg">Campera & Remera Mar Adentro</p>
+              <p class="text-slate-300 text-xs">Modeladas con los detalles reales de confección</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- BARRA DE BÚSQUEDA Y CONTADOR -->
+      <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 relative z-20">
+        <div class="bg-rucaCard rounded-2xl shadow-xl border border-rucaBorder p-4 flex flex-col md:flex-row gap-4 items-center justify-between">
+          
+          <div class="relative w-full md:w-96">
+            <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none text-slate-400">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+            </span>
+            <input type="text" id="searchInput" placeholder="Buscar por prenda, modelo o talle..." 
+                   class="w-full pl-10 pr-4 py-2.5 bg-rucaDark border border-rucaBorder text-white placeholder-slate-400 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-rucaGold">
+          </div>
+
+          <div class="flex items-center justify-between w-full md:w-auto gap-4">
+            <span id="catalogCount" class="text-xs sm:text-sm font-semibold text-slate-400 whitespace-nowrap">
+              Cargando prendas...
+            </span>
+            <div class="flex items-center gap-2">
+              <label for="sortFilter" class="text-xs text-slate-400 font-medium">Ordenar:</label>
+              <select id="sortFilter" class="bg-rucaDark border border-rucaBorder text-slate-200 text-xs sm:text-sm rounded-xl px-3 py-2 focus:outline-none focus:ring-2 focus:ring-rucaGold">
+                <option value="default">Recomendados</option>
+                <option value="price-asc">Menor precio</option>
+                <option value="price-desc">Mayor precio</option>
+              </select>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- GRILLA DE PRODUCTOS -->
+      <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div id="catalogGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Renderizado dinámico desde app.js -->
+        </div>
+
+        <!-- EMPTY STATE -->
+        <div id="emptyState" class="hidden text-center py-20 bg-rucaCard rounded-3xl border border-dashed border-rucaBorder mt-6">
+          <div class="w-16 h-16 bg-rucaDark rounded-full flex items-center justify-center mx-auto mb-3 text-2xl">
+            👕
+          </div>
+          <h3 class="text-lg font-bold text-white">No encontramos esa prenda</h3>
+          <p class="text-slate-400 text-sm mt-1 max-w-sm mx-auto">Revisa el término de búsqueda o selecciona otra categoría.</p>
+          <button onclick="resetFilters()" class="mt-4 px-4 py-2 bg-rucaGold text-rucaBlack rounded-xl text-xs font-bold hover:bg-rucaGoldHover transition-all">
+            Ver Todo el Catálogo
+          </button>
+        </div>
+      </section>
+
+      <!-- VISTA MODAL DINÁMICA / FICHA DE PRENDA -->
+      <div id="detailView" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm overflow-y-auto p-4 sm:p-6 lg:p-10 flex items-center justify-center">
+        <div class="bg-rucaDark border border-rucaGold/40 rounded-3xl max-w-4xl w-full overflow-hidden shadow-2xl relative my-auto">
+          
+          <button onclick="closeDetailView()" class="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-rucaCard/80 hover:bg-rucaGold hover:text-rucaBlack text-white flex items-center justify-center font-bold text-lg border border-rucaBorder transition-all">
+            ✕
+          </button>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2">
+            
+            <!-- GALERÍA -->
+            <div class="bg-rucaBlack flex flex-col justify-between p-4">
+              <div class="h-80 sm:h-96 w-full overflow-hidden rounded-2xl border border-rucaBorder flex items-center justify-center bg-rucaDark">
+                <img id="detailMainImage" src="" alt="Prenda de Ruca Tucun" class="w-full h-full object-cover transition-all duration-300">
+              </div>
+              <div id="detailThumbnails" class="flex gap-2 mt-3 overflow-x-auto p-1">
+                <!-- Miniaturas -->
+              </div>
+            </div>
+
+            <!-- INFO Y SELECTORES -->
+            <div class="p-6 sm:p-8 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between text-xs text-rucaGold font-mono mb-1">
+                  <span id="detailRef">CÓD: TUC-000</span>
+                  <span id="detailCategory" class="uppercase font-bold tracking-wider">Categoría</span>
+                </div>
+                
+                <h2 id="detailTitle" class="text-2xl font-black text-white leading-tight">
+                  Nombre de la Prenda
+                </h2>
+
+                <div class="my-4 pb-4 border-b border-rucaBorder">
+                  <span class="text-[10px] text-rucaGray uppercase font-bold tracking-wider block">Precio Oficial</span>
+                  <div id="detailPrice" class="text-3xl font-black text-rucaGold my-0.5">
+                    $ 00.000 ARS
+                  </div>
+                </div>
+
+                <!-- SELECTOR DE TALLE -->
+                <div class="mb-5">
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="text-xs font-bold text-slate-300 uppercase tracking-wider">Seleccionar Talle:</span>
+                    <span id="selectedTalleLabel" class="text-xs font-bold text-rucaGold">Talle M</span>
+                  </div>
+                  <div id="talleSelectorContainer" class="flex flex-wrap gap-2">
+                    <!-- Botones de talle -->
+                  </div>
+                </div>
+
+                <!-- DESCRIPCIÓN -->
+                <div class="mb-5">
+                  <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Detalles de Confección</h3>
+                  <p id="detailFullDescription" class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                    Descripción...
+                  </p>
+                </div>
+
+                <!-- FICHA TÉCNICA -->
+                <div class="mb-5">
+                  <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1.5">Ficha Técnica</h3>
+                  <div id="detailSpecsGrid" class="grid grid-cols-2 gap-2 text-xs">
+                    <!-- Specs -->
+                  </div>
+                </div>
+              </div>
+
+              <!-- BOTÓN WHATSAPP DINÁMICO -->
+              <div class="pt-4 border-t border-rucaBorder">
+                <a id="detailWaBtn" href="#" target="_blank" rel="noopener noreferrer" 
+                   class="w-full inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#128C7E] text-white py-3.5 px-6 rounded-2xl font-bold text-sm shadow-lg transition-all hover:scale-101 active:scale-95">
+                  <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.077-1.78-.396-1.393-.574-2.3-1.987-2.37-2.079-.069-.092-.562-.748-.562-1.424 0-.675.353-1.008.478-1.137.126-.13.275-.162.366-.162.091 0 .183.001.263.005.085.004.198-.032.308.232.114.275.389.948.423 1.017.034.069.057.149.011.239-.045.092-.068.149-.137.229-.068.08-.145.18-.207.241-.069.069-.141.144-.06.284.08.138.358.591.768.956.528.471.975.617 1.113.686.137.069.218.057.299-.035.08-.092.344-.402.436-.539.092-.138.184-.115.309-.069.126.046.797.376.935.445.138.069.229.103.263.161.035.057.035.332-.109.737z"/></svg>
+                  <span>Encargar Prenda por WhatsApp</span>
+                </a>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- ========================================== -->
+    <!-- 2. PESTAÑA: ACTIVIDADES & AGENDA            -->
+    <!-- ========================================== -->
+    <div id="sectionActividades" class="hidden transition-opacity duration-300 py-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="inline-block py-1 px-3.5 rounded-full bg-rucaGold/10 text-rucaGold font-bold text-xs tracking-wider uppercase mb-3 border border-rucaGold/30">
+          ⚜️ Vida de Ruca & Marcha Comunitaria
+        </span>
+        <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight mb-4">
+          Nuestras <span class="text-rucaGold">Actividades</span>
+        </h2>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+          En Ruca Tucun cada sábado y cada campamento es una oportunidad de crecer en virtudes, camaradería, fe y aventura al aire libre.
+        </p>
+      </div>
+
+      <!-- PRÓXIMAS ACTIVIDADES (AUTOMATIZADO) -->
+      <div class="mb-14">
+        <div class="flex items-center justify-between mb-6">
+          <div class="flex items-center gap-3">
+            <span class="w-8 h-8 rounded-lg bg-rucaGold text-rucaBlack font-black flex items-center justify-center text-sm">📅</span>
+            <h3 class="text-xl sm:text-2xl font-black text-white">Próximas Actividades & Convocatorias</h3>
+          </div>
+          <span class="text-xs text-rucaGold font-bold bg-rucaGold/10 px-3 py-1 rounded-full border border-rucaGold/30 hidden sm:inline-block">Agenda Oficial</span>
+        </div>
+
+        <div id="upcomingEventsContainer" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Renderizado automático desde data/ruca_events.json -->
+        </div>
+      </div>
+
+      <!-- HITOS Y EVENTOS PASADOS (GALERÍA AUTOMATIZADA) -->
+      <div>
+        <div class="flex items-center justify-between mb-6">
+          <div class="flex items-center gap-3">
+            <span class="w-8 h-8 rounded-lg bg-rucaGold text-rucaBlack font-black flex items-center justify-center text-sm">📸</span>
+            <h3 class="text-xl sm:text-2xl font-black text-white">Hitos de la Comunidad & Eventos Pasados</h3>
+          </div>
+          <span class="text-xs text-slate-400 font-medium">Galería Oficial</span>
+        </div>
+
+        <div id="pastEventsContainer" class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <!-- Renderizado automático desde data/ruca_events.json -->
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- ========================================== -->
+    <!-- 1. PESTAÑA: INFORMACIÓN & ORIGEN            -->
+    <!-- ========================================== -->
+    <div id="sectionInfo" class="transition-opacity duration-300 py-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="inline-block py-1 px-3.5 rounded-full bg-rucaGold/10 text-rucaGold font-bold text-xs tracking-wider uppercase mb-3 border border-rucaGold/30">
+          ⚜️ Historia, Simbología y Mística
+        </span>
+        <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight mb-4">
+          El Origen de la <span class="text-rucaGold">Casa de Semilla</span>
+        </h2>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+          Desde su fundación en 1989 en Mar del Plata, Ruca Tucun educa el corazón y el espíritu de los jóvenes bajo el lema evangélico de bogar "Mar Adentro".
+        </p>
+      </div>
+
+      <!-- ORIGEN Y NACIMIENTO 1989 -->
+      <div class="bg-rucaCard border border-rucaBorder rounded-3xl p-6 sm:p-10 shadow-2xl mb-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div>
+            <span class="text-xs font-mono font-bold text-rucaGold uppercase tracking-wider block mb-2">Fundado en Mar del Plata (1989)</span>
+            <h3 class="text-2xl sm:text-3xl font-black text-white mb-4 leading-tight">
+              ¿Por qué nos llamamos <span class="text-rucaGold">Ruca Tucun</span>?
+            </h3>
+            <div class="space-y-4 text-xs sm:text-sm text-slate-300 leading-relaxed">
+              <p>
+                La palabra <strong>Ruca</strong> proviene de la lengua mapuche y significa <em>"Casa"</em>, el hogar donde habita la familia y la hermandad comunitaria.
+              </p>
+              <p>
+                <strong>Tucun</strong> significa <em>"Semilla"</em>. Por lo tanto, Ruca Tucun es la <strong>"Casa de la Semilla"</strong>: el lugar donde se siembran las virtudes de la fe, la lealtad, el coraje y el amor a la patria en el alma de cada niño y joven, esperando que germinen en hombres y mujeres íntegros.
+              </p>
+              <p>
+                Bajo el cobijo del movimiento <strong>FASTA</strong> (Fraternidad de Agrupaciones Santo Tomás de Aquino), Ruca Tucun se convirtió en un faro formativo frente a la inmensidad del mar atlántico.
+              </p>
+            </div>
+          </div>
+          <div class="bg-rucaBlack/70 rounded-2xl p-6 border border-rucaGold/30 flex flex-col justify-center items-center text-center">
+            <span class="text-5xl font-black text-rucaGold font-heraldic mb-1">1989</span>
+            <span class="text-xs uppercase tracking-widest text-slate-400 font-bold mb-4">Año de Fundación Oficial</span>
+            <p class="text-xs text-slate-300 italic max-w-xs">
+              "Duc in altum — Rema mar adentro, echen las redes para pescar." (San Lucas 5, 4)
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- DESGLOSE DEL ESCUDO OFICIAL TRANSPARENTE -->
+      <div class="bg-rucaDark border border-rucaGold/40 rounded-3xl p-6 sm:p-10 shadow-2xl mb-12">
+        <h3 class="text-2xl font-black text-white text-center mb-8">
+          Significado de Nuestro <span class="text-rucaGold">Escudo Heráldico</span>
+        </h3>
+
+        <div class="flex flex-col lg:flex-row items-center gap-10">
+          
+          <!-- IMAGEN DEL ESCUDO TRANSPARENTE -->
+          <div class="flex-shrink-0 w-64 h-64 sm:w-80 sm:h-80 relative flex items-center justify-center bg-rucaBlack/80 rounded-3xl p-6 border border-rucaGold/40 shadow-inner">
+            <img src="assets/escudo_ruca_tucun_transparente.png" alt="Escudo Oficial Ruca Tucun Transparente" class="w-full h-full object-contain filter drop-shadow-[0_0_15px_rgba(250,204,21,0.5)]">
+          </div>
+
+          <!-- DESGLOSE DE ELEMENTOS -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 flex-grow">
+            
+            <div class="bg-rucaCard p-4 rounded-xl border border-rucaBorder">
+              <div class="flex items-center gap-2 mb-1">
+                <span class="text-lg">⭐</span>
+                <h4 class="font-bold text-rucaGold text-sm">La Estrella Guía</h4>
+              </div>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                La Estrella del Norte y de Belén que brilla en el cielo. Representa a Cristo y a la Virgen María guiando el rumbo seguro aun en las noches más oscuras.
+              </p>
+            </div>
+
+            <div class="bg-rucaCard p-4 rounded-xl border border-rucaBorder">
+              <div class="flex items-center gap-2 mb-1">
+                <span class="text-lg">⛵</span>
+                <h4 class="font-bold text-rucaGold text-sm">La Carabela & Fasta</h4>
+              </div>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                La nave intrépida que navega desafiando el horizonte. Lleva en su vela mayor el monograma y la cruz de Fasta, signo del apostolado y la evangelización.
+              </p>
+            </div>
+
+            <div class="bg-rucaCard p-4 rounded-xl border border-rucaBorder">
+              <div class="flex items-center gap-2 mb-1">
+                <span class="text-lg">🌊</span>
+                <h4 class="font-bold text-rucaGold text-sm">Las Olas del Mar</h4>
+              </div>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Las olas del mar atlántico de Mar del Plata. Simbolizan el oleaje del mundo y los desafíos de la vida que se navegan con temple y hermandad.
+              </p>
+            </div>
+
+            <div class="bg-rucaCard p-4 rounded-xl border border-rucaBorder">
+              <div class="flex items-center gap-2 mb-1">
+                <span class="text-lg">🛡️</span>
+                <h4 class="font-bold text-rucaGold text-sm">El Hexágono Oro & Negro</h4>
+              </div>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                El campo negro representa la sobriedad, la disciplina y el honor. El ribete dorado encarna la nobleza de ideales y la luz que no perece.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- NUESTRAS AGRUPACIONES (SEGÚN PEDIDO EXACTO DEL USUARIO) -->
+      <div class="mb-14">
+        <h3 class="text-2xl sm:text-3xl font-black text-white text-center mb-8">
+          Nuestras <span class="text-rucaGold">Agrupaciones</span>
+        </h3>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <!-- 1. AGRUPACIÓN FEMENINA -->
+          <div class="bg-rucaCard p-6 rounded-2xl border border-rucaBorder hover:border-rose-400/50 transition-all shadow-md">
+            <span class="text-xs font-black text-rose-400 uppercase tracking-wider block mb-1">Agrupación Femenina</span>
+            <h4 class="font-extrabold text-white text-lg mb-3">Caperucitas, Herederas y Adalidas</h4>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Formación de niñas y jóvenes en la pureza, el servicio abnegado, la delicadeza, la alegría comunitaria y las virtudes del hogar cristiano en marchas y campamentos.
+            </p>
+          </div>
+
+          <!-- 2. AGRUPACIÓN MASCULINA -->
+          <div class="bg-rucaCard p-6 rounded-2xl border border-rucaBorder hover:border-blue-400/50 transition-all shadow-md">
+            <span class="text-xs font-black text-blue-400 uppercase tracking-wider block mb-1">Agrupación Masculina</span>
+            <h4 class="font-extrabold text-white text-lg mb-3">Escuderos y Templarios</h4>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Juegos de destreza física, caballerosidad, protección al prójimo, forja del carácter viril, hermandad leal y espíritu de aventura en el campo.
+            </p>
+          </div>
+
+          <!-- 3. AGRUPACIÓN MILICIANOS -->
+          <div class="bg-rucaCard p-6 rounded-2xl border border-rucaBorder hover:border-rucaGold/50 transition-all shadow-md">
+            <span class="text-xs font-black text-rucaGold uppercase tracking-wider block mb-1">Agrupación Milicianos</span>
+            <div class="h-7"></div> <!-- Sin subtítulo según lo solicitado -->
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Los jóvenes mayores y dirigentes de la comunidad. Conducen las agrupaciones con testimonio de vida, entrega generosa, estudio, vida sacramental y liderazgo servicial.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- SECCIÓN: LÍNEA HISTÓRICA DE JEFES DE RUCA (CARRUSEL HORIZONTAL CADA 2 AÑOS) -->
+      <div class="bg-rucaCard border border-rucaBorder rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+          <div>
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-xs font-mono font-bold text-rucaGold bg-rucaGold/10 px-2.5 py-0.5 rounded-full border border-rucaGold/30 uppercase tracking-wider">
+                1989 — Presente • Mandatos de 2 Años
+              </span>
+            </div>
+            <h3 class="text-2xl sm:text-3xl font-black text-white">
+              Línea Histórica de <span class="text-rucaGold">Jefes de Ruca</span>
+            </h3>
+            <p class="text-slate-400 text-xs sm:text-sm mt-1 max-w-xl leading-relaxed">
+              Hombres que lideraron la Casa de Semilla a lo largo de las décadas. Hacé clic en cualquier tarjeta para ver la <strong>jerarquía de mando completa</strong> (Jefe de Masculina, Jefa de Femenina y Jefe de Milicianos).
+            </p>
+          </div>
+
+          <!-- CONTROLES DEL CARRUSEL (FLECHAS IZQUIERDA / DERECHA) -->
+          <div class="flex items-center gap-2 self-end md:self-auto">
+            <button onclick="scrollJefesCarousel('left')" 
+                    class="w-10 h-10 rounded-xl bg-rucaDark hover:bg-rucaGold hover:text-rucaBlack text-white border border-rucaBorder hover:border-rucaGold flex items-center justify-center font-bold text-lg transition-all shadow-md active:scale-95"
+                    title="Ver jefaturas anteriores">
+              ‹
+            </button>
+            <button onclick="scrollJefesCarousel('right')" 
+                    class="w-10 h-10 rounded-xl bg-rucaDark hover:bg-rucaGold hover:text-rucaBlack text-white border border-rucaBorder hover:border-rucaGold flex items-center justify-center font-bold text-lg transition-all shadow-md active:scale-95"
+                    title="Ver jefaturas siguientes">
+              ›
+            </button>
+          </div>
+        </div>
+
+        <!-- TRACK DEL CARRUSEL CON SCROLL SNAP (CARGA DINÁMICA DESDE JSON) -->
+        <div id="jefesCarouselTrack" class="jefes-carousel-container flex gap-5 overflow-x-auto pb-4 pt-2 scroll-smooth no-scrollbar">
+          <!-- Renderizado automático desde data/ruca_jefaturas.json -->
+        </div>
+
+        <!-- INDICADOR INFERIOR DE DESPLAZAMIENTO -->
+        <div class="mt-4 flex items-center justify-between text-xs text-slate-400 border-t border-rucaBorder/60 pt-3">
+          <span class="flex items-center gap-1.5 text-rucaGold font-semibold">
+            <span>💡</span> Tocá o hacé clic en cualquier período para ver su jerarquía de mando
+          </span>
+          <span class="text-[11px] hidden sm:inline text-slate-400">
+            Deslizá horizontalmente ‹ ›
+          </span>
+        </div>
+
+      </div>
+
+  <!-- MODAL JERARQUÍA DE MANDO DE JEFE DE RUCA -->
+  <div id="jefeHierarchyModal" class="hidden fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="bg-rucaCard border border-rucaGold/50 rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative transform transition-all max-h-[90vh] overflow-y-auto">
+      
+      <button onclick="closeJefeHierarchyModal()" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-rucaDark hover:bg-rucaGold hover:text-rucaBlack text-slate-300 flex items-center justify-center font-bold transition-all">
+        ✕
+      </button>
+
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-12 h-12 rounded-2xl bg-rucaDark border border-rucaGold/40 p-1 flex items-center justify-center flex-shrink-0">
+          <img src="assets/logo_ruca_tucun.png" alt="Escudo Ruca" class="w-full h-full object-contain">
+        </div>
+        <div>
+          <span id="modalJefePeriod" class="text-xs font-mono font-bold text-rucaGold bg-rucaGold/10 px-2 py-0.5 rounded border border-rucaGold/30">1989 - 1991</span>
+          <h3 id="modalJefePeriodName" class="text-lg font-black text-white mt-1">1ª Jefatura Fundacional</h3>
+        </div>
+      </div>
+
+      <div class="bg-rucaDark/80 rounded-2xl p-4 border border-rucaBorder mb-5">
+        <div class="flex items-center gap-3">
+          <div class="w-14 h-14 rounded-full bg-rucaBlack border-2 border-rucaGold flex items-center justify-center text-2xl font-black text-rucaGold overflow-hidden flex-shrink-0">
+            <span id="modalJefeAvatar">👑</span>
+          </div>
+          <div>
+            <span class="text-[10px] text-rucaGold uppercase font-extrabold tracking-wider block">Jefe de Ruca Tucun</span>
+            <h4 id="modalJefeName" class="text-base sm:text-lg font-bold text-white">Nombre del Jefe</h4>
+          </div>
+        </div>
+      </div>
+
+      <h5 class="text-xs uppercase font-extrabold tracking-wider text-slate-400 mb-3 flex items-center gap-2">
+        <span>⚜️</span> Jerarquía de Mando a su Cargo:
+      </h5>
+
+      <div class="space-y-3 mb-5">
+        
+        <!-- Jefa de Agrupación Femenina -->
+        <div class="bg-rucaDark/90 rounded-xl p-3 border border-pink-900/40 flex items-center gap-3">
+          <span class="text-2xl">🌸</span>
+          <div class="flex-grow">
+            <div class="flex justify-between items-center">
+              <span class="text-[10px] font-bold text-pink-300 uppercase">Jefa Agrupación Femenina</span>
+              <span class="text-[9px] text-slate-400">Caperucitas, Herederas y Adalidas</span>
+            </div>
+            <p id="modalJefaFemeninaName" class="text-sm font-semibold text-white mt-0.5">Nombre por completar</p>
+          </div>
+        </div>
+
+        <!-- Jefe de Agrupación Masculina -->
+        <div class="bg-rucaDark/90 rounded-xl p-3 border border-blue-900/40 flex items-center gap-3">
+          <span class="text-2xl">🛡️</span>
+          <div class="flex-grow">
+            <div class="flex justify-between items-center">
+              <span class="text-[10px] font-bold text-blue-300 uppercase">Jefe Agrupación Masculina</span>
+              <span class="text-[9px] text-slate-400">Escuderos y Templarios</span>
+            </div>
+            <p id="modalJefeMasculinaName" class="text-sm font-semibold text-white mt-0.5">Nombre por completar</p>
+          </div>
+        </div>
+
+        <!-- Jefe de Milicianos -->
+        <div class="bg-rucaDark/90 rounded-xl p-3 border border-amber-900/40 flex items-center gap-3">
+          <span class="text-2xl">⚔️</span>
+          <div class="flex-grow">
+            <span class="text-[10px] font-bold text-amber-300 uppercase block">Jefe Agrupación Milicianos</span>
+            <p id="modalJefeMilicianosName" class="text-sm font-semibold text-white mt-0.5">Nombre por completar</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="modalJefeNoteBox" class="bg-rucaDark/60 p-3 rounded-xl border border-rucaBorder/70 text-xs text-slate-300 italic mb-5">
+        <span id="modalJefeNote">Nota histórica del período...</span>
+      </div>
+
+      <button onclick="closeJefeHierarchyModal()" class="w-full bg-rucaGold hover:bg-rucaGoldHover text-rucaBlack font-black py-2.5 rounded-xl text-sm transition-all shadow-md">
+        Entendido / Volver a la Lista
+      </button>
+
+    </div>
+  </div>
+
+    </div>
+
+  </main>
+
+  <!-- STICKY BOTTOM BAR MÓVIL EN TIENDA -->
+  <div id="mobileStickyBar" class="hidden sm:hidden fixed bottom-0 left-0 right-0 bg-rucaDark border-t border-rucaBorder p-3 z-50 shadow-2xl flex items-center justify-between">
+    <div>
+      <span class="text-[9px] text-rucaGray font-bold uppercase block">Total</span>
+      <span id="mobileStickyPrice" class="text-base font-black text-rucaGold block leading-tight">$ 00.000 ARS</span>
+    </div>
+    <a id="mobileStickyWaBtn" href="#" target="_blank" rel="noopener noreferrer" 
+       class="inline-flex items-center gap-1.5 bg-[#25D366] text-white px-3.5 py-2 rounded-xl font-bold text-xs shadow-md">
+      <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.077-1.78-.396-1.393-.574-2.3-1.987-2.37-2.079-.069-.092-.562-.748-.562-1.424 0-.675.353-1.008.478-1.137.126-.13.275-.162.366-.162.091 0 .183.001.263.005.085.004.198-.032.308.232.114.275.389.948.423 1.017.034.069.057.149.011.239-.045.092-.068.149-.137.229-.068.08-.145.18-.207.241-.069.069-.141.144-.06.284.08.138.358.591.768.956.528.471.975.617 1.113.686.137.069.218.057.299-.035.08-.092.344-.402.436-.539.092-.138.184-.115.309-.069.126.046.797.376.935.445.138.069.229.103.263.161.035.057.035.332-.109.737z"/></svg>
+      Pedir Talle
+    </a>
+  </div>
+
+  <!-- BOTÓN FLOTANTE WHATSAPP -->
+  <a id="floatingGeneralWaBtn" href="#" target="_blank" rel="noopener noreferrer" 
+     class="fixed bottom-6 right-6 z-40 bg-[#25D366] hover:bg-[#128C7E] text-white p-4 rounded-full shadow-2xl transition-all duration-300 hover:scale-110 flex items-center justify-center group"
+     aria-label="Contactar al WhatsApp de Ruca Tucun">
+    <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.077-1.78-.396-1.393-.574-2.3-1.987-2.37-2.079-.069-.092-.562-.748-.562-1.424 0-.675.353-1.008.478-1.137.126-.13.275-.162.366-.162.091 0 .183.001.263.005.085.004.198-.032.308.232.114.275.389.948.423 1.017.034.069.057.149.011.239-.045.092-.068.149-.137.229-.068.08-.145.18-.207.241-.069.069-.141.144-.06.284.08.138.358.591.768.956.528.471.975.617 1.113.686.137.069.218.057.299-.035.08-.092.344-.402.436-.539.092-.138.184-.115.309-.069.126.046.797.376.935.445.138.069.229.103.263.161.035.057.035.332-.109.737z"/></svg>
+  </a>
+
+  <!-- FOOTER -->
+  <footer class="bg-rucaDark text-slate-400 py-12 border-t border-rucaBorder mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs">
+      <div class="w-12 h-12 mx-auto mb-3">
+        <img src="assets/logo_ruca_tucun.png" alt="Escudo Ruca Tucun" class="w-full h-full object-contain filter drop-shadow">
+      </div>
+      <p class="font-black text-white text-sm tracking-wider uppercase">RUCA TUCUN • MOVIMIENTO FASTA</p>
+      <p class="text-rucaGold font-mono text-xs mt-1">"Casa de Semilla" — Mar del Plata, Argentina • Desde 1989</p>
+      <p class="mt-4 text-slate-500">© 2026 Ruca Tucun Oficial. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

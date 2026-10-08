@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Cinzel:wght@600;700;800;900&display=swap');
+
+:root {
+  --color-ruca-black: #080c16;
+  --color-ruca-dark: #111827;
+  --color-ruca-gold: #facc15;
+  --color-ruca-gold-deep: #eab308;
+  --color-ruca-gold-dark: #ca8a04;
+  --color-ruca-gray: #1f293d;
+  --color-wa: #25D366;
+  --color-wa-hover: #128C7E;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  background-color: #0b101d;
+  color: #f1f5f9;
+}
+
+.font-heraldic {
+  font-family: 'Cinzel', serif;
+}
+
+/* Tab active state */
+.nav-tab-btn {
+  position: relative;
+  transition: all 0.2s ease-in-out;
+}
+
+.nav-tab-btn.active {
+  color: #facc15;
+  font-weight: 800;
+}
+
+.nav-tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #facc15, #f59e0b);
+  border-radius: 9999px;
+  box-shadow: 0 0 10px rgba(250, 204, 21, 0.6);
+}
+
+/* Card hover animation */
+.product-card {
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease, border-color 0.28s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(250, 204, 21, 0.5);
+  box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.8), 0 0 15px rgba(250, 204, 21, 0.15);
+}
+
+/* Talle buttons */
+.talle-btn {
+  transition: all 0.15s ease;
+}
+.talle-btn.active {
+  background-color: #facc15;
+  color: #080c16;
+  border-color: #facc15;
+  font-weight: 800;
+  box-shadow: 0 0 10px rgba(250, 204, 21, 0.4);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #080c16;
+}
+::-webkit-scrollbar-thumb {
+  background: #27354f;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #facc15;
+}
+
+/* Carrusel horizontal de Jefes de Ruca */
+.jefes-carousel-container {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.jefe-carousel-card {
+  scroll-snap-align: start;
+  flex: 0 0 260px;
+  min-width: 260px;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.jefe-carousel-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(250, 204, 21, 0.6);
+  box-shadow: 0 12px 25px -5px rgba(0, 0, 0, 0.7), 0 0 12px rgba(250, 204, 21, 0.2);
+}
+
+/* Ocultar scrollbar estándar en navegadores compatibles */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

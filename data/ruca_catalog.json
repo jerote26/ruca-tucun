@@ -1,0 +1,194 @@
+[
+  {
+    "id": "TUC-001",
+    "slug": "conjunto-camiseta-estrella-short-ruca-tucun",
+    "title": "Conjunto 'Camiseta Estrella' & Short de Juego",
+    "category": "Remeras",
+    "price": 38000,
+    "currency": "ARS",
+    "featured": true,
+    "shortDescription": "Conjunto deportivo oficial de juego: camiseta amarilla con mangas negras, escudo Ruca Tucun y short negro con número 10.",
+    "fullDescription": "Indumentaria técnica oficial para torneos y partidos de vóley, fútbol y competencias deportivas de Ruca Tucun. Camiseta confeccionada en tela deportiva Dry-Fit microperforada de alta transpirabilidad en color amarillo oro vibrante con hombros ranglan negros, cuello polo deportivo y escudo bordado de Ruca Tucun. Acompañada del short deportivo negro con cintura elástica reforzada, cordón de ajuste, número 10 en dorado y el escudo en la pernera.",
+    "images": [
+      "assets/conjunto_estrella_3d.jpg",
+      "assets/camiseta_estrella_real.png",
+      "assets/indumentaria_oficial_real.png"
+    ],
+    "specs": {
+      "Conjunto": "Camiseta deportiva Estrella + Short a juego",
+      "Tela": "Poliéster Dry-Fit tecnológico transpirable",
+      "Detalles Camiseta": "Cuerpo amarillo oro, mangas negras y escudo oficial",
+      "Detalles Short": "Negro con número 10 y escudo en dorado",
+      "Talles Disponibles": "XS, S, M, L, XL, XXL",
+      "Uso": "Torneos inter-rucas, vóley y competencias deportivas"
+    },
+    "tags": ["Destacado", "Deportiva", "Estrella", "Torneo"]
+  },
+  {
+    "id": "TUC-002",
+    "slug": "campera-deportiva-oficial-ruca-tucun",
+    "title": "Campera Deportiva Oficial Ruca Tucun",
+    "category": "Camperas",
+    "price": 52000,
+    "currency": "ARS",
+    "featured": true,
+    "shortDescription": "Campera institucional en gris grafito y amarillo oro con cuello alto, cierre completo y escudo bordado en hilo dorado.",
+    "fullDescription": "Prenda oficial de abrigo de Ruca Tucun para salidas, formaciones y campamentos. Confeccionada en microfibra deportiva con paneles amarillos en hombros, forro interior microtérmico, bolsillos laterales con cierre reforzado y el escudo hexagonal de la Carabela y la Estrella bordado en hilo dorado de alta definición.",
+    "images": [
+      "assets/campera_render_3d.jpg",
+      "assets/campera_oficial_real.png",
+      "assets/indumentaria_oficial_real.png"
+    ],
+    "specs": {
+      "Confección": "Microfibra deportiva + forro microtérmico",
+      "Detalles": "Paneles amarillo oro en hombros y cuello alto",
+      "Bordado": "Escudo hexagonal oficial Ruca Tucun",
+      "Cierre": "Cremallera completa reforzada YKK",
+      "Talles Disponibles": "S, M, L, XL, XXL",
+      "Colores": "Gris Grafito con Amarillo Oro"
+    },
+    "tags": ["Oficial", "Destacado", "Invierno", "Campamento"]
+  },
+  {
+    "id": "TUC-003",
+    "slug": "chomba-oficial-femenina-bordo",
+    "title": "Chomba Oficial Femenina (Bordó) - Agrupación Femenina",
+    "category": "Uniformes",
+    "price": 32000,
+    "currency": "ARS",
+    "featured": true,
+    "shortDescription": "Chomba reglamentaria de piqué bordó para Caperucitas, Herederas y Adalidas con cruz de Fasta y bandera argentina.",
+    "fullDescription": "Prenda de uniforme oficial para la Agrupación Femenina de Ruca Tucun (Caperucitas, Herederas y Adalidas). Confeccionada en piqué de algodón peinado de máxima calidad en tono bordó / borgoña, cuello tipo polo con botones al tono, la cruz histórica de Fasta bordada con precisión en hilo blanco sobre el pecho izquierdo y la bandera argentina bordada en la manga derecha.",
+    "images": [
+      "assets/chomba_bordo_3d.jpg",
+      "assets/chomba_bordo_real.png",
+      "assets/uniformes_oficiales_banner.png"
+    ],
+    "specs": {
+      "Agrupación": "Agrupación Femenina (Caperucitas, Herederas y Adalidas)",
+      "Tela": "Piqué de algodón peinado 100% de alta densidad",
+      "Bordados": "Cruz oficial Fasta en pecho y bandera argentina en manga",
+      "Corte": "Entallado femenino con cuello polo reforzado",
+      "Talles Disponibles": "XS, S, M, L, XL",
+      "Color": "Bordó Oficial Institucional"
+    },
+    "tags": ["Uniforme", "Femenina", "Oficial", "Piqué"]
+  },
+  {
+    "id": "TUC-004",
+    "slug": "chomba-oficial-masculina-azul",
+    "title": "Chomba Oficial Masculina (Azul Marino) - Agrupación Masculina",
+    "category": "Uniformes",
+    "price": 32000,
+    "currency": "ARS",
+    "featured": true,
+    "shortDescription": "Chomba reglamentaria de piqué azul marino para Escuderos y Templarios con cruz de Fasta y bandera argentina.",
+    "fullDescription": "Prenda de uniforme oficial para la Agrupación Masculina de Ruca Tucun (Escuderos y Templarios). Confeccionada en piqué resistente y respirable en elegante azul marino profundo, con cuello clásico polo con tapeta de dos botones, la cruz de Fasta bordada en blanco en el pecho izquierdo y la bandera nacional argentina en la manga derecha.",
+    "images": [
+      "assets/chomba_azul_3d.jpg",
+      "assets/chomba_azul_real.png",
+      "assets/uniformes_oficiales_banner.png"
+    ],
+    "specs": {
+      "Agrupación": "Agrupación Masculina (Escuderos y Templarios)",
+      "Tela": "Piqué de algodón con poliéster antidesgaste",
+      "Bordados": "Cruz oficial Fasta en pecho y bandera argentina en manga",
+      "Corte": "Corte regular masculino con aberturas laterales inferiores",
+      "Talles Disponibles": "S, M, L, XL, XXL",
+      "Color": "Azul Marino Oscuro"
+    },
+    "tags": ["Uniforme", "Masculina", "Oficial", "Piqué"]
+  },
+  {
+    "id": "TUC-005",
+    "slug": "buzo-uniforme-medio-cierre-negro",
+    "title": "Buzo de Uniforme Medio Cierre (Negro Oficial)",
+    "category": "Camperas",
+    "price": 46000,
+    "currency": "ARS",
+    "featured": true,
+    "shortDescription": "Buzo térmico de frisa negra con medio cierre metálico y cruz de Fasta bordada en blanco sobre el pecho.",
+    "fullDescription": "El abrigo oficial para las tardes y mañanas de sábado, marchas y campamentos en las sierras o la costa. Confeccionado en frisa de algodón con interior perchado ultra suave, cuello alto con cierre metálico de un cuarto (half-zip), puños y cintura acanalados elastizados y la cruz de Fasta bordada en hilo blanco de alta resistencia.",
+    "images": [
+      "assets/buzo_negro_3d.jpg",
+      "assets/uniformes_oficiales_banner.png"
+    ],
+    "specs": {
+      "Tela": "Frisa de algodón perchada térmica y abrigada",
+      "Cuello": "Cuello alto con cremallera medio cierre (half-zip)",
+      "Bordado": "Cruz oficial Fasta en relieve blanco",
+      "Uso": "Uniforme de abrigo y campamentos",
+      "Talles Disponibles": "S, M, L, XL, XXL",
+      "Color": "Negro Clásico"
+    },
+    "tags": ["Uniforme", "Abrigo", "Oficial", "Frisa"]
+  },
+  {
+    "id": "TUC-006",
+    "slug": "camiseta-tecnica-mar-adentro-torneo",
+    "title": "Camiseta Técnica 'Mar Adentro' Edición Torneo",
+    "category": "Remeras",
+    "price": 28000,
+    "currency": "ARS",
+    "featured": false,
+    "shortDescription": "Camiseta deportiva con diseño geométrico fractal negro y amarillo oro, cuello V deportivo y escudo en pecho.",
+    "fullDescription": "La indumentaria deportiva distintiva de Ruca Tucun para torneos, marchas y juegos de campo. Estampada en sublimación digital de alta definición con trama fractal amarilla y negra, cuello en V con vivo reforzado, tela Dry-Fit microperforada de secado rápido y el escudo oficial hexagonal en el pecho izquierdo.",
+    "images": [
+      "assets/remera_render_3d.jpg",
+      "assets/remera_mar_adentro_real.png",
+      "assets/indumentaria_oficial_real.png"
+    ],
+    "specs": {
+      "Tela": "Poliéster Dry-Fit tecnológico antitranspirante",
+      "Corte": "Atlético ergonómico con cuello en V",
+      "Estampa": "Sublimación digital total inalterable",
+      "Escudo": "Insignia oficial Ruca Tucun en pecho",
+      "Talles Disponibles": "XS, S, M, L, XL, XXL",
+      "Colores": "Negro y Amarillo Oro"
+    },
+    "tags": ["Deportiva", "Torneo", "Exclusivo"]
+  },
+  {
+    "id": "TUC-007",
+    "slug": "gorra-trucker-bordada-ruca-tucun",
+    "title": "Gorra Trucker Escudo Oficial 3D",
+    "category": "Gorras",
+    "price": 16500,
+    "currency": "ARS",
+    "featured": true,
+    "shortDescription": "Gorra trucker negra con visera curva, malla respirable y el escudo hexagonal bordado en relieve 3D en hilo oro.",
+    "fullDescription": "Diseño pensado para proteger del sol en marchas y campamentos con la mística de Ruca Tucun. Estructura de 5 paneles, malla trasera transpirable de alto flujo de aire y broche snapback ajustable para todos los talles.",
+    "images": [
+      "assets/gorra_render_3d.jpg"
+    ],
+    "specs": {
+      "Tipo": "Trucker 5 paneles con red posterior",
+      "Bordado": "Escudo hexagonal con relieve 3D en hilo oro",
+      "Ajuste": "Cierre snapback de 7 posiciones",
+      "Talle": "Único regulable (54 a 60 cm)",
+      "Colores": "Negro con detalles Oro"
+    },
+    "tags": ["Gorras", "Bordado", "Campamento"]
+  },
+  {
+    "id": "TUC-008",
+    "slug": "panuelo-reglamentario-y-pasapanuelo-tucun",
+    "title": "Kit Pañuelo de Marcha & Pasapañuelo Grabado",
+    "category": "Uniformes",
+    "price": 11000,
+    "currency": "ARS",
+    "featured": false,
+    "shortDescription": "Pañuelo triangular con ribete reforzado y pasapañuelo de cuero legítimo con carabela y cruz pirograbadas.",
+    "fullDescription": "El símbolo de pertenencia de Ruca Tucun. Confeccionado en tela suave que no irrita el cuello y pasapañuelo de cuero vacuno curtido con la carabela y la cruz grabadas a fuego artesanalmente.",
+    "images": [
+      "assets/comunidad_mar_adentro_1989.png"
+    ],
+    "specs": {
+      "Pañuelo": "Microfibra técnica triangular con dobladillo fino",
+      "Pasapañuelo": "100% Cuero vacuno pirograbado a mano",
+      "Medidas": "110 cm x 70 cm",
+      "Colores": "Colores oficiales de sección"
+    },
+    "tags": ["Uniforme", "Tradición", "Mística"]
+  }
+]

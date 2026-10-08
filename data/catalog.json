@@ -1,0 +1,86 @@
+[
+  {
+    "id": "PROP-101",
+    "slug": "villa-los-alamos-moderna",
+    "title": "Residencia Contemporánea con Parque y Piscina",
+    "category": "Casas",
+    "price": 320000,
+    "currency": "USD",
+    "featured": true,
+    "shortDescription": "Exclusiva propiedad de 5 ambientes en barrio privado de máxima seguridad.",
+    "fullDescription": "Diseñada con concepto abierto, aberturas DVH, cocina con isla de silestone, master suite con vestidor e hidromasaje, galería quincho techada y piscina climatizada.",
+    "images": [
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "specs": {
+      "Superficie Total": "350 m²",
+      "Superficie Cubierta": "260 m²",
+      "Ambientes": "5",
+      "Dormitorios": "3 en suite",
+      "Cocheras": "2 cubiertas",
+      "Orientación": "Noreste"
+    },
+    "tags": [
+      "Destacado",
+      "Piscina",
+      "Seguridad 24hs",
+      "A Estrenar"
+    ]
+  },
+  {
+    "id": "PROP-102",
+    "slug": "departamento-penthouse-vista-rio",
+    "title": "Penthouse de Lujo con Terraza Privada y Jacuzzi",
+    "category": "Departamentos",
+    "price": 245000,
+    "currency": "USD",
+    "featured": true,
+    "shortDescription": "Semipiso de alta gama con visuales panorámicas y amenities de primer nivel.",
+    "fullDescription": "Ubicado en el piso 18 con vista abierta al río, balcón terraza de 45m² con jacuzzi privado, pisos de madera natural, domótica integrada y 2 cocheras subterráneas fijas.",
+    "images": [
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "specs": {
+      "Superficie Total": "180 m²",
+      "Ambientes": "3",
+      "Dormitorios": "2",
+      "Baños": "3",
+      "Amenities": "Gym, Piscina, SUM"
+    },
+    "tags": [
+      "Oportunidad",
+      "Vista Panorámica",
+      "Terraza"
+    ]
+  },
+  {
+    "id": "PROP-103",
+    "slug": "casa-minimalista-golf",
+    "title": "Casa de Diseño Minimalista al Golf",
+    "category": "Casas",
+    "price": 410000,
+    "currency": "USD",
+    "featured": false,
+    "shortDescription": "Fondo directo a la cancha de golf con visuales ininterrumpidas.",
+    "fullDescription": "Arquitectura de hormigón visto y grandes paños vidriados. Sistema de calefacción por losa radiante, paneles solares y terminaciones premium.",
+    "images": [
+      "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "specs": {
+      "Superficie Total": "480 m²",
+      "Superficie Cubierta": "310 m²",
+      "Ambientes": "6",
+      "Dormitorios": "4",
+      "Cocheras": "3"
+    },
+    "tags": [
+      "Al Golf",
+      "Sustentable",
+      "Domótica"
+    ]
+  }
+]
