@@ -1,82 +1,36 @@
 [
   {
-    "id": "EVT-001",
-    "title": "Reunión Habitual de Agrupación",
-    "type": "proximo",
-    "dateBadge": "TODOS LOS SÁBADOS",
-    "time": "15:00 a 18:30 hs",
-    "location": "Sede Colegio Fasta (Mar del Plata)",
-    "description": "Formación, juegos de campo, actividades por patrullas, merienda comunitaria y arriada solemne de bandera con uniforme reglamentario.",
-    "image": "assets/indumentaria_oficial_real.png",
-    "tags": ["Formación", "Sábados", "Comunidad"],
-    "waQuery": "¡Hola! Quiero consultar por la reunión del próximo sábado en Ruca Tucun."
-  },
-  {
-    "id": "EVT-002",
-    "title": "Fogón de la Tradición & Retiro de Indumentaria",
-    "type": "proximo",
-    "dateBadge": "PRÓXIMA CONVOCATORIA",
-    "time": "19:00 a 22:00 hs",
-    "location": "Patio Central & Predio de Campamento",
-    "description": "Jornada especial nocturna con entrega oficial de prendas pedidas en la web, sketches de agrupación, canciones tradicionales y el gran fogón comunitario.",
-    "image": "assets/campera_render_3d.jpg",
-    "tags": ["Fogón", "Especial", "Tradición"],
-    "waQuery": "¡Hola! Quiero anotarme al Fogón de la Tradición de Ruca Tucun."
-  },
-  {
-    "id": "EVT-003",
-    "title": "Gran Campamento Anual 'Mar Adentro'",
-    "type": "proximo",
-    "dateBadge": "TEMPORADA 2026/2027",
-    "time": "Duración: 5 Días",
-    "location": "Sierras de Balcarce / Tandil",
-    "description": "El hito culminante del año: armado de carpas, construcciones con troncos, marchas de orientación diurnas y nocturnas, juegos de estrategia y promesas de sección.",
-    "image": "assets/comunidad_mar_adentro_1989.png",
-    "tags": ["Campamento", "Naturaleza", "Sierras"],
-    "waQuery": "¡Hola! Quisiera recibir información sobre el próximo Campamento Anual de Ruca Tucun."
-  },
-  {
-    "id": "EVT-004",
-    "title": "Encuentro Histórico frente a la Bandera 'Mar Adentro 1989'",
+    "id": "EVT-COPA-ESTILO-2026",
+    "title": "Copas Regionales — ¡Campeones de la Copa Estilo 2026!",
     "type": "pasado",
-    "dateBadge": "HITO HISTÓRICO",
+    "dateBadge": "COPA ESTILO 2026",
+    "time": "Torneo Regional",
+    "location": "Mar del Plata & Región",
+    "description": "Una jornada inolvidable de deporte, entrega y hermandad comunitaria. La sección Templarios (14 a 18 años) de la Agrupación Masculina se consagró campeona y logró traer la tan ansiada copa a la costa. Al mismo tiempo, las Adalides (16 a 18 años) de la Agrupación Femenina disputaron un torneo excepcional, demostrando el temple, la alegría y el estilo característico de Ruca Tucun.",
+    "image": "assets/eventos/copa_estilo_campeones_2026.png",
+    "tags": ["Templarios", "Adalides", "Copa Estilo", "Campeones 2026", "Mar Adentro"]
+  },
+  {
+    "id": "EVT-BANDERA-1989",
+    "title": "Encuentro Comunitario 'Mar Adentro 1989'",
+    "type": "pasado",
+    "dateBadge": "HISTORIA & MÍSTICA",
     "time": "Jubileo Comunitario",
     "location": "Mar del Plata",
-    "description": "Toda la comunidad de Ruca Tucun reunida bajo el manto emblemático amarillo y negro con la Carabela y la Estrella de Belén, celebrando el espíritu de la Casa de Semilla.",
+    "description": "Toda la familia de Ruca Tucun reunida bajo el manto histórico de la bandera amarilla y negra con la Carabela y la Estrella de Belén. Un testimonio vivo de las generaciones que hicieron grande a la Casa de Semilla.",
     "image": "assets/comunidad_mar_adentro_1989.png",
-    "tags": ["Historia", "1989", "Comunidad"]
+    "tags": ["Comunidad", "1989", "Mar Adentro", "Casa de Semilla"]
   },
   {
-    "id": "EVT-005",
-    "title": "Torneo Inter-Agrupaciones & Copa Estilo",
-    "type": "pasado",
-    "dateBadge": "JORNADA DEPORTIVA",
-    "time": "Competencia Anual",
-    "location": "Gimnasio Deportivo",
-    "description": "Juegos de equipo, vóley, fútbol y destreza física donde cada sección compite con honor, caballerosidad y su indumentaria técnica oficial.",
-    "image": "assets/indumentaria_oficial_real.png",
-    "tags": ["Deportes", "Torneo", "Copa Estilo"]
-  },
-  {
-    "id": "EVT-006",
-    "title": "Presentación de la 'Camiseta Estrella' en Torneo de Vóley",
-    "type": "pasado",
-    "dateBadge": "TORNEO DE VÓLEY",
-    "time": "Edición Torneo",
-    "location": "Cancha Techada",
-    "description": "El equipo de Ruca Tucun estrenando la Camiseta Estrella amarilla y sus shorts oficiales en una vibrante jornada de camaradería deportiva.",
-    "image": "assets/camiseta_estrella_real.png",
-    "tags": ["Vóley", "Camiseta Estrella", "Torneo"]
-  },
-  {
-    "id": "EVT-007",
-    "title": "Formación Solemne con Uniformes Reglamentarios",
-    "type": "pasado",
-    "dateBadge": "ACTO INSTITUCIONAL",
-    "time": "Sábado de Apertura",
-    "location": "Patio de Armas",
-    "description": "Presentación de las chombas de piqué de la Agrupación Femenina (bordó) y Masculina (azul marino) con la cruz de Fasta y la bandera nacional.",
-    "image": "assets/uniformes_oficiales_banner.png",
-    "tags": ["Uniformes", "Formación", "Agrupaciones"]
+    "id": "EVT-REUNION-HABITUAL",
+    "title": "Reunión Habitual de Agrupaciones",
+    "type": "proximo",
+    "dateBadge": "TODOS LOS SÁBADOS",
+    "time": "15:00 a 20:00 hs (incluye Santa Misa)",
+    "location": "Sede Colegio Fasta (Mar del Plata)",
+    "description": "El encuentro semanal de formación, juegos de campo, vida comunitaria, merienda y la celebración de la Santa Misa para todas las secciones y familias de Ruca Tucun.",
+    "image": "assets/eventos/copa_estilo_campeones_2026.png",
+    "tags": ["Sábados", "Formación", "Santa Misa", "Comunidad"],
+    "waQuery": "¡Hola! Quiero consultar por la reunión y la Santa Misa del próximo sábado en Ruca Tucun."
   }
 ]

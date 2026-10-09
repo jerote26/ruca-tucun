@@ -172,23 +172,27 @@
   },
   {
     "id": "TUC-008",
-    "slug": "panuelo-reglamentario-y-pasapanuelo-tucun",
-    "title": "Kit Pañuelo de Marcha & Pasapañuelo Grabado",
+    "slug": "boina-oficial-institucional-ruca-tucun",
+    "title": "Boina Oficial Institucional con Pin de Sección",
     "category": "Uniformes",
-    "price": 11000,
+    "price": 22000,
     "currency": "ARS",
-    "featured": false,
-    "shortDescription": "Pañuelo triangular con ribete reforzado y pasapañuelo de cuero legítimo con carabela y cruz pirograbadas.",
-    "fullDescription": "El símbolo de pertenencia de Ruca Tucun. Confeccionado en tela suave que no irrita el cuello y pasapañuelo de cuero vacuno curtido con la carabela y la cruz grabadas a fuego artesanalmente.",
+    "featured": true,
+    "shortDescription": "Boina miliciana de paño de lana azul marino con pin hexagonal oficial de sección, ribete reforzado y cordón de ajuste.",
+    "fullDescription": "Prenda de uniforme reglamentario de alta distinción en Ruca Tucun para ceremonias, formaciones de sábado, marchas y actos solemnes institucionales. Confeccionada en paño de lana 100% de máxima densidad en color azul marino oscuro, con badana interior suave, cordón perimetral de ajuste y pin metálico/bordado hexagonal de sección con la cruz histórica de Fasta.",
     "images": [
-      "assets/comunidad_mar_adentro_1989.png"
+      "assets/boina_render_3d.jpg",
+      "assets/boina_real_referencia.png",
+      "assets/jefes/jefe_actual_juan_ignacio_schenone.png"
     ],
     "specs": {
-      "Pañuelo": "Microfibra técnica triangular con dobladillo fino",
-      "Pasapañuelo": "100% Cuero vacuno pirograbado a mano",
-      "Medidas": "110 cm x 70 cm",
-      "Colores": "Colores oficiales de sección"
+      "Confección": "100% Paño de lana peinada de máxima densidad",
+      "Insignia": "Pin hexagonal reglamentario de sección con cruz de Fasta",
+      "Ajuste": "Badana interior con cordón regulable a medida",
+      "Talles Disponibles": "S (54-55 cm), M (56-57 cm), L (58-59 cm), XL (60-61 cm)",
+      "Color": "Azul Marino Institucional",
+      "Uso": "Uniforme reglamentario para ceremonias, formaciones y actos solemnes"
     },
-    "tags": ["Uniforme", "Tradición", "Mística"]
+    "tags": ["Boina", "Uniforme", "Oficial", "Ceremonia", "Tradición"]
   }
 ]

@@ -1,276 +1,290 @@
 [
   {
-    "id": "jefe-1989-1991",
-    "period": "1989 - 1991",
+    "id": "jefe-1989-1992",
+    "period": "1989 - 1992",
     "periodName": "1ª Jefatura Fundacional",
-    "jefeRuca": "Jefe Fundador (1989)",
+    "jefeRuca": "Pablo Vittar",
     "photo": "assets/logo_ruca_tucun.png",
     "isCurrent": false,
-    "badge": "Fundación",
+    "badge": "Fundación 1989",
     "hierarchy": {
-      "jefeRuca": "Jefe de Ruca Fundador",
-      "jefaFemenina": "Jefa de Agrupación Femenina (1989 - 1991)",
-      "jefeMasculina": "Jefe de Agrupación Masculina (1989 - 1991)",
-      "jefeMilicianos": "Jefe de Agrupación Milicianos (1989 - 1991)"
+      "jefeRuca": "Pablo Vittar (Jefe Fundador)",
+      "jefaFemenina": "Por completar",
+      "jefeMasculina": "Por completar",
+      "jefeMilicianos": "Por completar"
     },
-    "note": "28 de marzo de 1989: Nace el primer Ruca de Mar del Plata bajo el lema 'Mar Adentro'."
-  },
-  {
-    "id": "jefe-1991-1993",
-    "period": "1991 - 1993",
-    "periodName": "2ª Jefatura de Ruca",
-    "jefeRuca": "Jefe de Ruca (1991 - 1993)",
-    "photo": "assets/logo_ruca_tucun.png",
-    "isCurrent": false,
-    "hierarchy": {
-      "jefeRuca": "Jefe de Ruca (1991 - 1993)",
-      "jefaFemenina": "Jefa de Agrupación Femenina",
-      "jefeMasculina": "Jefe de Agrupación Masculina",
-      "jefeMilicianos": "Jefe de Agrupación Milicianos"
-    },
-    "note": "Consolidación de las secciones y primeros grandes campamentos en las sierras."
+    "note": "28 de marzo de 1989: Nace Ruca Tucun, el primer Ruca de Mar del Plata. Fundación de la Casa de Semilla bajo el lema evangélico 'Mar Adentro'."
   },
   {
     "id": "jefe-1993-1995",
     "period": "1993 - 1995",
+    "periodName": "2ª Jefatura de Ruca",
+    "jefeRuca": "Raúl Arrigo",
+    "photo": "assets/logo_ruca_tucun.png",
+    "isCurrent": false,
+    "badge": "",
+    "hierarchy": {
+      "jefeRuca": "Raúl Arrigo",
+      "jefaFemenina": "Por completar",
+      "jefeMasculina": "Por completar",
+      "jefeMilicianos": "Por completar"
+    },
+    "note": "Consolidación de las secciones formativas, primeros campamentos serranos y crecimiento de las patrullas."
+  },
+  {
+    "id": "jefe-1996-1997",
+    "period": "1996 - 1997",
     "periodName": "3ª Jefatura de Ruca",
-    "jefeRuca": "Jefe de Ruca (1993 - 1995)",
+    "jefeRuca": "Rafael Luena",
     "photo": "assets/logo_ruca_tucun.png",
     "isCurrent": false,
+    "badge": "",
     "hierarchy": {
-      "jefeRuca": "Jefe de Ruca (1993 - 1995)",
-      "jefaFemenina": "Jefa de Agrupación Femenina",
-      "jefeMasculina": "Jefe de Agrupación Masculina",
-      "jefeMilicianos": "Jefe de Agrupación Milicianos"
+      "jefeRuca": "Rafael Luena",
+      "jefaFemenina": "Por completar",
+      "jefeMasculina": "Por completar",
+      "jefeMilicianos": "Por completar"
     },
-    "note": "Expansión de la vida comunitaria y juegos de campo tradicionales."
+    "note": "Mística rucalera, vida al aire libre y fortalecimiento de las agrupaciones."
   },
   {
-    "id": "jefe-1995-1997",
-    "period": "1995 - 1997",
+    "id": "jefe-1998-1999",
+    "period": "1998 - 1999",
     "periodName": "4ª Jefatura de Ruca",
-    "jefeRuca": "Jefe de Ruca (1995 - 1997)",
+    "jefeRuca": "Mariano Navarro",
     "photo": "assets/logo_ruca_tucun.png",
     "isCurrent": false,
+    "badge": "10 Años",
     "hierarchy": {
-      "jefeRuca": "Jefe de Ruca (1995 - 1997)",
-      "jefaFemenina": "Jefa de Agrupación Femenina",
-      "jefeMasculina": "Jefe de Agrupación Masculina",
-      "jefeMilicianos": "Jefe de Agrupación Milicianos"
+      "jefeRuca": "Mariano Navarro",
+      "jefaFemenina": "Por completar",
+      "jefeMasculina": "Por completar",
+      "jefeMilicianos": "Por completar"
     },
-    "note": "Grandes fogones y formación de cuadros juveniles."
+    "note": "Celebración de la primera década de vida de Ruca Tucun en Mar del Plata."
   },
   {
-    "id": "jefe-1997-1999",
-    "period": "1997 - 1999",
+    "id": "jefe-2000-2001",
+    "period": "2000 - 2001",
     "periodName": "5ª Jefatura de Ruca",
-    "jefeRuca": "Jefe de Ruca (1997 - 1999)",
+    "jefeRuca": "Andrés Centeno",
     "photo": "assets/logo_ruca_tucun.png",
     "isCurrent": false,
+    "badge": "Gran Jubileo",
     "hierarchy": {
-      "jefeRuca": "Jefe de Ruca (1997 - 1999)",
-      "jefaFemenina": "Jefa de Agrupación Femenina",
-      "jefeMasculina": "Jefe de Agrupación Masculina",
-      "jefeMilicianos": "Jefe de Agrupación Milicianos"
+      "jefeRuca": "Andrés Centeno",
+      "jefaFemenina": "Por completar",
+      "jefeMasculina": "Por completar",
+      "jefeMilicianos": "Por completar"
     },
-    "note": "Primera década de la Casa de Semilla formando hombres y mujeres íntegros."
+    "note": "Jubileo del Año 2000, misiones comunitarias y grandes marchas juveniles."
   },
   {
-    "id": "jefe-1999-2001",
-    "period": "1999 - 2001",
+    "id": "jefe-2002",
+    "period": "2002",
     "periodName": "6ª Jefatura de Ruca",
-    "jefeRuca": "Jefe de Ruca (1999 - 2001)",
+    "jefeRuca": "César Ludueña",
     "photo": "assets/logo_ruca_tucun.png",
     "isCurrent": false,
+    "badge": "",
     "hierarchy": {
-      "jefeRuca": "Jefe de Ruca (1999 - 2001)",
-      "jefaFemenina": "Jefa de Agrupación Femenina",
-      "jefeMasculina": "Jefe de Agrupación Masculina",
-      "jefeMilicianos": "Jefe de Agrupación Milicianos"
+      "jefeRuca": "César Ludueña",
+      "jefaFemenina": "Por completar",
+      "jefeMasculina": "Por completar",
+      "jefeMilicianos": "Por completar"
     },
-    "note": "Jubileo del año 2000 y misiones apostólicas en Mar del Plata."
+    "note": "Testimonio de fidelidad y servicio fraterno en tiempos desafiantes."
   },
   {
-    "id": "jefe-2001-2003",
-    "period": "2001 - 2003",
+    "id": "jefe-2003-2004",
+    "period": "2003 - 2004",
     "periodName": "7ª Jefatura de Ruca",
-    "jefeRuca": "Jefe de Ruca (2001 - 2003)",
+    "jefeRuca": "Federico Giacopazzi",
     "photo": "assets/logo_ruca_tucun.png",
     "isCurrent": false,
+    "badge": "",
     "hierarchy": {
-      "jefeRuca": "Jefe de Ruca (2001 - 2003)",
-      "jefaFemenina": "Jefa de Agrupación Femenina",
-      "jefeMasculina": "Jefe de Agrupación Masculina",
-      "jefeMilicianos": "Jefe de Agrupación Milicianos"
+      "jefeRuca": "Federico Giacopazzi",
+      "jefaFemenina": "Por completar",
+      "jefeMasculina": "Por completar",
+      "jefeMilicianos": "Por completar"
     },
-    "note": "Testimonio de fidelidad y servicio fraterno en tiempos difíciles."
+    "note": "Renovación de mandos juveniles y actividades de formación doctrinaria."
   },
   {
-    "id": "jefe-2003-2005",
-    "period": "2003 - 2005",
+    "id": "jefe-2005-2006",
+    "period": "2005 - 2006",
     "periodName": "8ª Jefatura de Ruca",
-    "jefeRuca": "Jefe de Ruca (2003 - 2005)",
+    "jefeRuca": "Juan Manuel Del Valle Ricci",
     "photo": "assets/logo_ruca_tucun.png",
     "isCurrent": false,
+    "badge": "",
     "hierarchy": {
-      "jefeRuca": "Jefe de Ruca (2003 - 2005)",
-      "jefaFemenina": "Jefa de Agrupación Femenina",
-      "jefeMasculina": "Jefe de Agrupación Masculina",
-      "jefeMilicianos": "Jefe de Agrupación Milicianos"
+      "jefeRuca": "Juan Manuel Del Valle Ricci",
+      "jefaFemenina": "Por completar",
+      "jefeMasculina": "Por completar",
+      "jefeMilicianos": "Por completar"
     },
-    "note": "Crecimiento de Caperucitas y Escuderos con nuevas patrullas."
+    "note": "Grandes fogones comunitarios e integración de nuevas familias al Ruca."
   },
   {
-    "id": "jefe-2005-2007",
-    "period": "2005 - 2007",
+    "id": "jefe-2007-2008",
+    "period": "2007 - 2008",
     "periodName": "9ª Jefatura de Ruca",
-    "jefeRuca": "Jefe de Ruca (2005 - 2007)",
-    "photo": "assets/logo_ruca_tucun.png",
-    "isCurrent": false,
-    "hierarchy": {
-      "jefeRuca": "Jefe de Ruca (2005 - 2007)",
-      "jefaFemenina": "Jefa de Agrupación Femenina",
-      "jefeMasculina": "Jefe de Agrupación Masculina",
-      "jefeMilicianos": "Jefe de Agrupación Milicianos"
-    },
-    "note": "Grandes encuentros deportivos y marchas costeras."
-  },
-  {
-    "id": "jefe-2007-2009",
-    "period": "2007 - 2009",
-    "periodName": "10ª Jefatura de Ruca",
-    "jefeRuca": "Jefe de Ruca (2007 - 2009)",
+    "jefeRuca": "Santiago Barrera Capdepon",
     "photo": "assets/logo_ruca_tucun.png",
     "isCurrent": false,
     "badge": "20 Años",
     "hierarchy": {
-      "jefeRuca": "Jefe de Ruca (2007 - 2009)",
-      "jefaFemenina": "Jefa de Agrupación Femenina",
-      "jefeMasculina": "Jefe de Agrupación Masculina",
-      "jefeMilicianos": "Jefe de Agrupación Milicianos"
+      "jefeRuca": "Santiago Barrera Capdepon",
+      "jefaFemenina": "Por completar",
+      "jefeMasculina": "Por completar",
+      "jefeMilicianos": "Por completar"
     },
-    "note": "Celebración de los 20 años de historia y fundación en Mar del Plata."
+    "note": "Conmemoración de dos décadas sembrando virtudes en la juventud de Mar del Plata."
   },
   {
-    "id": "jefe-2009-2011",
-    "period": "2009 - 2011",
-    "periodName": "11ª Jefatura de Ruca",
-    "jefeRuca": "Jefe de Ruca (2009 - 2011)",
+    "id": "jefe-2009-2010",
+    "period": "2009 - 2010",
+    "periodName": "10ª Jefatura de Ruca",
+    "jefeRuca": "Pablo Morfú",
     "photo": "assets/logo_ruca_tucun.png",
     "isCurrent": false,
+    "badge": "",
     "hierarchy": {
-      "jefeRuca": "Jefe de Ruca (2009 - 2011)",
-      "jefaFemenina": "Jefa de Agrupación Femenina",
-      "jefeMasculina": "Jefe de Agrupación Masculina",
-      "jefeMilicianos": "Jefe de Agrupación Milicianos"
+      "jefeRuca": "Pablo Morfú",
+      "jefaFemenina": "Por completar",
+      "jefeMasculina": "Por completar",
+      "jefeMilicianos": "Por completar"
     },
-    "note": "Impulso de las Agrupaciones Mayores y campamentos de alta montaña."
+    "note": "Fortalecimiento de la Agrupación Milicianos y campamentos de alta montaña."
   },
   {
     "id": "jefe-2011-2013",
     "period": "2011 - 2013",
+    "periodName": "11ª Jefatura de Ruca",
+    "jefeRuca": "Rodrigo Díaz",
+    "photo": "assets/logo_ruca_tucun.png",
+    "isCurrent": false,
+    "badge": "Mandato Trienal",
+    "hierarchy": {
+      "jefeRuca": "Rodrigo Díaz",
+      "jefaFemenina": "Por completar",
+      "jefeMasculina": "Por completar",
+      "jefeMilicianos": "Por completar"
+    },
+    "note": "Consolidación de las tradiciones, torneos deportivos inter-rucas y espíritu de servicio."
+  },
+  {
+    "id": "jefe-2014",
+    "period": "2014",
     "periodName": "12ª Jefatura de Ruca",
-    "jefeRuca": "Jefe de Ruca (2011 - 2013)",
+    "jefeRuca": "Francisco Corní",
     "photo": "assets/logo_ruca_tucun.png",
     "isCurrent": false,
+    "badge": "25° Aniversario",
     "hierarchy": {
-      "jefeRuca": "Jefe de Ruca (2011 - 2013)",
-      "jefaFemenina": "Jefa de Agrupación Femenina",
-      "jefeMasculina": "Jefe de Agrupación Masculina",
-      "jefeMilicianos": "Jefe de Agrupación Milicianos"
+      "jefeRuca": "Francisco Corní",
+      "jefaFemenina": "Por completar",
+      "jefeMasculina": "Por completar",
+      "jefeMilicianos": "Por completar"
     },
-    "note": "Renovación de insignias y mística de sección."
+    "note": "Celebración de las Bodas de Plata (25 años) de la Casa de Semilla."
   },
   {
-    "id": "jefe-2013-2015",
-    "period": "2013 - 2015",
+    "id": "jefe-2015-2016",
+    "period": "2015 - 2016",
     "periodName": "13ª Jefatura de Ruca",
-    "jefeRuca": "Jefe de Ruca (2013 - 2015)",
+    "jefeRuca": "Juan Ignacio Díaz",
     "photo": "assets/logo_ruca_tucun.png",
     "isCurrent": false,
+    "badge": "",
     "hierarchy": {
-      "jefeRuca": "Jefe de Ruca (2013 - 2015)",
-      "jefaFemenina": "Jefa de Agrupación Femenina",
-      "jefeMasculina": "Jefe de Agrupación Masculina",
-      "jefeMilicianos": "Jefe de Agrupación Milicianos"
+      "jefeRuca": "Juan Ignacio Díaz",
+      "jefaFemenina": "Por completar",
+      "jefeMasculina": "Por completar",
+      "jefeMilicianos": "Por completar"
     },
-    "note": "Consolidación de las tradiciones rucaleras y espíritu de servicio."
-  },
-  {
-    "id": "jefe-2015-2017",
-    "period": "2015 - 2017",
-    "periodName": "14ª Jefatura de Ruca",
-    "jefeRuca": "Jefe de Ruca (2015 - 2017)",
-    "photo": "assets/logo_ruca_tucun.png",
-    "isCurrent": false,
-    "hierarchy": {
-      "jefeRuca": "Jefe de Ruca (2015 - 2017)",
-      "jefaFemenina": "Jefa de Agrupación Femenina",
-      "jefeMasculina": "Jefe de Agrupación Masculina",
-      "jefeMilicianos": "Jefe de Agrupación Milicianos"
-    },
-    "note": "Innovación en actividades de aire libre y misiones juveniles."
+    "note": "Innovación en actividades de aire libre, campamentos y misiones juveniles."
   },
   {
     "id": "jefe-2017-2019",
     "period": "2017 - 2019",
-    "periodName": "15ª Jefatura de Ruca",
-    "jefeRuca": "Jefe de Ruca (2017 - 2019)",
+    "periodName": "14ª Jefatura de Ruca",
+    "jefeRuca": "Renzo Nicolli",
     "photo": "assets/logo_ruca_tucun.png",
     "isCurrent": false,
     "badge": "30° Aniversario",
     "hierarchy": {
-      "jefeRuca": "Jefe de Ruca (2017 - 2019)",
-      "jefaFemenina": "Jefa de Agrupación Femenina",
-      "jefeMasculina": "Jefe de Agrupación Masculina",
-      "jefeMilicianos": "Jefe de Agrupación Milicianos"
+      "jefeRuca": "Renzo Nicolli",
+      "jefaFemenina": "Por completar",
+      "jefeMasculina": "Por completar",
+      "jefeMilicianos": "Por completar"
     },
-    "note": "2019: Gran Jubileo por los 30 años de Ruca Tucun con la bandera 'Mar Adentro 1989'."
+    "note": "Histórico 30° Aniversario (1989 - 2019) con el despliegue de la bandera comunitaria Mar Adentro 1989."
   },
   {
-    "id": "jefe-2019-2021",
-    "period": "2019 - 2021",
+    "id": "jefe-2020-2021",
+    "period": "2020 - 2021",
+    "periodName": "15ª Jefatura de Ruca",
+    "jefeRuca": "Santiago López Bayerque",
+    "photo": "assets/logo_ruca_tucun.png",
+    "isCurrent": false,
+    "badge": "",
+    "hierarchy": {
+      "jefeRuca": "Santiago López Bayerque",
+      "jefaFemenina": "Por completar",
+      "jefeMasculina": "Por completar",
+      "jefeMilicianos": "Por completar"
+    },
+    "note": "Sostenimiento de la hermandad comunitaria y creatividad apostólica."
+  },
+  {
+    "id": "jefe-2022",
+    "period": "2022",
     "periodName": "16ª Jefatura de Ruca",
-    "jefeRuca": "Jefe de Ruca (2019 - 2021)",
+    "jefeRuca": "Francisco Molinari",
     "photo": "assets/logo_ruca_tucun.png",
     "isCurrent": false,
+    "badge": "",
     "hierarchy": {
-      "jefeRuca": "Jefe de Ruca (2019 - 2021)",
-      "jefaFemenina": "Jefa de Agrupación Femenina",
-      "jefeMasculina": "Jefe de Agrupación Masculina",
-      "jefeMilicianos": "Jefe de Agrupación Milicianos"
+      "jefeRuca": "Francisco Molinari",
+      "jefaFemenina": "Por completar",
+      "jefeMasculina": "Por completar",
+      "jefeMilicianos": "Por completar"
     },
-    "note": "Creatividad apostólica y sostenimiento de los lazos comunitarios."
+    "note": "Reencuentro pleno en actividades presenciales, campamentos masivos y nuevos desafíos."
   },
   {
-    "id": "jefe-2021-2023",
-    "period": "2021 - 2023",
+    "id": "jefe-2023-2024",
+    "period": "2023 - 2024",
     "periodName": "17ª Jefatura de Ruca",
-    "jefeRuca": "Jefe de Ruca (2021 - 2023)",
+    "jefeRuca": "Juan Ignacio Lurbe",
     "photo": "assets/logo_ruca_tucun.png",
     "isCurrent": false,
+    "badge": "Mandato Reciente",
     "hierarchy": {
-      "jefeRuca": "Jefe de Ruca (2021 - 2023)",
-      "jefaFemenina": "Jefa de Agrupación Femenina",
-      "jefeMasculina": "Jefe de Agrupación Masculina",
-      "jefeMilicianos": "Jefe de Agrupación Milicianos"
+      "jefeRuca": "Juan Ignacio Lurbe",
+      "jefaFemenina": "Por completar",
+      "jefeMasculina": "Por completar",
+      "jefeMilicianos": "Por completar"
     },
-    "note": "Regreso pleno a los campamentos masivos y nuevos torneos de agrupación."
+    "note": "Nuevos torneos deportivos, Copa Estilo y consolidación de la indumentaria oficial."
   },
   {
-    "id": "jefe-2023-2025",
-    "period": "2023 - 2025",
+    "id": "jefe-2025-2026",
+    "period": "2025 - 2026",
     "periodName": "18ª Jefatura de Ruca",
-    "jefeRuca": "Jefe de Ruca (2023 - 2025)",
-    "photo": "assets/logo_ruca_tucun.png",
+    "jefeRuca": "Juan Ignacio Schenone",
+    "photo": "assets/jefes/jefe_actual_juan_ignacio_schenone.png",
     "isCurrent": true,
     "badge": "Jefatura Actual",
     "hierarchy": {
-      "jefeRuca": "Jefe de Ruca Actual",
-      "jefaFemenina": "Jefa de Agrupación Femenina",
-      "jefeMasculina": "Jefe de Agrupación Masculina",
-      "jefeMilicianos": "Jefe de Agrupación Milicianos"
+      "jefeRuca": "Juan Ignacio Schenone (Jefe en funciones)",
+      "jefaFemenina": "Por completar",
+      "jefeMasculina": "Por completar",
+      "jefeMilicianos": "Por completar"
     },
-    "note": "Conducción activa de la Casa de Semilla rumbo al futuro de Fasta en Mar del Plata."
+    "note": "Conducción actual de la Casa de Semilla liderando la marcha juvenil de Fasta en Mar del Plata."
   }
 ]

@@ -400,33 +400,223 @@ function resetFilters() {
   setCategoryFilter("all");
 }
 
-// MANEJO DE EDICIÓN Y CARGA DE FOTOS DE JEFES DE RUCA
-function triggerJefePhotoUpload(jefeId) {
-  currentTargetJefeId = jefeId;
-  const input = document.getElementById("jefePhotoInput");
-  if (input) input.click();
+// ==========================================
+// CARGA AUTOMATIZADA DE EVENTOS (PRÓXIMOS Y PASADOS)
+// ==========================================
+async function loadEvents() {
+  try {
+    const res = await fetch(CONFIG.eventsPath);
+    if (!res.ok) throw new Error("No se pudo cargar la lista de eventos.");
+    eventsData = await res.json();
+    renderEvents();
+  } catch (err) {
+    console.error("Error al cargar eventos:", err);
+  }
 }
 
-function handleJefePhotoUpload(event) {
-  const file = event.target.files[0];
-  if (!file || !currentTargetJefeId) return;
+function renderEvents() {
+  const upcomingContainer = document.getElementById("upcomingEventsContainer");
+  const pastContainer = document.getElementById("pastEventsContainer");
+  if (!upcomingContainer || !pastContainer) return;
 
-  const reader = new FileReader();
-  reader.onload = function(e) {
-    const imgEl = document.getElementById(`jefeImg-${currentTargetJefeId}`);
-    const placeholderEl = document.getElementById(`jefePlaceholder-${currentTargetJefeId}`);
-    
-    if (imgEl && placeholderEl) {
-      imgEl.src = e.target.result;
-      imgEl.classList.remove("hidden");
-      placeholderEl.classList.add("hidden");
+  const upcoming = eventsData.filter(e => e.type === "proximo");
+  const past = eventsData.filter(e => e.type === "pasado");
+
+  // Renderizar Próximas Actividades
+  upcomingContainer.innerHTML = upcoming.map(event => {
+    const waUrl = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(event.waQuery || "¡Hola! Quiero consultar por la actividad de Ruca Tucun.")}`;
+    return `
+      <div class="bg-rucaCard border border-rucaBorder hover:border-rucaGold/50 rounded-2xl p-6 transition-all shadow-md flex flex-col justify-between group">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-3">
+            <span class="text-xs font-mono font-bold text-rucaGold bg-rucaGold/10 px-2.5 py-1 rounded border border-rucaGold/30">
+              ${event.dateBadge}
+            </span>
+            <span class="text-[11px] text-slate-400 font-mono">${event.time}</span>
+          </div>
+          <h4 class="text-lg font-bold text-white group-hover:text-rucaGold transition-colors mb-2">
+            ${event.title}
+          </h4>
+          <p class="text-xs text-slate-300 mb-4 leading-relaxed font-light">
+            ${event.description}
+          </p>
+        </div>
+
+        <div class="text-[11px] text-slate-300 border-t border-rucaBorder pt-3 flex justify-between items-center mt-2">
+          <span class="flex items-center gap-1 text-slate-400">
+            <span>📍</span> ${event.location}
+          </span>
+          <a href="${waUrl}" target="_blank" rel="noopener noreferrer" 
+             class="text-rucaGold font-bold hover:underline flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+            Consultar →
+          </a>
+        </div>
+      </div>
+    `;
+  }).join("");
+
+  // Renderizar Hitos y Eventos Pasados (Galería Histórica)
+  pastContainer.innerHTML = past.map(event => {
+    return `
+      <div class="bg-rucaCard rounded-3xl overflow-hidden border border-rucaBorder hover:border-rucaGold/40 transition-all shadow-xl flex flex-col justify-between group">
+        <div class="relative h-64 sm:h-80 overflow-hidden bg-rucaBlack">
+          <img src="${event.image}" alt="${event.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="absolute top-4 left-4 bg-rucaBlack/85 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-rucaGold border border-rucaGold/30">
+            ${event.dateBadge}
+          </div>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center gap-2 mb-2 text-xs text-slate-400">
+            <span>🏛️ ${event.location}</span>
+            <span>•</span>
+            <span class="font-mono text-rucaGold">${event.time}</span>
+          </div>
+          <h4 class="font-extrabold text-white text-lg mb-2 group-hover:text-rucaGold transition-colors">
+            ${event.title}
+          </h4>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-light mb-4">
+            ${event.description}
+          </p>
+          <div class="flex flex-wrap gap-1.5 border-t border-rucaBorder/60 pt-3">
+            ${(event.tags || []).map(tag => `<span class="text-[10px] bg-rucaDark text-slate-400 px-2 py-0.5 rounded font-medium">#${tag}</span>`).join("")}
+          </div>
+        </div>
+      </div>
+    `;
+  }).join("");
+}
+
+// ==========================================
+// CARRUSEL DE JEFES DE RUCA & JERARQUÍA DE MANDO
+// ==========================================
+async function loadJefaturas() {
+  try {
+    const res = await fetch(CONFIG.jefaturasPath);
+    if (!res.ok) throw new Error("No se pudo cargar la lista de jefaturas.");
+    jefaturasData = await res.json();
+    renderJefaturasCarousel();
+  } catch (err) {
+    console.error("Error al cargar jefaturas:", err);
+  }
+}
+
+function renderJefaturasCarousel() {
+  const track = document.getElementById("jefesCarouselTrack");
+  if (!track) return;
+
+  track.innerHTML = jefaturasData.map(jefe => {
+    const isCurrent = jefe.isCurrent;
+    const badgeHtml = jefe.badge ? `
+      <span class="text-[10px] font-mono font-extrabold px-2 py-0.5 rounded ${isCurrent ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/40' : 'bg-rucaGold/20 text-rucaGold border border-rucaGold/40'}">
+        ${jefe.badge}
+      </span>
+    ` : '';
+
+    const isPhotoReal = jefe.photo && !jefe.photo.includes("logo_ruca_tucun");
+    const imgClass = isPhotoReal ? "w-full h-full object-cover object-center" : "w-full h-full object-contain filter drop-shadow";
+    const containerPadding = isPhotoReal ? "p-0" : "p-3";
+
+    return `
+      <div class="jefe-carousel-card bg-rucaDark rounded-2xl p-5 border ${isCurrent ? 'border-rucaGold shadow-[0_0_15px_rgba(250,204,21,0.25)]' : 'border-rucaBorder'} text-center flex flex-col items-center justify-between cursor-pointer select-none"
+           onclick="openJefeHierarchyModal('${jefe.id}')"
+           title="Clic para ver Comando de Ruca completo">
+        
+        <div class="w-full flex items-center justify-between mb-3">
+          <span class="text-xs font-mono font-bold ${isCurrent ? 'text-emerald-400' : 'text-rucaGold'} bg-rucaBlack/70 px-2 py-0.5 rounded">
+            ${jefe.period}
+          </span>
+          ${badgeHtml}
+        </div>
+
+        <div class="relative w-24 h-24 rounded-full bg-rucaBlack border-2 ${isCurrent ? 'border-rucaGold' : 'border-rucaBorder'} flex items-center justify-center overflow-hidden mb-3 shadow-inner group-hover:scale-105 transition-transform ${containerPadding}">
+          <img src="${jefe.photo || 'assets/logo_ruca_tucun.png'}" alt="${jefe.jefeRuca}" class="${imgClass}">
+        </div>
+
+        <div class="w-full mb-3">
+          <h4 class="font-extrabold text-white text-sm mb-0.5">${jefe.periodName}</h4>
+          <p class="text-xs text-rucaGold font-semibold">${jefe.jefeRuca}</p>
+        </div>
+
+        <button class="w-full mt-auto text-[11px] font-bold py-1.5 px-3 rounded-xl border border-rucaGold/40 text-rucaGold hover:bg-rucaGold hover:text-rucaBlack transition-all flex items-center justify-center gap-1.5">
+          <span>👑</span> Ver Comando de Ruca
+        </button>
+      </div>
+    `;
+  }).join("");
+}
+
+// Desplazamiento horizontal del carrusel con flechas
+function scrollJefesCarousel(direction) {
+  const track = document.getElementById("jefesCarouselTrack");
+  if (!track) return;
+  const scrollAmount = 290;
+  track.scrollBy({
+    left: direction === "left" ? -scrollAmount : scrollAmount,
+    behavior: "smooth"
+  });
+}
+
+// Abrir modal con la jerarquía de mando del período seleccionado
+function openJefeHierarchyModal(jefeId) {
+  const jefe = jefaturasData.find(j => j.id === jefeId);
+  if (!jefe) return;
+
+  const modal = document.getElementById("jefeHierarchyModal");
+  if (!modal) return;
+
+  document.getElementById("modalJefePeriod").textContent = jefe.period;
+  document.getElementById("modalJefePeriodName").textContent = jefe.periodName;
+  document.getElementById("modalJefeName").textContent = jefe.jefeRuca;
+
+  const avatarEl = document.getElementById("modalJefeAvatar");
+  if (avatarEl) {
+    if (jefe.photo && !jefe.photo.includes("logo_ruca_tucun")) {
+      avatarEl.innerHTML = `<img src="${jefe.photo}" alt="${jefe.jefeRuca}" class="w-full h-full object-cover object-center">`;
+    } else {
+      avatarEl.innerHTML = `<span>👑</span>`;
     }
-  };
-  reader.readAsDataURL(file);
+  }
+
+  const hier = jefe.hierarchy || {};
+  document.getElementById("modalJefaFemeninaName").textContent = hier.jefaFemenina || "Por completar";
+  document.getElementById("modalJefeMasculinaName").textContent = hier.jefeMasculina || "Por completar";
+  document.getElementById("modalJefeMilicianosName").textContent = hier.jefeMilicianos || "Por completar";
+
+  const noteBox = document.getElementById("modalJefeNoteBox");
+  const noteEl = document.getElementById("modalJefeNote");
+  if (jefe.note) {
+    noteEl.textContent = jefe.note;
+    noteBox.classList.remove("hidden");
+  } else {
+    noteBox.classList.add("hidden");
+  }
+
+  modal.classList.remove("hidden");
+}
+
+function closeJefeHierarchyModal() {
+  const modal = document.getElementById("jefeHierarchyModal");
+  if (modal) modal.classList.add("hidden");
 }
 
 function setupEventListeners() {
   window.addEventListener("hashchange", handleRouting);
   document.getElementById("searchInput").addEventListener("input", applyFilters);
   document.getElementById("sortFilter").addEventListener("change", applyFilters);
+
+  // Cerrar modales con la tecla Escape
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      closeDetailView(true);
+      closeJefeHierarchyModal();
+    }
+  });
+
+  // Cerrar modal al hacer clic en el fondo oscuro
+  const hierModal = document.getElementById("jefeHierarchyModal");
+  if (hierModal) {
+    hierModal.addEventListener("click", (e) => {
+      if (e.target === hierModal) closeJefeHierarchyModal();
+    });
+  }
 }
