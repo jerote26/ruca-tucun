@@ -173,13 +173,13 @@
   {
     "id": "TUC-008",
     "slug": "boina-oficial-institucional-ruca-tucun",
-    "title": "Boina Oficial Institucional con Pin de Sección",
+    "title": "Boina Oficial Institucional (Paño de Lana)",
     "category": "Uniformes",
     "price": 22000,
     "currency": "ARS",
     "featured": true,
-    "shortDescription": "Boina miliciana de paño de lana azul marino tradicionalmente orejeada a la derecha con pin hexagonal oficial de sección, ribete reforzado y cordón de ajuste.",
-    "fullDescription": "Prenda de uniforme reglamentario de alta distinción en Ruca Tucun para ceremonias, formaciones de sábado, marchas y actos solemnes institucionales. Moldeada con el porte tradicional orejeada hacia la derecha con copa drapeada de gran porte, confeccionada en paño de lana 100% peinada de máxima densidad en color azul marino oscuro, con badana interior reforzada, cordón perimetral de ajuste y pin metálico/esmaltado hexagonal con la cruz y saeta de Fasta.",
+    "shortDescription": "Boina miliciana de paño de lana azul marino tradicionalmente orejeada a la derecha, con ribete reforzado y cordón perimetral de ajuste.",
+    "fullDescription": "Prenda de uniforme reglamentario de alta distinción en Ruca Tucun para ceremonias, formaciones de sábado, marchas y actos solemnes institucionales. Moldeada con el porte tradicional orejeada hacia la derecha con copa drapeada de gran porte, confeccionada en paño de lana 100% peinada de máxima densidad en color azul marino oscuro, con badana interior reforzada y cordón perimetral de ajuste a medida.",
     "images": [
       "assets/boina_render_3d.jpg",
       "assets/boina_real_referencia.png",
@@ -188,8 +188,7 @@
     "specs": {
       "Confección": "100% Paño de lana peinada de máxima densidad",
       "Porte y Caída": "Corte tradicional orejeado hacia la derecha",
-      "Insignia": "Pin hexagonal reglamentario de sección con cruz de Fasta",
-      "Ajuste": "Badana interior con cordón regulable a medida",
+      "Terminación": "Ribete reforzado de badana con cordón de ajuste",
       "Talles Disponibles": "S (54-55 cm), M (56-57 cm), L (58-59 cm), XL (60-61 cm)",
       "Color": "Azul Marino Institucional",
       "Uso": "Uniforme reglamentario para ceremonias, formaciones y actos solemnes"
