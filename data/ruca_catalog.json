@@ -103,25 +103,26 @@
     "id": "TUC-005",
     "slug": "buzo-uniforme-medio-cierre-negro",
     "title": "Buzo de Uniforme Medio Cierre (Negro Oficial)",
-    "category": "Camperas",
+    "category": "Uniformes",
     "price": 46000,
     "currency": "ARS",
     "featured": true,
-    "shortDescription": "Buzo térmico de frisa negra con medio cierre metálico y cruz de Fasta bordada en blanco sobre el pecho.",
-    "fullDescription": "El abrigo oficial para las tardes y mañanas de sábado, marchas y campamentos en las sierras o la costa. Confeccionado en frisa de algodón con interior perchado ultra suave, cuello alto con cierre metálico de un cuarto (half-zip), puños y cintura acanalados elastizados y la cruz de Fasta bordada en hilo blanco de alta resistencia.",
+    "shortDescription": "Buzo reglamentario de uniforme en frisa negra con medio cierre metálico y cruz de Fasta bordada en blanco sobre el pecho.",
+    "fullDescription": "Prenda de uniforme oficial reglamentario de abrigo para las tardes y mañanas de sábado, formaciones, marchas y campamentos. Confeccionado en frisa de algodón con interior perchado ultra suave, cuello alto con cierre metálico de un cuarto (half-zip), puños y cintura acanalados elastizados y la cruz de Fasta bordada en hilo blanco de alta resistencia.",
     "images": [
       "assets/buzo_negro_3d.jpg",
       "assets/uniformes_oficiales_banner.png"
     ],
     "specs": {
+      "Prenda": "Buzo oficial de uniforme reglamentario",
       "Tela": "Frisa de algodón perchada térmica y abrigada",
       "Cuello": "Cuello alto con cremallera medio cierre (half-zip)",
       "Bordado": "Cruz oficial Fasta en relieve blanco",
-      "Uso": "Uniforme de abrigo y campamentos",
+      "Uso": "Uniforme reglamentario de abrigo, formaciones y campamentos",
       "Talles Disponibles": "S, M, L, XL, XXL",
       "Color": "Negro Clásico"
     },
-    "tags": ["Uniforme", "Abrigo", "Oficial", "Frisa"]
+    "tags": ["Uniforme", "Abrigo", "Oficial", "Frisa", "Buzo"]
   },
   {
     "id": "TUC-006",
