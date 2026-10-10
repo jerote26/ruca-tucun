@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ruca-tucun.vercel.app/sitemap.xml
