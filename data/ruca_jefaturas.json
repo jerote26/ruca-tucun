@@ -179,12 +179,12 @@
     "id": "jefe-2014",
     "period": "2014",
     "periodName": "12ª Jefatura de Ruca",
-    "jefeRuca": "Francisco Corní",
+    "jefeRuca": "Francisco Cornú",
     "photo": "assets/logo_ruca_tucun.png",
     "isCurrent": false,
     "badge": "25° Aniversario",
     "hierarchy": {
-      "jefeRuca": "Francisco Corní",
+      "jefeRuca": "Francisco Cornú",
       "jefaFemenina": "Por completar",
       "jefeMasculina": "Por completar",
       "jefeMilicianos": "Por completar"
