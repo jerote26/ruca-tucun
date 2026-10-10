@@ -6,9 +6,9 @@
 const CONFIG = {
   // Teléfono oficial para consultas y pedidos en Mar del Plata
   whatsappNumber: "5492236001234",
-  catalogPath: "data/ruca_catalog.json",
-  eventsPath: "data/ruca_events.json",
-  jefaturasPath: "data/ruca_jefaturas.json"
+  catalogPath: `data/ruca_catalog.json?t=${Date.now()}`,
+  eventsPath: `data/ruca_events.json?t=${Date.now()}`,
+  jefaturasPath: `data/ruca_jefaturas.json?t=${Date.now()}`
 };
 
 // Estado global de la aplicación
