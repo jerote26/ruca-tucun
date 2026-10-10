@@ -194,6 +194,9 @@
               <button onclick="setCategoryFilter('Gorras')" class="cat-pill bg-rucaCard hover:bg-rucaBorder text-slate-200 font-medium text-xs px-4 py-2 rounded-xl border border-rucaBorder transition-all" data-cat="Gorras">
                 🧢 Gorras
               </button>
+              <button onclick="setCategoryFilter('Insignias')" class="cat-pill bg-rucaCard hover:bg-rucaBorder text-slate-200 font-medium text-xs px-4 py-2 rounded-xl border border-rucaBorder transition-all" data-cat="Insignias">
+                ⚜️ Insignias
+              </button>
             </div>
           </div>
 
@@ -612,23 +615,37 @@
             <div>
               <div class="flex items-center justify-between mb-2">
                 <span class="text-xs font-black text-rucaGold uppercase tracking-wider">Agrupación Milicianos</span>
-                <span class="text-[10px] font-mono text-rucaGold bg-rucaGold/10 px-2 py-0.5 rounded border border-rucaGold/30">Mandos & Cuadros</span>
+                <span class="text-[10px] font-mono text-rucaGold bg-rucaGold/10 px-2 py-0.5 rounded border border-rucaGold/30">18 a 25 años</span>
               </div>
-              <h4 class="font-extrabold text-white text-lg mb-2">Mandos y Cuadros Dirigenciales</h4>
+              <h4 class="font-extrabold text-white text-lg mb-2">Jóvenes Universitarios y Mandos</h4>
               <p class="text-xs text-slate-300 leading-relaxed mb-6">
-                Los jóvenes mayores y dirigentes de la comunidad. Conducen las agrupaciones con testimonio de vida, entrega generosa, estudio, vida sacramental y liderazgo servicial.
+                Los jóvenes mayores y universitarios (18 a 25 años aproximadamente). Conducen las agrupaciones con testimonio de vida, entrega generosa, estudio, vida sacramental y liderazgo servicial en la Casa de Semilla.
               </p>
             </div>
 
-            <!-- ESCUDO MAYOR RUCA TUCUN -->
+            <!-- ESCUDOS OFICIALES DE MILICIANOS Y MANDO -->
             <div class="pt-4 border-t border-rucaBorder/70">
-              <span class="text-[10px] uppercase font-bold tracking-wider text-slate-400 block mb-3 text-center">Insignia Mayor de Conducción</span>
-              <div class="bg-rucaDark/90 p-2.5 rounded-2xl border border-rucaBorder hover:border-rucaGold/50 transition-all flex flex-col items-center text-center group">
-                <div class="h-20 flex items-center justify-center mb-1.5 transform group-hover:scale-105 transition-transform">
-                  <img src="assets/escudo_ruca_tucun_transparente.png" alt="Escudo Mayor Ruca Tucun" class="max-h-full w-auto object-contain filter drop-shadow-[0_0_10px_rgba(250,204,21,0.35)]">
+              <span class="text-[10px] uppercase font-bold tracking-wider text-slate-400 block mb-3 text-center">Insignias Oficiales de Milicianos</span>
+              <div class="grid grid-cols-2 gap-3 text-center">
+                
+                <!-- Escudo Agrupación Milicianos (Flecha Roja) -->
+                <div class="bg-rucaDark/90 p-2.5 rounded-2xl border border-rucaBorder hover:border-rose-500/50 transition-all flex flex-col items-center group">
+                  <div class="h-20 flex items-center justify-center mb-1.5 transform group-hover:scale-105 transition-transform">
+                    <img src="assets/escudos/escudo_agrupacion_milicianos.png" alt="Escudo Agrupación Milicianos" class="max-h-full w-auto object-contain filter drop-shadow">
+                  </div>
+                  <span class="text-[11px] font-extrabold text-white block">Agrup. Milicianos</span>
+                  <span class="text-[9px] text-rose-400 leading-tight">Flecha Roja</span>
                 </div>
-                <span class="text-[11px] font-extrabold text-white block">Escudo Ruca Tucun</span>
-                <span class="text-[9px] text-rucaGold leading-tight">Hexágono Oficial de Mando</span>
+
+                <!-- Insignia Mayor Ruca Tucun -->
+                <div class="bg-rucaDark/90 p-2.5 rounded-2xl border border-rucaBorder hover:border-rucaGold/50 transition-all flex flex-col items-center group">
+                  <div class="h-20 flex items-center justify-center mb-1.5 transform group-hover:scale-105 transition-transform">
+                    <img src="assets/escudo_ruca_tucun_transparente.png" alt="Escudo Mayor Ruca Tucun" class="max-h-full w-auto object-contain filter drop-shadow-[0_0_10px_rgba(250,204,21,0.35)]">
+                  </div>
+                  <span class="text-[11px] font-extrabold text-white block">Ruca Tucun</span>
+                  <span class="text-[9px] text-rucaGold leading-tight">Hexágono de Mando</span>
+                </div>
+
               </div>
             </div>
           </div>
@@ -769,7 +786,8 @@
               <span class="text-[9px] text-slate-400 block mt-0.5">Mandos y Cuadros Dirigenciales</span>
             </div>
           </div>
-          <div class="flex items-center flex-shrink-0 bg-rucaBlack/50 p-1.5 rounded-lg border border-rucaBorder/50">
+          <div class="flex items-center gap-1.5 flex-shrink-0 bg-rucaBlack/50 p-1.5 rounded-lg border border-rucaBorder/50">
+            <img src="assets/escudos/escudo_agrupacion_milicianos.png" alt="Milicianos" class="h-7 w-auto object-contain filter drop-shadow" title="Agrupación Milicianos">
             <img src="assets/escudo_ruca_tucun_transparente.png" alt="Ruca Tucun" class="h-7 w-auto object-contain filter drop-shadow-[0_0_6px_rgba(250,204,21,0.3)]" title="Insignia Oficial de Mando">
           </div>
         </div>
