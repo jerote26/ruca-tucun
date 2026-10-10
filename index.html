@@ -502,39 +502,135 @@
         </div>
       </div>
 
-      <!-- NUESTRAS AGRUPACIONES (SEGÚN PEDIDO EXACTO DEL USUARIO) -->
+      <!-- NUESTRAS AGRUPACIONES Y ESCUDOS HERÁLDICOS DE SECCIÓN -->
       <div class="mb-14">
-        <h3 class="text-2xl sm:text-3xl font-black text-white text-center mb-8">
-          Nuestras <span class="text-rucaGold">Agrupaciones</span>
-        </h3>
+        <div class="text-center max-w-2xl mx-auto mb-8">
+          <span class="text-xs font-mono font-bold text-rucaGold bg-rucaGold/10 px-3 py-1 rounded-full border border-rucaGold/30 uppercase tracking-wider mb-2 inline-block">
+            Heráldica Oficial • Saeta hacia lo Alto
+          </span>
+          <h3 class="text-2xl sm:text-3xl font-black text-white">
+            Nuestras <span class="text-rucaGold">Agrupaciones y Secciones</span>
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-300 mt-2 leading-relaxed">
+            Cada sección posee su insignia tradicional con la saeta orientada al cielo, reflejo del ideal caballeresco y la etapa de crecimiento de cada miliciano.
+          </p>
+        </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
           
           <!-- 1. AGRUPACIÓN FEMENINA -->
-          <div class="bg-rucaCard p-6 rounded-2xl border border-rucaBorder hover:border-rose-400/50 transition-all shadow-md">
-            <span class="text-xs font-black text-rose-400 uppercase tracking-wider block mb-1">Agrupación Femenina</span>
-            <h4 class="font-extrabold text-white text-lg mb-3">Caperucitas, Herederas y Adalidas</h4>
-            <p class="text-xs text-slate-300 leading-relaxed">
-              Formación de niñas y jóvenes en la pureza, el servicio abnegado, la delicadeza, la alegría comunitaria y las virtudes del hogar cristiano en marchas y campamentos.
-            </p>
+          <div class="bg-rucaCard p-6 rounded-3xl border border-rucaBorder hover:border-rose-400/50 transition-all shadow-xl flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-black text-rose-400 uppercase tracking-wider">Agrupación Femenina</span>
+                <span class="text-[10px] font-mono text-slate-400 bg-rucaDark px-2 py-0.5 rounded border border-rucaBorder">3 Secciones</span>
+              </div>
+              <h4 class="font-extrabold text-white text-lg mb-2">Caperucitas, Herederas y Adalidas</h4>
+              <p class="text-xs text-slate-300 leading-relaxed mb-6">
+                Formación de niñas y jóvenes en la pureza, el servicio abnegado, la delicadeza, la alegría comunitaria y las virtudes del hogar cristiano en marchas y campamentos.
+              </p>
+            </div>
+
+            <!-- ESCUDOS OFICIALES DE SECCIÓN FEMENINA -->
+            <div class="pt-4 border-t border-rucaBorder/70">
+              <span class="text-[10px] uppercase font-bold tracking-wider text-slate-400 block mb-3 text-center">Insignias Oficiales de Sección</span>
+              <div class="grid grid-cols-3 gap-2 text-center">
+                
+                <!-- Caperucitas -->
+                <div class="bg-rucaDark/90 p-2.5 rounded-2xl border border-rucaBorder hover:border-yellow-400/50 transition-all flex flex-col items-center group">
+                  <div class="h-20 flex items-center justify-center mb-1.5 transform group-hover:scale-105 transition-transform">
+                    <img src="assets/escudos/escudo_seccion_caperucitas.png" alt="Escudo Sección Caperucitas" class="max-h-full w-auto object-contain filter drop-shadow">
+                  </div>
+                  <span class="text-[11px] font-extrabold text-white block">Caperucitas</span>
+                  <span class="text-[9px] text-yellow-400 leading-tight">Fondo Amarillo</span>
+                </div>
+
+                <!-- Herederas -->
+                <div class="bg-rucaDark/90 p-2.5 rounded-2xl border border-rucaBorder hover:border-yellow-400/50 transition-all flex flex-col items-center group">
+                  <div class="h-20 flex items-center justify-center mb-1.5 transform group-hover:scale-105 transition-transform">
+                    <img src="assets/escudos/escudo_seccion_herederas.png" alt="Escudo Sección Herederas" class="max-h-full w-auto object-contain filter drop-shadow">
+                  </div>
+                  <span class="text-[11px] font-extrabold text-white block">Herederas</span>
+                  <span class="text-[9px] text-slate-300 leading-tight">Fondo Blanco</span>
+                </div>
+
+                <!-- Adalides -->
+                <div class="bg-rucaDark/90 p-2.5 rounded-2xl border border-rucaBorder hover:border-yellow-400/50 transition-all flex flex-col items-center group">
+                  <div class="h-20 flex items-center justify-center mb-1.5 transform group-hover:scale-105 transition-transform">
+                    <img src="assets/escudos/escudo_seccion_adalides.png" alt="Escudo Sección Adalides" class="max-h-full w-auto object-contain filter drop-shadow">
+                  </div>
+                  <span class="text-[11px] font-extrabold text-white block">Adalides</span>
+                  <span class="text-[9px] text-yellow-400 leading-tight">Flecha Oro</span>
+                </div>
+
+              </div>
+            </div>
           </div>
 
           <!-- 2. AGRUPACIÓN MASCULINA -->
-          <div class="bg-rucaCard p-6 rounded-2xl border border-rucaBorder hover:border-blue-400/50 transition-all shadow-md">
-            <span class="text-xs font-black text-blue-400 uppercase tracking-wider block mb-1">Agrupación Masculina</span>
-            <h4 class="font-extrabold text-white text-lg mb-3">Escuderos y Templarios</h4>
-            <p class="text-xs text-slate-300 leading-relaxed">
-              Juegos de destreza física, caballerosidad, protección al prójimo, forja del carácter viril, hermandad leal y espíritu de aventura en el campo.
-            </p>
+          <div class="bg-rucaCard p-6 rounded-3xl border border-rucaBorder hover:border-blue-400/50 transition-all shadow-xl flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-black text-blue-400 uppercase tracking-wider">Agrupación Masculina</span>
+                <span class="text-[10px] font-mono text-slate-400 bg-rucaDark px-2 py-0.5 rounded border border-rucaBorder">2 Secciones</span>
+              </div>
+              <h4 class="font-extrabold text-white text-lg mb-2">Escuderos y Templarios</h4>
+              <p class="text-xs text-slate-300 leading-relaxed mb-6">
+                Juegos de destreza física, caballerosidad, protección al prójimo, forja del carácter viril, hermandad leal y espíritu de aventura en el campo.
+              </p>
+            </div>
+
+            <!-- ESCUDOS OFICIALES DE SECCIÓN MASCULINA -->
+            <div class="pt-4 border-t border-rucaBorder/70">
+              <span class="text-[10px] uppercase font-bold tracking-wider text-slate-400 block mb-3 text-center">Insignias Oficiales de Sección</span>
+              <div class="grid grid-cols-2 gap-3 text-center">
+                
+                <!-- Escuderos -->
+                <div class="bg-rucaDark/90 p-2.5 rounded-2xl border border-rucaBorder hover:border-emerald-500/50 transition-all flex flex-col items-center group">
+                  <div class="h-20 flex items-center justify-center mb-1.5 transform group-hover:scale-105 transition-transform">
+                    <img src="assets/escudos/escudo_seccion_escuderos.png" alt="Escudo Sección Escuderos" class="max-h-full w-auto object-contain filter drop-shadow">
+                  </div>
+                  <span class="text-[11px] font-extrabold text-white block">Escuderos</span>
+                  <span class="text-[9px] text-emerald-400 leading-tight">9 a 13 años</span>
+                </div>
+
+                <!-- Templarios -->
+                <div class="bg-rucaDark/90 p-2.5 rounded-2xl border border-rucaBorder hover:border-emerald-500/50 transition-all flex flex-col items-center group">
+                  <div class="h-20 flex items-center justify-center mb-1.5 transform group-hover:scale-105 transition-transform">
+                    <img src="assets/escudos/escudo_seccion_templarios.png" alt="Escudo Sección Templarios" class="max-h-full w-auto object-contain filter drop-shadow">
+                  </div>
+                  <span class="text-[11px] font-extrabold text-white block">Templarios</span>
+                  <span class="text-[9px] text-emerald-400 leading-tight">14 a 18 años</span>
+                </div>
+
+              </div>
+            </div>
           </div>
 
           <!-- 3. AGRUPACIÓN MILICIANOS -->
-          <div class="bg-rucaCard p-6 rounded-2xl border border-rucaBorder hover:border-rucaGold/50 transition-all shadow-md">
-            <span class="text-xs font-black text-rucaGold uppercase tracking-wider block mb-1">Agrupación Milicianos</span>
-            <div class="h-7"></div> <!-- Sin subtítulo según lo solicitado -->
-            <p class="text-xs text-slate-300 leading-relaxed">
-              Los jóvenes mayores y dirigentes de la comunidad. Conducen las agrupaciones con testimonio de vida, entrega generosa, estudio, vida sacramental y liderazgo servicial.
-            </p>
+          <div class="bg-rucaCard p-6 rounded-3xl border border-rucaBorder hover:border-rucaGold/50 transition-all shadow-xl flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-black text-rucaGold uppercase tracking-wider">Agrupación Milicianos</span>
+                <span class="text-[10px] font-mono text-rucaGold bg-rucaGold/10 px-2 py-0.5 rounded border border-rucaGold/30">Mandos & Cuadros</span>
+              </div>
+              <h4 class="font-extrabold text-white text-lg mb-2">Mandos y Cuadros Dirigenciales</h4>
+              <p class="text-xs text-slate-300 leading-relaxed mb-6">
+                Los jóvenes mayores y dirigentes de la comunidad. Conducen las agrupaciones con testimonio de vida, entrega generosa, estudio, vida sacramental y liderazgo servicial.
+              </p>
+            </div>
+
+            <!-- ESCUDO MAYOR RUCA TUCUN -->
+            <div class="pt-4 border-t border-rucaBorder/70">
+              <span class="text-[10px] uppercase font-bold tracking-wider text-slate-400 block mb-3 text-center">Insignia Mayor de Conducción</span>
+              <div class="bg-rucaDark/90 p-2.5 rounded-2xl border border-rucaBorder hover:border-rucaGold/50 transition-all flex flex-col items-center text-center group">
+                <div class="h-20 flex items-center justify-center mb-1.5 transform group-hover:scale-105 transition-transform">
+                  <img src="assets/escudo_ruca_tucun_transparente.png" alt="Escudo Mayor Ruca Tucun" class="max-h-full w-auto object-contain filter drop-shadow-[0_0_10px_rgba(250,204,21,0.35)]">
+                </div>
+                <span class="text-[11px] font-extrabold text-white block">Escudo Ruca Tucun</span>
+                <span class="text-[9px] text-rucaGold leading-tight">Hexágono Oficial de Mando</span>
+              </div>
+            </div>
           </div>
 
         </div>
@@ -627,35 +723,54 @@
       <div class="space-y-3 mb-5">
         
         <!-- Comando Agrupación Femenina -->
-        <div class="bg-rucaDark/90 rounded-xl p-3 border border-pink-900/40 flex items-center gap-3">
-          <span class="text-2xl">🌸</span>
-          <div class="flex-grow">
-            <div class="flex justify-between items-center">
-              <span class="text-[10px] font-bold text-pink-300 uppercase">Comando Agrupación Femenina</span>
-              <span class="text-[9px] text-slate-400">Caperucitas, Herederas y Adalidas</span>
+        <div class="bg-rucaDark/90 rounded-xl p-3 border border-pink-900/40 flex items-center justify-between gap-3">
+          <div class="flex items-center gap-3">
+            <span class="text-2xl">🌸</span>
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="text-[10px] font-bold text-pink-300 uppercase">Comando Agrupación Femenina</span>
+              </div>
+              <p id="modalJefaFemeninaName" class="text-sm font-semibold text-white mt-0.5">Nombre por completar</p>
+              <span class="text-[9px] text-slate-400 block mt-0.5">Caperucitas, Herederas y Adalidas</span>
             </div>
-            <p id="modalJefaFemeninaName" class="text-sm font-semibold text-white mt-0.5">Nombre por completar</p>
+          </div>
+          <div class="flex items-center gap-1.5 flex-shrink-0 bg-rucaBlack/50 p-1.5 rounded-lg border border-rucaBorder/50">
+            <img src="assets/escudos/escudo_seccion_caperucitas.png" alt="Caperucitas" class="h-7 w-auto object-contain filter drop-shadow" title="Sección Caperucitas">
+            <img src="assets/escudos/escudo_seccion_herederas.png" alt="Herederas" class="h-7 w-auto object-contain filter drop-shadow" title="Sección Herederas">
+            <img src="assets/escudos/escudo_seccion_adalides.png" alt="Adalides" class="h-7 w-auto object-contain filter drop-shadow" title="Sección Adalides">
           </div>
         </div>
 
         <!-- Comando Agrupación Masculina -->
-        <div class="bg-rucaDark/90 rounded-xl p-3 border border-blue-900/40 flex items-center gap-3">
-          <span class="text-2xl">🛡️</span>
-          <div class="flex-grow">
-            <div class="flex justify-between items-center">
-              <span class="text-[10px] font-bold text-blue-300 uppercase">Comando Agrupación Masculina</span>
-              <span class="text-[9px] text-slate-400">Escuderos y Templarios</span>
+        <div class="bg-rucaDark/90 rounded-xl p-3 border border-blue-900/40 flex items-center justify-between gap-3">
+          <div class="flex items-center gap-3">
+            <span class="text-2xl">🛡️</span>
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="text-[10px] font-bold text-blue-300 uppercase">Comando Agrupación Masculina</span>
+              </div>
+              <p id="modalJefeMasculinaName" class="text-sm font-semibold text-white mt-0.5">Nombre por completar</p>
+              <span class="text-[9px] text-slate-400 block mt-0.5">Escuderos y Templarios</span>
             </div>
-            <p id="modalJefeMasculinaName" class="text-sm font-semibold text-white mt-0.5">Nombre por completar</p>
+          </div>
+          <div class="flex items-center gap-1.5 flex-shrink-0 bg-rucaBlack/50 p-1.5 rounded-lg border border-rucaBorder/50">
+            <img src="assets/escudos/escudo_seccion_escuderos.png" alt="Escuderos" class="h-7 w-auto object-contain filter drop-shadow" title="Sección Escuderos">
+            <img src="assets/escudos/escudo_seccion_templarios.png" alt="Templarios" class="h-7 w-auto object-contain filter drop-shadow" title="Sección Templarios">
           </div>
         </div>
 
         <!-- Comando Agrupación Milicianos -->
-        <div class="bg-rucaDark/90 rounded-xl p-3 border border-amber-900/40 flex items-center gap-3">
-          <span class="text-2xl">⚔️</span>
-          <div class="flex-grow">
-            <span class="text-[10px] font-bold text-amber-300 uppercase block">Comando Agrupación Milicianos</span>
-            <p id="modalJefeMilicianosName" class="text-sm font-semibold text-white mt-0.5">Nombre por completar</p>
+        <div class="bg-rucaDark/90 rounded-xl p-3 border border-amber-900/40 flex items-center justify-between gap-3">
+          <div class="flex items-center gap-3">
+            <span class="text-2xl">⚔️</span>
+            <div>
+              <span class="text-[10px] font-bold text-amber-300 uppercase block">Comando Agrupación Milicianos</span>
+              <p id="modalJefeMilicianosName" class="text-sm font-semibold text-white mt-0.5">Nombre por completar</p>
+              <span class="text-[9px] text-slate-400 block mt-0.5">Mandos y Cuadros Dirigenciales</span>
+            </div>
+          </div>
+          <div class="flex items-center flex-shrink-0 bg-rucaBlack/50 p-1.5 rounded-lg border border-rucaBorder/50">
+            <img src="assets/escudo_ruca_tucun_transparente.png" alt="Ruca Tucun" class="h-7 w-auto object-contain filter drop-shadow-[0_0_6px_rgba(250,204,21,0.3)]" title="Insignia Oficial de Mando">
           </div>
         </div>
 
