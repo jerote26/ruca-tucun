@@ -198,13 +198,13 @@
   {
     "id": "TUC-009",
     "slug": "insignia-formulacion-de-promesas-fasta",
-    "title": "Insignia de Formulación de Promesas",
-    "category": "Insignias",
+    "title": "Insignia de Formulación de Promesas (para Boina)",
+    "category": "Uniformes",
     "price": 12500,
     "currency": "ARS",
     "featured": true,
-    "shortDescription": "Insignia metálica esmaltada hexagonal oficial de Formulación de Promesas de la Milicia Juvenil de Fasta.",
-    "fullDescription": "Emblema sagrado e institucional reglamentario para los milicianos que formulan sus promesas en Fasta. Confeccionada en metal fundido pulido con esmalte horneado de alta resistencia: fondo blanco central con el monograma histórico de Fasta, rebordes en rojo carmesí con las inscripciones 'ESTILO Y HONOR' y 'MILICIA JUVENIL' en letras negras, y sujeción posterior reforzada tipo pin con broche de mariposa.",
+    "shortDescription": "Insignia metálica hexagonal esmaltada de Formulación de Promesas para colocar en la boina de uniforme de Fasta.",
+    "fullDescription": "Distintivo reglamentario e institucional para colocar en la boina de uniforme de los milicianos que formulan sus promesas en Fasta. Confeccionada en metal fundido pulido con esmalte horneado de alta resistencia: fondo blanco central con el monograma histórico de Fasta, rebordes en rojo carmesí con las inscripciones 'ESTILO Y HONOR' y 'MILICIA JUVENIL' en letras negras, y broche metálico de mariposa para fijación perfecta en el paño de la boina.",
     "images": [
       "assets/insignia_promesas_render_3d.jpg",
       "assets/insignias/insignia_promesas_vector.png"
@@ -213,9 +213,9 @@
       "Material": "Metal fundido esmaltado horneado de alta definición",
       "Diseño": "Hexagonal con reborde rojo, centro blanco y monograma Fasta",
       "Inscripciones": "'ESTILO Y HONOR' y 'MILICIA JUVENIL' en letras negras",
-      "Cierre": "Broche metálico de seguridad tipo mariposa posterior",
-      "Uso": "Distintivo ceremonial de Formulación de Promesas en ceremonias oficiales"
+      "Colocación": "Fijación con broche de seguridad para paño de la boina",
+      "Uso": "Distintivo ceremonial para boina en Formulación de Promesas"
     },
-    "tags": ["Insignia", "Promesas", "Milicia Juvenil", "Ceremonia", "Oficial"]
+    "tags": ["Insignia", "Boina", "Uniforme", "Promesas", "Milicia Juvenil", "Ceremonia"]
   }
 ]
