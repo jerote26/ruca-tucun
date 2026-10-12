@@ -1,27 +1,27 @@
 [
   {
     "id": "TUC-001",
-    "slug": "conjunto-camiseta-estrella-short-ruca-tucun",
-    "title": "Camiseta 'Estrella' Campeón Copa Estilo",
+    "slug": "la-estrella-camiseta-campeon-ruca-tucun",
+    "title": "La Estrella",
     "category": "Remeras",
     "price": 38000,
     "currency": "ARS",
     "featured": true,
-    "shortDescription": "Camiseta oficial de juego amarilla oro con mangas raglán negras, escudo Campeón Copa Estilo 2026 y lema 'Mar Adentro' en espalda.",
-    "fullDescription": "Indumentaria técnica oficial para torneos inter-rucas y competencias deportivas de Ruca Tucun. Confeccionada en tela deportiva Dry-Fit microperforada de alta transpirabilidad en color amarillo oro vibrante con cuello polo en V negro, mangas raglán negras con doble franja amarilla, escudo hexagonal oficial de Ruca Tucun en el pecho izquierdo e insignia dorada central 'CAMPEÓN COPA ESTILO 2026'. En el reverso presenta el lema 'Mar Adentro' bajo la nuca, estampa personalizada y dorsal con estrella.",
+    "shortDescription": "La última camiseta que salió y con la que salimos campeones. Diseño con cuellito negro, cuerpo amarillo oro, mangas raglán negras y escudo Campeón Copa Estilo.",
+    "fullDescription": "La última camiseta lanzada por Ruca Tucun y la casaca con la que salimos campeones de la Copa Estilo 2026. Confeccionada en tela deportiva Dry-Fit microperforada de alta transpirabilidad en color amarillo oro vibrante con cuellito polo en V negro, mangas raglán negras con doble franja amarilla, escudo hexagonal oficial de Ruca Tucun en el pecho izquierdo e insignia dorada central 'CAMPEÓN COPA ESTILO 2026'. En el reverso presenta el lema 'Mar Adentro' bajo la nuca, nombre y dorsal con estrella.",
     "images": [
       "assets/conjunto_estrella_3d.jpg",
       "assets/conjunto_estrella_back_3d.jpg"
     ],
     "specs": {
-      "Prenda": "Camiseta deportiva oficial 'Estrella' - Campeón Copa Estilo",
+      "Nombre": "La Estrella (Última edición - Campeón Copa Estilo)",
       "Tela": "Poliéster Dry-Fit tecnológico transpirable",
-      "Detalles Frente": "Cuello polo V negro, escudo Ruca Tucun e insignia Campeón Copa Estilo 2026",
+      "Detalles Frente": "Cuellito polo V negro, escudo Ruca Tucun e insignia Campeón Copa Estilo 2026",
       "Detalles Espalda": "Lema 'Mar Adentro' en cursiva, nombre y dorsal con estrella",
       "Talles Disponibles": "XS, S, M, L, XL, XXL",
       "Uso": "Torneos inter-rucas, Copa Estilo y competencias deportivas"
     },
-    "tags": ["Destacado", "Deportiva", "Estrella", "Copa Estilo", "Torneo"]
+    "tags": ["La Estrella", "Campeón", "Destacado", "Deportiva", "Copa Estilo"]
   },
   {
     "id": "TUC-002",
@@ -122,19 +122,20 @@
   },
   {
     "id": "TUC-006",
-    "slug": "camiseta-tecnica-mar-adentro-torneo",
-    "title": "Camiseta Técnica 'Mar Adentro' Edición Torneo",
+    "slug": "remera-marejada-ruca-tucun",
+    "title": "Marejada",
     "category": "Remeras",
     "price": 28000,
     "currency": "ARS",
     "featured": false,
-    "shortDescription": "Camiseta deportiva con diseño geométrico fractal negro y amarillo oro, cuello V deportivo y escudo en pecho.",
-    "fullDescription": "La indumentaria deportiva distintiva de Ruca Tucun para torneos, marchas y juegos de campo. Estampada en sublimación digital de alta definición con trama fractal amarilla y negra tanto en el frente como en la espalda, cuello en V con vivo reforzado, inscripción institucional RUCA TUCUN en hombros traseros, tela Dry-Fit microperforada de secado rápido y el escudo oficial hexagonal en el pecho izquierdo.",
+    "shortDescription": "Camiseta deportiva 'Marejada' con diseño geométrico fractal negro y amarillo oro, cuello V deportivo y escudo en pecho.",
+    "fullDescription": "La emblemática camiseta deportiva 'Marejada' de Ruca Tucun para torneos, marchas y juegos de campo. Estampada en sublimación digital de alta definición con trama fractal amarilla y negra tanto en el frente como en la espalda, cuello en V con vivo reforzado, inscripción institucional RUCA TUCUN en hombros traseros, tela Dry-Fit microperforada de secado rápido y el escudo oficial hexagonal en el pecho izquierdo.",
     "images": [
       "assets/remera_render_3d.jpg",
       "assets/remera_back_3d.jpg"
     ],
     "specs": {
+      "Nombre": "Marejada",
       "Tela": "Poliéster Dry-Fit tecnológico antitranspirante",
       "Corte": "Atlético ergonómico con cuello en V",
       "Estampa": "Sublimación digital total inalterable en frente y espalda",
@@ -142,7 +143,7 @@
       "Talles Disponibles": "XS, S, M, L, XL, XXL",
       "Colores": "Negro y Amarillo Oro"
     },
-    "tags": ["Deportiva", "Torneo", "Exclusivo"]
+    "tags": ["Marejada", "Deportiva", "Torneo", "Exclusivo"]
   },
   {
     "id": "TUC-007",
@@ -216,51 +217,51 @@
   },
   {
     "id": "TUC-010",
-    "slug": "camiseta-bastones-aurinegra-edicion-torneo",
-    "title": "Camiseta Deportiva a Bastones 'Edición Torneo'",
+    "slug": "remera-de-tucun-c",
+    "title": "Remera de TUCUN C",
     "category": "Remeras",
     "price": 30000,
     "currency": "ARS",
     "featured": true,
-    "shortDescription": "Camiseta de fútbol a bastones verticales en dos tonos de amarillo oro, cuello V y puños negros, con escudo hexagonal de Ruca Tucun.",
-    "fullDescription": "Camiseta oficial de competencia deportiva de Ruca Tucun confeccionada por PMX con diseño clásico de bastones verticales sublimados en dos tonalidades de amarillo oro. Presenta cuello en V y puños de manga en negro contrastante, escudo hexagonal lineal de la Carabela y la Estrella en el pecho izquierdo y patrocinadores históricos de la comunidad en frente y espalda junto con nombre y dorsal número 7.",
+    "shortDescription": "Remera de TUCUN C a bastones verticales en dos tonos de amarillo oro, cuello V y puños negros, escudo de Ruca Tucun y estampa Di Costanzo.",
+    "fullDescription": "Camiseta oficial 'Remera de TUCUN C' confeccionada por PMX con diseño clásico de bastones verticales sublimados en dos tonalidades de amarillo oro. Presenta cuello en V y puños de manga en negro contrastante, escudo hexagonal lineal de la Carabela y la Estrella en el pecho izquierdo, patrocinador frontal 'Pescaderías Di Costanzo' y en la espalda nombre, dorsal número 7 y 'Ferretería Santa Lucía'.",
     "images": [
       "assets/camiseta_bastones_3d.jpg",
       "assets/camiseta_bastones_back_3d.jpg"
     ],
     "specs": {
+      "Nombre": "Remera de TUCUN C",
       "Tela": "Poliéster deportivo Dry-Fit sublimado de alto rendimiento",
-      "Diseño Frontal": "Bastones verticales en dos tonos de amarillo oro, cuello V negro y escudo Ruca Tucun",
-      "Diseño Trasero": "Bastones amarillos, logo en nuca, nombre personalizado, dorsal 7 y sponsor",
+      "Diseño Frontal": "Bastones verticales en dos tonos de amarillo oro, cuello V negro, escudo Ruca Tucun y Di Costanzo",
+      "Diseño Trasero": "Bastones amarillos, logo en nuca, nombre personalizado, dorsal 7 y Ferretería Santa Lucía",
       "Terminaciones": "Cuello en V deportivo y puños de manga en rib negro reforzado",
-      "Talles Disponibles": "XS, S, M, L, XL, XXL",
-      "Uso": "Torneos de fútbol, competencias inter-rucas y entrenamientos"
+      "Talles Disponibles": "XS, S, M, L, XL, XXL"
     },
-    "tags": ["Deportiva", "Bastones", "Fútbol", "Torneo", "Destacado"]
+    "tags": ["TUCUN C", "Deportiva", "Bastones", "Fútbol", "Torneo", "Destacado"]
   },
   {
     "id": "TUC-011",
-    "slug": "camiseta-tradicional-cruz-blanca-ruca-tucun",
-    "title": "Camiseta Histórica 'Cruz Blanca' Ruca Tucun",
+    "slug": "remera-ruca-tucun",
+    "title": "Remera Ruca Tucun",
     "category": "Remeras",
     "price": 31000,
     "currency": "ARS",
     "featured": true,
-    "shortDescription": "Camiseta histórica en piqué amarillo oro con la gran Cruz Blanca cosida al frente, escudo circular de Fasta y 'Ruca Tucun' en la espalda.",
-    "fullDescription": "Una de las camisetas más emblemáticas y con mayor mística de la historia de Ruca Tucun. Confeccionada en tejido piqué panal de abeja en amarillo oro intenso, destaca en el frente por su gran Cruz Blanca cosida de extremo a extremo y el escudo circular histórico de Fasta (Fraternidad de Agrupaciones Santo Tomás de Aquino) en el pecho superior izquierdo. En el reverso lleva estampada la inscripción 'Ruca Tucun' en tipografía stencil clásica junto al dorsal número 1.",
+    "shortDescription": "Remera en piqué amarillo oro con cruz blanca en el frente, escudo circular de Fasta en el pecho y 'Ruca Tucun' en la espalda.",
+    "fullDescription": "Remera de Ruca Tucun confeccionada en tejido piqué panal de abeja en amarillo oro intenso. Destaca en el frente por su cruz blanca cosida de extremo a extremo y el escudo circular de Fasta (Fraternidad de Agrupaciones Santo Tomás de Aquino) en el pecho superior izquierdo. En el reverso lleva estampada la inscripción 'Ruca Tucun' en tipografía stencil negra junto al dorsal número 1.",
     "images": [
       "assets/camiseta_cruz_blanca_3d.jpg",
       "assets/camiseta_cruz_blanca_back_3d.jpg"
     ],
     "specs": {
       "Tela": "Tejido Piqué panal de abeja respirable de alta resistencia",
-      "Frente": "Gran Cruz Blanca aplicada en contraste y escudo circular Fasta en pecho",
+      "Frente": "Cruz blanca central aplicada y escudo circular Fasta en pecho",
       "Espalda": "Inscripción 'Ruca Tucun' en tipografía stencil negra y dorsal N° 1",
       "Cuello": "Redondo clásico en amarillo oro con costura reforzada",
       "Talles Disponibles": "XS, S, M, L, XL, XXL",
       "Colores": "Amarillo Oro, Blanco y Negro"
     },
-    "tags": ["Histórica", "Cruz Blanca", "Tradición", "Deportiva", "Destacado"]
+    "tags": ["Deportiva", "Tradición", "Remeras", "Destacado"]
   }
 ]
 
