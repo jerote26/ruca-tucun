@@ -8,16 +8,15 @@
     "currency": "ARS",
     "featured": true,
     "shortDescription": "Conjunto deportivo oficial de juego: camiseta amarilla con mangas negras, escudo Ruca Tucun y short negro con número 10.",
-    "fullDescription": "Indumentaria técnica oficial para torneos y partidos de vóley, fútbol y competencias deportivas de Ruca Tucun. Camiseta confeccionada en tela deportiva Dry-Fit microperforada de alta transpirabilidad en color amarillo oro vibrante con hombros ranglan negros, cuello polo deportivo y escudo bordado de Ruca Tucun. Acompañada del short deportivo negro con cintura elástica reforzada, cordón de ajuste, número 10 en dorado y el escudo en la pernera.",
+    "fullDescription": "Indumentaria técnica oficial para torneos y partidos de vóley, fútbol y competencias deportivas de Ruca Tucun. Camiseta confeccionada en tela deportiva Dry-Fit microperforada de alta transpirabilidad en color amarillo oro vibrante con hombros ranglan negros, dorsal número 10 en espalda y escudo bordado de Ruca Tucun. Acompañada del short deportivo negro con cintura elástica reforzada, cordón de ajuste, número 10 en dorado y el escudo en la pernera.",
     "images": [
       "assets/conjunto_estrella_3d.jpg",
-      "assets/camiseta_estrella_real.png",
-      "assets/indumentaria_oficial_real.png"
+      "assets/conjunto_estrella_back_3d.jpg"
     ],
     "specs": {
       "Conjunto": "Camiseta deportiva Estrella + Short a juego",
       "Tela": "Poliéster Dry-Fit tecnológico transpirable",
-      "Detalles Camiseta": "Cuerpo amarillo oro, mangas negras y escudo oficial",
+      "Detalles Frente y Espalda": "Cuerpo amarillo oro, mangas negras, escudo oficial y dorsal 10",
       "Detalles Short": "Negro con número 10 y escudo en dorado",
       "Talles Disponibles": "XS, S, M, L, XL, XXL",
       "Uso": "Torneos inter-rucas, vóley y competencias deportivas"
@@ -33,15 +32,14 @@
     "currency": "ARS",
     "featured": true,
     "shortDescription": "Campera institucional en gris grafito y amarillo oro con cuello alto, cierre completo y escudo bordado en hilo dorado.",
-    "fullDescription": "Prenda oficial de abrigo de Ruca Tucun para salidas, formaciones y campamentos. Confeccionada en microfibra deportiva con paneles amarillos en hombros, forro interior microtérmico, bolsillos laterales con cierre reforzado y el escudo hexagonal de la Carabela y la Estrella bordado en hilo dorado de alta definición.",
+    "fullDescription": "Prenda oficial de abrigo de Ruca Tucun para salidas, formaciones y campamentos. Confeccionada en microfibra deportiva con paneles amarillos en hombros que continúan hacia la espalda, corte bicolor en gris grafito, forro interior microtérmico, bolsillos laterales con cierre reforzado y el escudo hexagonal de la Carabela y la Estrella bordado en hilo dorado de alta definición.",
     "images": [
       "assets/campera_render_3d.jpg",
-      "assets/campera_oficial_real.png",
-      "assets/indumentaria_oficial_real.png"
+      "assets/campera_back_3d.jpg"
     ],
     "specs": {
       "Confección": "Microfibra deportiva + forro microtérmico",
-      "Detalles": "Paneles amarillo oro en hombros y cuello alto",
+      "Detalles": "Paneles amarillo oro en hombros, cuello alto y espalda bicolor",
       "Bordado": "Escudo hexagonal oficial Ruca Tucun",
       "Cierre": "Cremallera completa reforzada YKK",
       "Talles Disponibles": "S, M, L, XL, XXL",
@@ -61,13 +59,12 @@
     "fullDescription": "Prenda de uniforme oficial para la Agrupación Femenina de Ruca Tucun (Caperucitas, Herederas y Adalidas). Confeccionada en piqué de algodón peinado de máxima calidad en tono bordó / borgoña, cuello tipo polo con botones al tono, la cruz histórica de Fasta bordada con precisión en hilo blanco sobre el pecho izquierdo y la bandera argentina bordada en la manga derecha.",
     "images": [
       "assets/chomba_bordo_3d.jpg",
-      "assets/chomba_bordo_real.png",
-      "assets/uniformes_oficiales_banner.png"
+      "assets/chomba_bordo_back_3d.jpg"
     ],
     "specs": {
       "Agrupación": "Agrupación Femenina (Caperucitas, Herederas y Adalidas)",
       "Tela": "Piqué de algodón peinado 100% de alta densidad",
-      "Bordados": "Cruz oficial Fasta en pecho y bandera argentina en manga",
+      "Bordados": "Cruz oficial Fasta en pecho y bandera argentina en manga derecha",
       "Corte": "Entallado femenino con cuello polo reforzado",
       "Talles Disponibles": "XS, S, M, L, XL",
       "Color": "Bordó Oficial Institucional"
@@ -86,13 +83,12 @@
     "fullDescription": "Prenda de uniforme oficial para la Agrupación Masculina de Ruca Tucun (Escuderos y Templarios). Confeccionada en piqué resistente y respirable en elegante azul marino profundo, con cuello clásico polo con tapeta de dos botones, la cruz de Fasta bordada en blanco en el pecho izquierdo y la bandera nacional argentina en la manga derecha.",
     "images": [
       "assets/chomba_azul_3d.jpg",
-      "assets/chomba_azul_real.png",
-      "assets/uniformes_oficiales_banner.png"
+      "assets/chomba_azul_back_3d.jpg"
     ],
     "specs": {
       "Agrupación": "Agrupación Masculina (Escuderos y Templarios)",
       "Tela": "Piqué de algodón con poliéster antidesgaste",
-      "Bordados": "Cruz oficial Fasta en pecho y bandera argentina en manga",
+      "Bordados": "Cruz oficial Fasta en pecho y bandera argentina en manga derecha",
       "Corte": "Corte regular masculino con aberturas laterales inferiores",
       "Talles Disponibles": "S, M, L, XL, XXL",
       "Color": "Azul Marino Oscuro"
@@ -111,7 +107,7 @@
     "fullDescription": "Prenda de uniforme oficial reglamentario de abrigo para las tardes y mañanas de sábado, formaciones, marchas y campamentos. Confeccionado en frisa de algodón con interior perchado ultra suave, cuello alto con cierre metálico de un cuarto (half-zip), puños y cintura acanalados elastizados y la cruz de Fasta bordada en hilo blanco de alta resistencia.",
     "images": [
       "assets/buzo_negro_3d.jpg",
-      "assets/uniformes_oficiales_banner.png"
+      "assets/buzo_negro_back_3d.jpg"
     ],
     "specs": {
       "Prenda": "Buzo oficial de uniforme reglamentario",
@@ -133,17 +129,16 @@
     "currency": "ARS",
     "featured": false,
     "shortDescription": "Camiseta deportiva con diseño geométrico fractal negro y amarillo oro, cuello V deportivo y escudo en pecho.",
-    "fullDescription": "La indumentaria deportiva distintiva de Ruca Tucun para torneos, marchas y juegos de campo. Estampada en sublimación digital de alta definición con trama fractal amarilla y negra, cuello en V con vivo reforzado, tela Dry-Fit microperforada de secado rápido y el escudo oficial hexagonal en el pecho izquierdo.",
+    "fullDescription": "La indumentaria deportiva distintiva de Ruca Tucun para torneos, marchas y juegos de campo. Estampada en sublimación digital de alta definición con trama fractal amarilla y negra tanto en el frente como en la espalda, cuello en V con vivo reforzado, inscripción institucional RUCA TUCUN en hombros traseros, tela Dry-Fit microperforada de secado rápido y el escudo oficial hexagonal en el pecho izquierdo.",
     "images": [
       "assets/remera_render_3d.jpg",
-      "assets/remera_mar_adentro_real.png",
-      "assets/indumentaria_oficial_real.png"
+      "assets/remera_back_3d.jpg"
     ],
     "specs": {
       "Tela": "Poliéster Dry-Fit tecnológico antitranspirante",
       "Corte": "Atlético ergonómico con cuello en V",
-      "Estampa": "Sublimación digital total inalterable",
-      "Escudo": "Insignia oficial Ruca Tucun en pecho",
+      "Estampa": "Sublimación digital total inalterable en frente y espalda",
+      "Escudo": "Insignia oficial Ruca Tucun en pecho y dorso institucional",
       "Talles Disponibles": "XS, S, M, L, XL, XXL",
       "Colores": "Negro y Amarillo Oro"
     },
@@ -157,16 +152,17 @@
     "price": 16500,
     "currency": "ARS",
     "featured": true,
-    "shortDescription": "Gorra trucker negra con visera curva, malla respirable y el escudo hexagonal bordado en relieve 3D en hilo oro.",
-    "fullDescription": "Diseño pensado para proteger del sol en marchas y campamentos con la mística de Ruca Tucun. Estructura de 5 paneles, malla trasera transpirable de alto flujo de aire y broche snapback ajustable para todos los talles.",
+    "shortDescription": "Gorra trucker negra con visera curva, malla respirable con bordado trasero y el escudo hexagonal en relieve 3D en hilo oro.",
+    "fullDescription": "Diseño pensado para proteger del sol en marchas y campamentos con la mística de Ruca Tucun. Estructura frontal firme con el escudo hexagonal bordado en relieve 3D dorado, paneles traseros de malla respirable con bordado 'RUCA TUCUN' en arco y broche snapback ajustable de 7 posiciones.",
     "images": [
-      "assets/gorra_render_3d.jpg"
+      "assets/gorra_render_3d.jpg",
+      "assets/gorra_back_3d.jpg"
     ],
     "specs": {
-      "Tipo": "Trucker 5 paneles con red posterior",
-      "Bordado": "Escudo hexagonal con relieve 3D en hilo oro",
-      "Ajuste": "Cierre snapback de 7 posiciones",
-      "Talle": "Único regulable (54 a 60 cm)",
+      "Tipo": "Trucker 5 paneles con red posterior respirable",
+      "Bordado": "Escudo hexagonal 3D frontal + inscripción RUCA TUCUN trasera",
+      "Ajuste": "Cierre snapback trasero de 7 posiciones",
+      "Talles Disponibles": "Único Regulable (54 a 60 cm)",
       "Colores": "Negro con detalles Oro"
     },
     "tags": ["Gorras", "Bordado", "Campamento"]
@@ -180,16 +176,15 @@
     "currency": "ARS",
     "featured": true,
     "shortDescription": "Boina miliciana de paño de lana azul marino tradicionalmente orejeada a la derecha, con ribete reforzado y cordón perimetral de ajuste.",
-    "fullDescription": "Prenda de uniforme reglamentario de alta distinción en Ruca Tucun para ceremonias, formaciones de sábado, marchas y actos solemnes institucionales. Moldeada con el porte tradicional orejeada hacia la derecha con copa drapeada de gran porte, confeccionada en paño de lana 100% peinada de máxima densidad en color azul marino oscuro, con badana interior reforzada y cordón perimetral de ajuste a medida.",
+    "fullDescription": "Prenda de uniforme reglamentario de alta distinción en Ruca Tucun para ceremonias, formaciones de sábado, marchas y actos solemnes institucionales. Moldeada con el porte tradicional orejeada hacia la derecha con copa drapeada de gran porte, confeccionada en paño de lana 100% peinada de máxima densidad en color azul marino oscuro, con badana interior de cuero reforzada y lacito posterior del cordón de ajuste en la nuca.",
     "images": [
       "assets/boina_render_3d.jpg",
-      "assets/boina_real_referencia.png",
-      "assets/jefes/jefe_actual_juan_ignacio_schenone.png"
+      "assets/boina_back_3d.jpg"
     ],
     "specs": {
       "Confección": "100% Paño de lana peinada de máxima densidad",
       "Porte y Caída": "Corte tradicional orejeado hacia la derecha",
-      "Terminación": "Ribete reforzado de badana con cordón de ajuste",
+      "Terminación Trasera": "Ribete de badana con lazo de ajuste tradicional en nuca",
       "Talles Disponibles": "S (54-55 cm), M (56-57 cm), L (58-59 cm), XL (60-61 cm)",
       "Color": "Azul Marino Institucional",
       "Uso": "Uniforme reglamentario para ceremonias, formaciones y actos solemnes"
@@ -205,17 +200,17 @@
     "currency": "ARS",
     "featured": true,
     "shortDescription": "Insignia metálica hexagonal esmaltada de Formulación de Promesas para colocar en la boina de uniforme de Fasta.",
-    "fullDescription": "Distintivo reglamentario e institucional para colocar en la boina de uniforme de los milicianos que formulan sus promesas en Fasta. Confeccionada en metal fundido pulido con esmalte horneado de alta resistencia: fondo blanco central con el monograma histórico de Fasta, rebordes en rojo carmesí con las inscripciones 'ESTILO Y HONOR' y 'MILICIA JUVENIL' en letras negras, y broche metálico de mariposa para fijación perfecta en el paño de la boina.",
+    "fullDescription": "Distintivo reglamentario e institucional para colocar en la boina de uniforme de los milicianos que formulan sus promesas en Fasta. Confeccionada en metal fundido pulido con esmalte horneado de alta resistencia: anverso hexagonal con fondo blanco central y el monograma histórico de Fasta, rebordes en rojo carmesí con las inscripciones 'ESTILO Y HONOR' y 'MILICIA JUVENIL' en letras negras, y reverso metálico en acero cepillado con pin central y broche metálico de mariposa para fijación firme en el paño de la boina.",
     "images": [
       "assets/insignia_promesas_render_3d.jpg",
-      "assets/insignias/insignia_promesas_vector.png"
+      "assets/insignia_promesas_back_3d.jpg"
     ],
     "specs": {
-      "Material": "Metal fundido esmaltado horneado de alta definición",
-      "Diseño": "Hexagonal con reborde rojo, centro blanco y monograma Fasta",
-      "Inscripciones": "'ESTILO Y HONOR' y 'MILICIA JUVENIL' en letras negras",
-      "Colocación": "Fijación con broche de seguridad para paño de la boina",
-      "Uso": "Distintivo ceremonial para boina en Formulación de Promesas"
+      "Material": "Metal fundido esmaltado horneado y reverso de acero cepillado",
+      "Anverso": "Hexagonal con reborde rojo, centro blanco y monograma Fasta",
+      "Reverso": "Pin central con broche metálico de seguridad tipo mariposa",
+      "Talles Disponibles": "Tamaño Único Reglamentario",
+      "Uso": "Distintivo ceremonial para colocar en la boina en Formulación de Promesas"
     },
     "tags": ["Insignia", "Boina", "Uniforme", "Promesas", "Milicia Juvenil", "Ceremonia"]
   }

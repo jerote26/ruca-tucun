@@ -246,17 +246,21 @@ function openDetailView(id) {
     mainImg.alt = item.title;
 
     item.images.forEach((imgUrl, index) => {
+      const viewLabel = index === 0 ? "Vista Frontal" : index === 1 ? "Vista Trasera" : `Vista ${index + 1}`;
       const thumb = document.createElement("button");
-      thumb.className = `w-14 h-11 rounded-lg overflow-hidden border-2 flex-shrink-0 transition-all ${index === 0 ? 'border-rucaGold' : 'border-transparent opacity-60 hover:opacity-100'}`;
-      thumb.innerHTML = `<img src="${imgUrl}" alt="Miniatura ${index + 1}" class="w-full h-full object-cover">`;
+      thumb.className = `flex items-center gap-2 px-2.5 py-1.5 rounded-xl overflow-hidden border-2 flex-shrink-0 transition-all bg-rucaBlack/80 backdrop-blur-md ${index === 0 ? 'border-rucaGold text-rucaGold shadow-lg' : 'border-rucaBorder text-slate-300 opacity-75 hover:opacity-100'}`;
+      thumb.innerHTML = `
+        <img src="${imgUrl}" alt="${viewLabel}" class="w-10 h-10 rounded-lg object-cover">
+        <span class="text-[11px] font-bold pr-1">${viewLabel}</span>
+      `;
       thumb.onclick = () => {
         mainImg.src = imgUrl;
         thumbsContainer.querySelectorAll("button").forEach(b => {
-          b.classList.remove("border-rucaGold");
-          b.classList.add("border-transparent", "opacity-60");
+          b.classList.remove("border-rucaGold", "text-rucaGold", "shadow-lg");
+          b.classList.add("border-rucaBorder", "text-slate-300", "opacity-75");
         });
-        thumb.classList.add("border-rucaGold");
-        thumb.classList.remove("border-transparent", "opacity-60");
+        thumb.classList.add("border-rucaGold", "text-rucaGold", "shadow-lg");
+        thumb.classList.remove("border-rucaBorder", "text-slate-300", "opacity-75");
       };
       thumbsContainer.appendChild(thumb);
     });
