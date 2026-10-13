@@ -18,7 +18,7 @@
       "Tela Remera": "Poliéster Dry-Fit microperforado con cuellito polo V negro",
       "Tela Short": "Microfibra deportiva negra con cintura elástica y cordón",
       "Detalles Frente": "Escudo Ruca Tucun, insignia Campeón Copa Estilo 2026 y short con N° 10",
-      "Detalles Espalda": "Lema 'Mar Adentro' en cursiva, nombre y dorsal con estrella",
+      "Detalles Espalda": "Lema 'Mar Adentro' en cursiva, estampa personalizable de NOMBRE y dorsal N° 10 con estrella",
       "Talles Disponibles": "XS, S, M, L, XL, XXL"
     },
     "tags": ["Combo 2x1", "La Estrella", "Short y Remera", "Campeón", "Destacado"]
@@ -32,7 +32,7 @@
     "currency": "ARS",
     "featured": true,
     "shortDescription": "La última camiseta que salió y con la que salimos campeones (prenda individual). Cuellito negro, cuerpo amarillo oro e insignia Campeón Copa Estilo.",
-    "fullDescription": "La última camiseta lanzada por Ruca Tucun y la casaca con la que salimos campeones de la Copa Estilo 2026 (versión prenda individual sin short). Confeccionada en tela deportiva Dry-Fit microperforada de alta transpirabilidad en color amarillo oro vibrante con cuellito polo en V negro, mangas raglán negras con doble franja amarilla, escudo hexagonal oficial de Ruca Tucun en el pecho izquierdo e insignia dorada central 'CAMPEÓN COPA ESTILO 2026'. En el reverso presenta el lema 'Mar Adentro' bajo la nuca, nombre y dorsal con estrella.",
+    "fullDescription": "La última camiseta lanzada por Ruca Tucun y la casaca con la que salimos campeones de la Copa Estilo 2026 (versión prenda individual sin short). Confeccionada en tela deportiva Dry-Fit microperforada de alta transpirabilidad en color amarillo oro vibrante con cuellito polo en V negro, mangas raglán negras con doble franja amarilla, escudo hexagonal oficial de Ruca Tucun en el pecho izquierdo e insignia dorada central 'CAMPEÓN COPA ESTILO 2026'. En el reverso presenta el lema 'Mar Adentro' bajo la nuca, estampa personalizable de NOMBRE y dorsal número 10 con estrella.",
     "images": [
       "assets/la_estrella_remera_3d.jpg",
       "assets/la_estrella_remera_back_3d.jpg"
@@ -41,7 +41,7 @@
       "Prenda": "Camiseta 'La Estrella' (Parte individual)",
       "Tela": "Poliéster Dry-Fit tecnológico transpirable",
       "Detalles Frente": "Cuellito polo V negro, escudo Ruca Tucun e insignia Campeón Copa Estilo 2026",
-      "Detalles Espalda": "Lema 'Mar Adentro' en cursiva, nombre y dorsal con estrella",
+      "Detalles Espalda": "Lema 'Mar Adentro' en cursiva, estampa de NOMBRE y dorsal N° 10 con estrella",
       "Talles Disponibles": "XS, S, M, L, XL, XXL",
       "Uso": "Torneos inter-rucas, Copa Estilo y competencias deportivas"
     },
@@ -272,7 +272,7 @@
     "currency": "ARS",
     "featured": true,
     "shortDescription": "Camiseta oficial Tucun C en dos tonos de amarillo oro, cuello V y puños negros, escudo de Ruca Tucun y estampa Di Costanzo.",
-    "fullDescription": "Camiseta oficial 'Camiseta Tucun C' confeccionada por PMX con diseño deportivo sublimado en dos tonalidades de amarillo oro. Presenta cuello en V y puños de manga en negro contrastante, escudo hexagonal lineal de la Carabela y la Estrella en el pecho izquierdo, patrocinador frontal 'Pescaderías Di Costanzo' y en la espalda nombre, dorsal número 7 y 'Ferretería Santa Lucía'.",
+    "fullDescription": "Camiseta oficial 'Camiseta Tucun C' confeccionada por PMX con diseño deportivo sublimado en dos tonalidades de amarillo oro. Presenta cuello en V y puños de manga en negro contrastante, escudo hexagonal lineal de la Carabela y la Estrella en el pecho izquierdo, patrocinador frontal 'Pescaderías Di Costanzo' y en la espalda estampa personalizable de NOMBRE, dorsal número 10 y 'Ferretería Santa Lucía'.",
     "images": [
       "assets/camiseta_tucun_c_3d.jpg",
       "assets/camiseta_tucun_c_back_3d.jpg"
@@ -281,7 +281,7 @@
       "Nombre": "Camiseta Tucun C",
       "Tela": "Poliéster deportivo Dry-Fit sublimado de alto rendimiento",
       "Diseño Frontal": "Dos tonos de amarillo oro, cuello V negro, escudo Ruca Tucun y Di Costanzo",
-      "Diseño Trasero": "Dorso amarillo, logo en nuca, nombre personalizado, dorsal 7 y Ferretería Santa Lucía",
+      "Diseño Trasero": "Cuello negro anatómico, logo PMX, nombre personalizado, dorsal 10 y Ferretería Santa Lucía",
       "Terminaciones": "Cuello en V deportivo y puños de manga en rib negro reforzado",
       "Talles Disponibles": "XS, S, M, L, XL, XXL"
     },
