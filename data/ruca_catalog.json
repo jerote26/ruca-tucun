@@ -265,27 +265,27 @@
   },
   {
     "id": "TUC-010",
-    "slug": "remera-de-tucun-c",
-    "title": "Remera de TUCUN C",
+    "slug": "camiseta-tucun-c",
+    "title": "Camiseta Tucun C",
     "category": "Remeras",
     "price": 30000,
     "currency": "ARS",
     "featured": true,
-    "shortDescription": "Remera de TUCUN C a bastones verticales en dos tonos de amarillo oro, cuello V y puños negros, escudo de Ruca Tucun y estampa Di Costanzo.",
-    "fullDescription": "Camiseta oficial 'Remera de TUCUN C' confeccionada por PMX con diseño clásico de bastones verticales sublimados en dos tonalidades de amarillo oro. Presenta cuello en V y puños de manga en negro contrastante, escudo hexagonal lineal de la Carabela y la Estrella en el pecho izquierdo, patrocinador frontal 'Pescaderías Di Costanzo' y en la espalda nombre, dorsal número 7 y 'Ferretería Santa Lucía'.",
+    "shortDescription": "Camiseta oficial Tucun C en dos tonos de amarillo oro, cuello V y puños negros, escudo de Ruca Tucun y estampa Di Costanzo.",
+    "fullDescription": "Camiseta oficial 'Camiseta Tucun C' confeccionada por PMX con diseño deportivo sublimado en dos tonalidades de amarillo oro. Presenta cuello en V y puños de manga en negro contrastante, escudo hexagonal lineal de la Carabela y la Estrella en el pecho izquierdo, patrocinador frontal 'Pescaderías Di Costanzo' y en la espalda nombre, dorsal número 7 y 'Ferretería Santa Lucía'.",
     "images": [
-      "assets/camiseta_bastones_3d.jpg",
-      "assets/camiseta_bastones_back_3d.jpg"
+      "assets/camiseta_tucun_c_3d.jpg",
+      "assets/camiseta_tucun_c_back_3d.jpg"
     ],
     "specs": {
-      "Nombre": "Remera de TUCUN C",
+      "Nombre": "Camiseta Tucun C",
       "Tela": "Poliéster deportivo Dry-Fit sublimado de alto rendimiento",
-      "Diseño Frontal": "Bastones verticales en dos tonos de amarillo oro, cuello V negro, escudo Ruca Tucun y Di Costanzo",
-      "Diseño Trasero": "Bastones amarillos, logo en nuca, nombre personalizado, dorsal 7 y Ferretería Santa Lucía",
+      "Diseño Frontal": "Dos tonos de amarillo oro, cuello V negro, escudo Ruca Tucun y Di Costanzo",
+      "Diseño Trasero": "Dorso amarillo, logo en nuca, nombre personalizado, dorsal 7 y Ferretería Santa Lucía",
       "Terminaciones": "Cuello en V deportivo y puños de manga en rib negro reforzado",
       "Talles Disponibles": "XS, S, M, L, XL, XXL"
     },
-    "tags": ["TUCUN C", "Deportiva", "Bastones", "Fútbol", "Torneo", "Destacado"]
+    "tags": ["Camiseta Tucun C", "Tucun C", "Deportiva", "Fútbol", "Torneo", "Destacado"]
   },
   {
     "id": "TUC-011",
