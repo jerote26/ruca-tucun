@@ -177,7 +177,7 @@
     "currency": "ARS",
     "featured": false,
     "shortDescription": "Camiseta deportiva 'Marejada' con diseño geométrico fractal negro y amarillo oro, cuello V deportivo y escudo en pecho.",
-    "fullDescription": "La emblemática camiseta deportiva 'Marejada' de Ruca Tucun para torneos, marchas y juegos de campo. Estampada en sublimación digital de alta definición con trama fractal amarilla y negra tanto en el frente como en la espalda, cuello en V con vivo reforzado, inscripción institucional RUCA TUCUN en hombros traseros, tela Dry-Fit microperforada de secado rápido y el escudo oficial hexagonal en el pecho izquierdo.",
+    "fullDescription": "La emblemática camiseta deportiva 'Marejada' de Ruca Tucun para torneos, marchas y juegos de campo. Estampada en sublimación digital de alta definición con trama fractal amarilla y negra tanto en el frente como en la espalda, cuello en V con vivo reforzado, estampa trasera personalizable con nombre y dorsal número 10 en tipografía atlética dorada, tela Dry-Fit microperforada de secado rápido y el escudo oficial hexagonal en el pecho izquierdo.",
     "images": [
       "assets/remera_render_3d.jpg",
       "assets/remera_back_3d.jpg"
@@ -186,12 +186,12 @@
       "Nombre": "Marejada",
       "Tela": "Poliéster Dry-Fit tecnológico antitranspirante",
       "Corte": "Atlético ergonómico con cuello en V",
-      "Estampa": "Sublimación digital total inalterable en frente y espalda",
-      "Escudo": "Insignia oficial Ruca Tucun en pecho y dorso institucional",
+      "Frente": "Trama fractal amarillo oro y negro con escudo oficial en pecho",
+      "Espalda": "Personalización de NOMBRE y dorsal N° 10 en tipografía deportiva dorada",
       "Talles Disponibles": "XS, S, M, L, XL, XXL",
       "Colores": "Negro y Amarillo Oro"
     },
-    "tags": ["Marejada", "Deportiva", "Torneo", "Exclusivo"]
+    "tags": ["Marejada", "Deportiva", "Dorsal 10", "Personalizada", "Torneo", "Exclusivo"]
   },
   {
     "id": "TUC-007",
