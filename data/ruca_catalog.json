@@ -1,27 +1,75 @@
 [
   {
     "id": "TUC-001",
-    "slug": "la-estrella-camiseta-campeon-ruca-tucun",
-    "title": "La Estrella",
+    "slug": "combo-2x1-short-y-remera-la-estrella",
+    "title": "Combo 2x1 Short y Remera 'La Estrella'",
     "category": "Remeras",
     "price": 38000,
     "currency": "ARS",
     "featured": true,
-    "shortDescription": "La última camiseta que salió y con la que salimos campeones. Diseño con cuellito negro, cuerpo amarillo oro, mangas raglán negras y escudo Campeón Copa Estilo.",
-    "fullDescription": "La última camiseta lanzada por Ruca Tucun y la casaca con la que salimos campeones de la Copa Estilo 2026. Confeccionada en tela deportiva Dry-Fit microperforada de alta transpirabilidad en color amarillo oro vibrante con cuellito polo en V negro, mangas raglán negras con doble franja amarilla, escudo hexagonal oficial de Ruca Tucun en el pecho izquierdo e insignia dorada central 'CAMPEÓN COPA ESTILO 2026'. En el reverso presenta el lema 'Mar Adentro' bajo la nuca, nombre y dorsal con estrella.",
+    "shortDescription": "Combo 2x1 de juego completo: camiseta 'La Estrella' (Campeón Copa Estilo) + Short deportivo negro oficial con número y escudo.",
+    "fullDescription": "Promoción exclusiva Combo 2x1 de Ruca Tucun que incluye el equipo completo de juego: la camiseta 'La Estrella' (la última que salió y con la que salimos campeones de la Copa Estilo, con cuellito polo en V negro, cuerpo amarillo oro y mangas raglán negras) junto con el Short deportivo negro oficial con escudo hexagonal dorado y numeración. Disponible tanto en este combo promocional como por partes individuales.",
     "images": [
       "assets/conjunto_estrella_3d.jpg",
       "assets/conjunto_estrella_back_3d.jpg"
     ],
     "specs": {
-      "Nombre": "La Estrella (Última edición - Campeón Copa Estilo)",
+      "Promoción": "Combo 2x1 (Incluye Remera 'La Estrella' + Short de Juego)",
+      "Tela Remera": "Poliéster Dry-Fit microperforado con cuellito polo V negro",
+      "Tela Short": "Microfibra deportiva negra con cintura elástica y cordón",
+      "Detalles Frente": "Escudo Ruca Tucun, insignia Campeón Copa Estilo 2026 y short con N° 10",
+      "Detalles Espalda": "Lema 'Mar Adentro' en cursiva, nombre y dorsal con estrella",
+      "Talles Disponibles": "XS, S, M, L, XL, XXL"
+    },
+    "tags": ["Combo 2x1", "La Estrella", "Short y Remera", "Campeón", "Destacado"]
+  },
+  {
+    "id": "TUC-012",
+    "slug": "la-estrella-remera-individual-ruca-tucun",
+    "title": "La Estrella (Remera Individual)",
+    "category": "Remeras",
+    "price": 29000,
+    "currency": "ARS",
+    "featured": true,
+    "shortDescription": "La última camiseta que salió y con la que salimos campeones (prenda individual). Cuellito negro, cuerpo amarillo oro e insignia Campeón Copa Estilo.",
+    "fullDescription": "La última camiseta lanzada por Ruca Tucun y la casaca con la que salimos campeones de la Copa Estilo 2026 (versión prenda individual sin short). Confeccionada en tela deportiva Dry-Fit microperforada de alta transpirabilidad en color amarillo oro vibrante con cuellito polo en V negro, mangas raglán negras con doble franja amarilla, escudo hexagonal oficial de Ruca Tucun en el pecho izquierdo e insignia dorada central 'CAMPEÓN COPA ESTILO 2026'. En el reverso presenta el lema 'Mar Adentro' bajo la nuca, nombre y dorsal con estrella.",
+    "images": [
+      "assets/la_estrella_remera_3d.jpg",
+      "assets/la_estrella_remera_back_3d.jpg"
+    ],
+    "specs": {
+      "Prenda": "Camiseta 'La Estrella' (Parte individual)",
       "Tela": "Poliéster Dry-Fit tecnológico transpirable",
       "Detalles Frente": "Cuellito polo V negro, escudo Ruca Tucun e insignia Campeón Copa Estilo 2026",
       "Detalles Espalda": "Lema 'Mar Adentro' en cursiva, nombre y dorsal con estrella",
       "Talles Disponibles": "XS, S, M, L, XL, XXL",
       "Uso": "Torneos inter-rucas, Copa Estilo y competencias deportivas"
     },
-    "tags": ["La Estrella", "Campeón", "Destacado", "Deportiva", "Copa Estilo"]
+    "tags": ["La Estrella", "Individual", "Campeón", "Deportiva", "Copa Estilo"]
+  },
+  {
+    "id": "TUC-013",
+    "slug": "short-de-juego-oficial-ruca-tucun",
+    "title": "Short de Juego Oficial Ruca Tucun (Individual)",
+    "category": "Remeras",
+    "price": 18000,
+    "currency": "ARS",
+    "featured": true,
+    "shortDescription": "Short deportivo negro oficial (prenda individual) con escudo hexagonal de Ruca Tucun en dorado y número en pernera.",
+    "fullDescription": "Short deportivo oficial de juego de Ruca Tucun (versión prenda individual). Confeccionado en tela deportiva liviana y resistente de secado rápido en color negro, con cintura elástica reforzada, cordón interno de ajuste, costuras de alta tracción para fútbol, vóley y juegos de campo, número en dorado en la pierna derecha y el escudo hexagonal de la Carabela y la Estrella en la pierna izquierda.",
+    "images": [
+      "assets/short_juego_3d.jpg",
+      "assets/short_juego_back_3d.jpg"
+    ],
+    "specs": {
+      "Prenda": "Short deportivo de juego (Parte individual)",
+      "Tela": "Poliéster deportivo Dry-Fit liviano de alta resistencia",
+      "Cintura": "Elástica reforzada con cordón de ajuste interno",
+      "Detalles Frente": "Escudo oficial Ruca Tucun en dorado y número en pernera",
+      "Detalles Espalda": "Corte atlético negro liso con tiro reforzado",
+      "Talles Disponibles": "XS, S, M, L, XL, XXL"
+    },
+    "tags": ["Short", "Individual", "Deportiva", "Torneo", "Destacado"]
   },
   {
     "id": "TUC-002",
