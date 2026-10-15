@@ -4,7 +4,7 @@
     "period": "1989 - 1992",
     "periodName": "1ª Jefatura Fundacional",
     "jefeRuca": "Pablo Vittar",
-    "photo": "assets/logo_ruca_tucun.png",
+    "photo": "assets/escudo_ruca_tucun.png",
     "isCurrent": false,
     "badge": "Fundación 1989",
     "hierarchy": {
@@ -20,7 +20,7 @@
     "period": "1993 - 1995",
     "periodName": "2ª Jefatura de Ruca",
     "jefeRuca": "Raúl Arrigo",
-    "photo": "assets/logo_ruca_tucun.png",
+    "photo": "assets/escudo_ruca_tucun.png",
     "isCurrent": false,
     "badge": "",
     "hierarchy": {
@@ -36,7 +36,7 @@
     "period": "1996 - 1997",
     "periodName": "3ª Jefatura de Ruca",
     "jefeRuca": "Rafael Luena",
-    "photo": "assets/logo_ruca_tucun.png",
+    "photo": "assets/escudo_ruca_tucun.png",
     "isCurrent": false,
     "badge": "",
     "hierarchy": {
@@ -52,7 +52,7 @@
     "period": "1998 - 1999",
     "periodName": "4ª Jefatura de Ruca",
     "jefeRuca": "Mariano Navarro",
-    "photo": "assets/logo_ruca_tucun.png",
+    "photo": "assets/escudo_ruca_tucun.png",
     "isCurrent": false,
     "badge": "10 Años",
     "hierarchy": {
@@ -68,7 +68,7 @@
     "period": "2000 - 2001",
     "periodName": "5ª Jefatura de Ruca",
     "jefeRuca": "Andrés Centeno",
-    "photo": "assets/logo_ruca_tucun.png",
+    "photo": "assets/escudo_ruca_tucun.png",
     "isCurrent": false,
     "badge": "Gran Jubileo",
     "hierarchy": {
@@ -84,7 +84,7 @@
     "period": "2002",
     "periodName": "6ª Jefatura de Ruca",
     "jefeRuca": "César Ludueña",
-    "photo": "assets/logo_ruca_tucun.png",
+    "photo": "assets/escudo_ruca_tucun.png",
     "isCurrent": false,
     "badge": "",
     "hierarchy": {
@@ -100,7 +100,7 @@
     "period": "2003 - 2004",
     "periodName": "7ª Jefatura de Ruca",
     "jefeRuca": "Federico Giacopazzi",
-    "photo": "assets/logo_ruca_tucun.png",
+    "photo": "assets/escudo_ruca_tucun.png",
     "isCurrent": false,
     "badge": "",
     "hierarchy": {
@@ -116,7 +116,7 @@
     "period": "2005 - 2006",
     "periodName": "8ª Jefatura de Ruca",
     "jefeRuca": "Juan Manuel Del Valle Ricci",
-    "photo": "assets/logo_ruca_tucun.png",
+    "photo": "assets/escudo_ruca_tucun.png",
     "isCurrent": false,
     "badge": "",
     "hierarchy": {
@@ -132,7 +132,7 @@
     "period": "2007 - 2008",
     "periodName": "9ª Jefatura de Ruca",
     "jefeRuca": "Santiago Barrera Capdepon",
-    "photo": "assets/logo_ruca_tucun.png",
+    "photo": "assets/escudo_ruca_tucun.png",
     "isCurrent": false,
     "badge": "20 Años",
     "hierarchy": {
@@ -148,7 +148,7 @@
     "period": "2009 - 2010",
     "periodName": "10ª Jefatura de Ruca",
     "jefeRuca": "Pablo Morfú",
-    "photo": "assets/logo_ruca_tucun.png",
+    "photo": "assets/escudo_ruca_tucun.png",
     "isCurrent": false,
     "badge": "",
     "hierarchy": {
@@ -164,7 +164,7 @@
     "period": "2011 - 2013",
     "periodName": "11ª Jefatura de Ruca",
     "jefeRuca": "Rodrigo Díaz",
-    "photo": "assets/logo_ruca_tucun.png",
+    "photo": "assets/escudo_ruca_tucun.png",
     "isCurrent": false,
     "badge": "Mandato Trienal",
     "hierarchy": {
@@ -180,7 +180,7 @@
     "period": "2014",
     "periodName": "12ª Jefatura de Ruca",
     "jefeRuca": "Francisco Cornú",
-    "photo": "assets/logo_ruca_tucun.png",
+    "photo": "assets/escudo_ruca_tucun.png",
     "isCurrent": false,
     "badge": "25° Aniversario",
     "hierarchy": {
@@ -196,7 +196,7 @@
     "period": "2015 - 2016",
     "periodName": "13ª Jefatura de Ruca",
     "jefeRuca": "Juan Ignacio Díaz",
-    "photo": "assets/logo_ruca_tucun.png",
+    "photo": "assets/escudo_ruca_tucun.png",
     "isCurrent": false,
     "badge": "",
     "hierarchy": {
@@ -212,7 +212,7 @@
     "period": "2017 - 2019",
     "periodName": "14ª Jefatura de Ruca",
     "jefeRuca": "Renzo Nicolli",
-    "photo": "assets/logo_ruca_tucun.png",
+    "photo": "assets/escudo_ruca_tucun.png",
     "isCurrent": false,
     "badge": "30° Aniversario",
     "hierarchy": {
@@ -228,7 +228,7 @@
     "period": "2020 - 2021",
     "periodName": "15ª Jefatura de Ruca",
     "jefeRuca": "Santiago López Bayerque",
-    "photo": "assets/logo_ruca_tucun.png",
+    "photo": "assets/escudo_ruca_tucun.png",
     "isCurrent": false,
     "badge": "",
     "hierarchy": {
@@ -244,7 +244,7 @@
     "period": "2022",
     "periodName": "16ª Jefatura de Ruca",
     "jefeRuca": "Francisco Molinari",
-    "photo": "assets/logo_ruca_tucun.png",
+    "photo": "assets/escudo_ruca_tucun.png",
     "isCurrent": false,
     "badge": "",
     "hierarchy": {

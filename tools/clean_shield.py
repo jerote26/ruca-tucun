@@ -1,7 +1,7 @@
 from PIL import Image, ImageDraw
 
 # Cargar imagen original
-img = Image.open("assets/logo_ruca_tucun.png").convert("RGBA")
+img = Image.open("assets/escudo_ruca_tucun.png").convert("RGBA")
 cropped = img.crop((31, 10, 139, 132))
 cw, ch = cropped.size
 
@@ -29,6 +29,5 @@ scale_w, scale_h = cw * 4, ch * 4
 high_res_shield = transparent_shield.resize((scale_w, scale_h), Image.Resampling.LANCZOS)
 
 # Guardar
-transparent_shield.save("assets/escudo_ruca_tucun_transparente.png", "PNG")
-high_res_shield.save("assets/logo_ruca_tucun.png", "PNG")
+high_res_shield.save("assets/escudo_ruca_tucun.png", "PNG")
 print(f"Escudo transparente generado exitosamente: {scale_w}x{scale_h} px")

@@ -10,8 +10,8 @@ os.makedirs(DEST_DIR, exist_ok=True)
 
 # 1. Copiar y procesar Logo Oficial
 img_logo = Image.open(SRC_LOGO)
-img_logo.save(os.path.join(DEST_DIR, "logo_ruca_tucun.png"), "PNG")
-print("Logo guardado en assets/logo_ruca_tucun.png")
+img_logo.save(os.path.join(DEST_DIR, "escudo_ruca_tucun.png"), "PNG")
+print("Logo guardado en assets/escudo_ruca_tucun.png")
 
 # 2. Copiar foto general de indumentaria
 img_apparel = Image.open(SRC_APPAREL)

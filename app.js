@@ -516,7 +516,7 @@ function renderJefaturasCarousel() {
       </span>
     ` : '';
 
-    const isPhotoReal = jefe.photo && !jefe.photo.includes("logo_ruca_tucun");
+    const isPhotoReal = jefe.photo && !jefe.photo.includes("escudo_ruca_tucun");
     const imgClass = isPhotoReal ? "w-full h-full object-cover object-center" : "w-full h-full object-contain filter drop-shadow";
     const containerPadding = isPhotoReal ? "p-0" : "p-3";
 
@@ -533,7 +533,7 @@ function renderJefaturasCarousel() {
         </div>
 
         <div class="relative w-24 h-24 rounded-full bg-rucaBlack border-2 ${isCurrent ? 'border-rucaGold' : 'border-rucaBorder'} flex items-center justify-center overflow-hidden mb-3 shadow-inner group-hover:scale-105 transition-transform ${containerPadding}">
-          <img src="${jefe.photo || 'assets/logo_ruca_tucun.png'}" alt="${jefe.jefeRuca}" class="${imgClass}">
+          <img src="${jefe.photo || 'assets/escudo_ruca_tucun.png'}" alt="${jefe.jefeRuca}" class="${imgClass}">
         </div>
 
         <div class="w-full mb-3">
@@ -574,7 +574,7 @@ function openJefeHierarchyModal(jefeId) {
 
   const avatarEl = document.getElementById("modalJefeAvatar");
   if (avatarEl) {
-    if (jefe.photo && !jefe.photo.includes("logo_ruca_tucun")) {
+    if (jefe.photo && !jefe.photo.includes("escudo_ruca_tucun")) {
       avatarEl.innerHTML = `<img src="${jefe.photo}" alt="${jefe.jefeRuca}" class="w-full h-full object-cover object-center">`;
     } else {
       avatarEl.innerHTML = `<span>👑</span>`;
