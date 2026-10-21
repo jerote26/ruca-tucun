@@ -1,164 +1,5 @@
 [
   {
-    "id": "2025",
-    "year": 2025,
-    "jefaturaId": "jefe-2025-2026",
-    "titulo": "Cuadro de Mandos 2025",
-    "comandoCentral": [
-      {
-        "cargo": "Jefe de Ruca",
-        "nombre": "Juan Ignacio Schenone"
-      }
-    ],
-    "columnas": [
-      {
-        "cabeza": {
-          "cargo": "Jefe de Agrupación Masculina",
-          "nombre": "Juan Ignacio Marino"
-        },
-        "tono": "azul",
-        "subgrupos": [
-          {
-            "nombre": "Escuderos",
-            "escudo": "assets/escudos/escudo_seccion_escuderos.png",
-            "miembros": [
-              "Juan Monke",
-              "Ramiro Plaza",
-              "Lorenzo Tempone",
-              "Juan P. Rodriguez Iglesias"
-            ]
-          },
-          {
-            "nombre": "Templarios",
-            "escudo": "assets/escudos/escudo_seccion_templarios.png",
-            "miembros": [
-              "Tiziano Hanaini",
-              "Joaquín Larralde",
-              "Valentín Bonnefón",
-              "Franco Benegas"
-            ]
-          }
-        ]
-      },
-      {
-        "cabeza": {
-          "cargo": "Secretaria",
-          "nombre": "Jacinta Campos"
-        },
-        "tono": "violeta",
-        "subgrupos": []
-      },
-      {
-        "cabeza": {
-          "cargo": "Jefe de Milicianos",
-          "nombre": "Tomás Perelló"
-        },
-        "tono": "rojo",
-        "subgrupos": [
-          {
-            "nombre": "Milicianos",
-            "miembros": [
-              "Simón Soler Villén",
-              "Mercedes Santillán",
-              "Mateo Andrés",
-              "Abril Muñoz"
-            ],
-            "escudo": "assets/escudos/escudo_agrupacion_milicianos.png"
-          }
-        ]
-      },
-      {
-        "cabeza": {
-          "cargo": "Jefa de Formación Doctrinal",
-          "nombre": "María Pía Santillán"
-        },
-        "tono": "verde",
-        "subgrupos": [
-          {
-            "nombre": "Formación",
-            "miembros": [
-              "Mariano Santillán",
-              "Ana Varela",
-              "Abril Barrera",
-              "Francisco Serrano"
-            ]
-          }
-        ]
-      },
-      {
-        "cabeza": {
-          "cargo": "Jefa de Departamentos",
-          "nombre": "Guadalupe Varela"
-        },
-        "tono": "ambar",
-        "subgrupos": [
-          {
-            "nombre": "Comunicaciones",
-            "miembros": [
-              "Sofía Cañada",
-              "Lautaro Dipauli",
-              "Joaquín Uribe",
-              "Jazmín Pavía"
-            ]
-          },
-          {
-            "nombre": "Intendencia",
-            "miembros": [
-              "Juan Pedro Silguero",
-              "Dante Bruno",
-              "Tiago Rodriguez",
-              "Joaquín Romero"
-            ]
-          },
-          {
-            "nombre": "Administración",
-            "miembros": [
-              "Luciano Mateos"
-            ]
-          }
-        ]
-      },
-      {
-        "cabeza": {
-          "cargo": "Jefa de Agrupación Femenina",
-          "nombre": "Ludmila Sanchez"
-        },
-        "tono": "rosa",
-        "subgrupos": [
-          {
-            "nombre": "Caperucitas",
-            "escudo": "assets/escudos/escudo_seccion_caperucitas.png",
-            "miembros": [
-              "Oriana Carrizo",
-              "Magdalena Cueli",
-              "Catalina Mascarenhas",
-              "Victoria Carrera",
-              "Cande Sequeira"
-            ]
-          },
-          {
-            "nombre": "Herederas",
-            "escudo": "assets/escudos/escudo_seccion_herederas.png",
-            "miembros": [
-              "Josefina Santillán",
-              "Florencia Marquez",
-              "Pilar Varela"
-            ]
-          },
-          {
-            "nombre": "Adalides",
-            "escudo": "assets/escudos/escudo_seccion_adalides.png",
-            "miembros": [
-              "Emilia Uriona",
-              "Valentina Perelló",
-              "Elena Sburlati"
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
     "id": "2022",
     "year": 2022,
     "jefaturaId": "jefe-2022",
@@ -175,7 +16,7 @@
           "cargo": "Jefe de Agrupación Masculina (AMJM)",
           "nombre": "Jerónimo Brasero"
         },
-        "tono": "azul",
+        "tono": "verde",
         "subgrupos": [
           {
             "nombre": "Escuderos",
@@ -235,7 +76,7 @@
           "cargo": "Secretario de Ruca",
           "nombre": "Juan Ignacio Lurbe"
         },
-        "tono": "ambar",
+        "tono": "violeta",
         "subgrupos": [
           {
             "nombre": "Templarios Mayores",
@@ -301,7 +142,7 @@
           "cargo": "Jefa de Formación",
           "nombre": "Marina Navas"
         },
-        "tono": "verde",
+        "tono": "azul",
         "subgrupos": [
           {
             "nombre": "Delegadas",
@@ -323,7 +164,7 @@
           "cargo": "Jefa de Agrupación Femenina (AMJF)",
           "nombre": "Guadalupe Varela"
         },
-        "tono": "rosa",
+        "tono": "ambar",
         "subgrupos": [
           {
             "nombre": "Caperucitas",
@@ -376,6 +217,367 @@
             ]
           }
         ]
+      }
+    ]
+  },
+  {
+    "id": "2025",
+    "year": 2025,
+    "jefaturaId": "jefe-2025-2026",
+    "titulo": "Cuadro de Mandos 2025",
+    "comandoCentral": [
+      {
+        "cargo": "Jefe de Ruca",
+        "nombre": "Juan Ignacio Schenone"
+      }
+    ],
+    "columnas": [
+      {
+        "cabeza": {
+          "cargo": "Jefe de Agrupación Masculina",
+          "nombre": "Juan Ignacio Marino"
+        },
+        "tono": "verde",
+        "subgrupos": [
+          {
+            "nombre": "Escuderos",
+            "escudo": "assets/escudos/escudo_seccion_escuderos.png",
+            "miembros": [
+              "Juan Monke",
+              "Ramiro Plaza",
+              "Lorenzo Tempone",
+              "Juan P. Rodriguez Iglesias"
+            ]
+          },
+          {
+            "nombre": "Templarios",
+            "escudo": "assets/escudos/escudo_seccion_templarios.png",
+            "miembros": [
+              "Tiziano Hanaini",
+              "Joaquín Larralde",
+              "Valentín Bonnefón",
+              "Franco Benegas"
+            ]
+          }
+        ]
+      },
+      {
+        "cabeza": {
+          "cargo": "Secretaria",
+          "nombre": "Jacinta Campos"
+        },
+        "tono": "violeta",
+        "subgrupos": []
+      },
+      {
+        "cabeza": {
+          "cargo": "Jefe de Milicianos",
+          "nombre": "Tomás Perelló"
+        },
+        "tono": "rojo",
+        "subgrupos": [
+          {
+            "nombre": "Milicianos",
+            "miembros": [
+              "Simón Soler Villén",
+              "Mercedes Santillán",
+              "Mateo Andrés",
+              "Abril Muñoz"
+            ],
+            "escudo": "assets/escudos/escudo_agrupacion_milicianos.png"
+          }
+        ]
+      },
+      {
+        "cabeza": {
+          "cargo": "Jefa de Formación Doctrinal",
+          "nombre": "María Pía Santillán"
+        },
+        "tono": "azul",
+        "subgrupos": [
+          {
+            "nombre": "Formación",
+            "miembros": [
+              "Mariano Santillán",
+              "Ana Varela",
+              "Abril Barrera",
+              "Francisco Serrano"
+            ]
+          }
+        ]
+      },
+      {
+        "cabeza": {
+          "cargo": "Jefa de Departamentos",
+          "nombre": "Guadalupe Varela"
+        },
+        "tono": "celeste",
+        "subgrupos": [
+          {
+            "nombre": "Comunicaciones",
+            "miembros": [
+              "Sofía Cañada",
+              "Lautaro Dipauli",
+              "Joaquín Uribe",
+              "Jazmín Pavía"
+            ]
+          },
+          {
+            "nombre": "Intendencia",
+            "miembros": [
+              "Juan Pedro Silguero",
+              "Dante Bruno",
+              "Tiago Rodriguez",
+              "Joaquín Romero"
+            ]
+          },
+          {
+            "nombre": "Administración",
+            "miembros": [
+              "Luciano Mateos"
+            ]
+          }
+        ]
+      },
+      {
+        "cabeza": {
+          "cargo": "Jefa de Agrupación Femenina",
+          "nombre": "Ludmila Sanchez"
+        },
+        "tono": "ambar",
+        "subgrupos": [
+          {
+            "nombre": "Caperucitas",
+            "escudo": "assets/escudos/escudo_seccion_caperucitas.png",
+            "miembros": [
+              "Oriana Carrizo",
+              "Magdalena Cueli",
+              "Catalina Mascarenhas",
+              "Victoria Carrera",
+              "Cande Sequeira"
+            ]
+          },
+          {
+            "nombre": "Herederas",
+            "escudo": "assets/escudos/escudo_seccion_herederas.png",
+            "miembros": [
+              "Josefina Santillán",
+              "Florencia Marquez",
+              "Pilar Varela"
+            ]
+          },
+          {
+            "nombre": "Adalides",
+            "escudo": "assets/escudos/escudo_seccion_adalides.png",
+            "miembros": [
+              "Emilia Uriona",
+              "Valentina Perelló",
+              "Elena Sburlati"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2026",
+    "year": 2026,
+    "jefaturaId": "jefe-2025-2026",
+    "titulo": "Cuadro de Mandos 2026",
+    "comandoCentral": [
+      {
+        "cargo": "Jefe de Ruca",
+        "nombre": "Juan Ignacio Schenone"
+      }
+    ],
+    "columnas": [
+      {
+        "cabeza": {
+          "cargo": "Jefe de Agrupación Masculina",
+          "nombre": "Juan Ignacio Marino"
+        },
+        "tono": "verde",
+        "secretario": {
+          "cargo": "Secretario",
+          "nombre": "Federico Fernandez"
+        },
+        "subgrupos": [
+          {
+            "nombre": "Escuderos Menores",
+            "miembros": [
+              "Joaquín Larralde",
+              "Gian Marco Nicolli",
+              "Facundo Fittipaldi",
+              "Valentino Etcheverría",
+              "Facundo García Wallinger",
+              "Benjamín Rodriguez Prioletta"
+            ],
+            "escudo": "assets/escudos/escudo_seccion_escuderos.png"
+          },
+          {
+            "nombre": "Escuderos Mayores",
+            "miembros": [
+              "Juan Monke",
+              "Baltasar Nuñez",
+              "Benjamín Gomez",
+              "Rocco Consolo",
+              "Nicolás Elordi",
+              "Ignacio Uribe"
+            ],
+            "escudo": "assets/escudos/escudo_seccion_escuderos.png"
+          },
+          {
+            "nombre": "Templarios Menores",
+            "miembros": [
+              "Tiziano Hanaini",
+              "Uriel Bastidas",
+              "Juan P. Rodriguez Iglesias",
+              "Lorenzo Tempone",
+              "Mateo Galván",
+              "Franco Benegas"
+            ],
+            "escudo": "assets/escudos/escudo_seccion_templarios.png"
+          },
+          {
+            "nombre": "Templarios Mayores",
+            "miembros": [
+              "Mateo Andrés",
+              "Ramiro Plaza",
+              "Valentín Bonnefón"
+            ],
+            "escudo": "assets/escudos/escudo_seccion_templarios.png"
+          }
+        ]
+      },
+      {
+        "cabeza": {
+          "cargo": "Secretaria",
+          "nombre": "Ana Inés Varela"
+        },
+        "tono": "violeta",
+        "subgrupos": []
+      },
+      {
+        "cabeza": {
+          "cargo": "Jefe de Milicianos",
+          "nombre": "Martín Ramos"
+        },
+        "tono": "rojo",
+        "subgrupos": [
+          {
+            "nombre": "Milicianos",
+            "miembros": [
+              "Ana Inés Varela",
+              "Emilia Uriona",
+              "Jazmín Pavía"
+            ],
+            "escudo": "assets/escudos/escudo_agrupacion_milicianos.png"
+          }
+        ]
+      },
+      {
+        "cabeza": {
+          "cargo": "Jefa de Formación",
+          "nombre": "Abril Muñoz"
+        },
+        "tono": "azul",
+        "subgrupos": [
+          {
+            "nombre": "Formación",
+            "miembros": [
+              "Valentina Perelló",
+              "Mariano Santillán",
+              "Francisco Serrano"
+            ]
+          }
+        ]
+      },
+      {
+        "cabeza": {
+          "cargo": "Jefe de Departamentos",
+          "nombre": "Simón Soler Villén"
+        },
+        "tono": "celeste",
+        "subgrupos": [
+          {
+            "nombre": "Comunicaciones",
+            "miembros": [
+              "Mercedes Santillán",
+              "Ivo Juric"
+            ]
+          },
+          {
+            "nombre": "Intendencia",
+            "miembros": [
+              "Dante Bruno",
+              "Tiago Rodriguez",
+              "Máximo St. Esteben",
+              "Joaquín Romero",
+              "Gian Biasucci",
+              "Tomás Casenave",
+              "Facundo Eulloque"
+            ]
+          },
+          {
+            "nombre": "Administración",
+            "miembros": [
+              "Lautaro Di Pauli"
+            ]
+          }
+        ]
+      },
+      {
+        "cabeza": {
+          "cargo": "Jefa de Agrupación Femenina",
+          "nombre": "Ludmila Sanchez"
+        },
+        "tono": "ambar",
+        "secretario": {
+          "cargo": "Secretaria",
+          "nombre": "Morena Chamorro"
+        },
+        "subgrupos": [
+          {
+            "nombre": "Caperucitas",
+            "miembros": [
+              "Victoria Carrera",
+              "Catalina Mascarenhas",
+              "Marianela Reynoso",
+              "Cande Sequeira"
+            ],
+            "escudo": "assets/escudos/escudo_seccion_caperucitas.png"
+          },
+          {
+            "nombre": "Herederas",
+            "miembros": [
+              "Pilar Varela",
+              "Florencia Marquez",
+              "Magdalena Cueli",
+              "Mia Chamorro"
+            ],
+            "escudo": "assets/escudos/escudo_seccion_herederas.png"
+          },
+          {
+            "nombre": "Adalides",
+            "miembros": [
+              "Josefina Santillán",
+              "Oriana Carrizo",
+              "Elena Sburlati",
+              "María Emilia Rodriguez",
+              "Valentina Brunelli",
+              "Renata Funes"
+            ],
+            "escudo": "assets/escudos/escudo_seccion_adalides.png"
+          }
+        ]
+      },
+      {
+        "cabeza": {
+          "cargo": "Jefa de Lourdes",
+          "nombre": "Daiana Etcheverry"
+        },
+        "tono": "rosa",
+        "subgrupos": []
       }
     ]
   }
