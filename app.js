@@ -656,7 +656,7 @@ function renderOrganigrama(id) {
   const columnas = (org.columnas || []).map(c => `
     <div class="org-col org-tone-${escHtml(c.tono)}">
       <div class="org-box"><div class="org-cargo">${escHtml(c.cabeza.cargo)}</div><div class="org-nombre">${escHtml(c.cabeza.nombre)}</div></div>
-      <section class="org-group">${c.subgrupos.map(subHtml).join("")}</section>
+      ${c.subgrupos.length ? `<section class="org-group">${c.subgrupos.map(subHtml).join("")}</section>` : ""}
     </div>`).join("");
   const grupos = (org.grupos || []).map(g => `
     <section class="org-group org-tone-${escHtml(g.tono)}">

@@ -141,8 +141,9 @@ body {
 .org-tone-ambar { --tone:#fbbf24; --tone-bg:rgba(251,191,36,.10); }
 .org-tone-rojo { --tone:#f87171; --tone-bg:rgba(248,113,113,.10); }
 .org-tone-verde { --tone:#4ade80; --tone-bg:rgba(74,222,128,.10); }
-.org-cols { display:grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap:16px; align-items:start; }
+.org-cols { display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap:16px; align-items:start; }
 .org-col { display:flex; flex-direction:column; gap:12px; }
 .org-col > .org-box { max-width:none; width:100%; border-color:var(--tone); background:var(--tone-bg); }
 .org-col > .org-box .org-cargo { color:var(--tone); }
 .org-sub li small { display:block; font-size:11px; color:#94a3b8; }
+.org-tone-violeta { --tone:#a78bfa; --tone-bg:rgba(167,139,250,.10); }

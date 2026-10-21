@@ -8,35 +8,14 @@
       {
         "cargo": "Jefe de Ruca",
         "nombre": "Juan Ignacio Schenone"
-      },
-      {
-        "cargo": "Secretaria",
-        "nombre": "Jacinta Campos"
-      },
-      {
-        "cargo": "Jefa de Departamentos",
-        "nombre": "Guadalupe Varela"
-      },
-      {
-        "cargo": "Jefa de Formación Doctrinal",
-        "nombre": "María Pía Santillán"
-      },
-      {
-        "cargo": "Jefe de Milicianos",
-        "nombre": "Tomás Perelló"
-      },
-      {
-        "cargo": "Jefe de Masculina",
-        "nombre": "Juan Ignacio Marino"
-      },
-      {
-        "cargo": "Jefa de Femenina",
-        "nombre": "Ludmila Sanchez"
       }
     ],
-    "grupos": [
+    "columnas": [
       {
-        "titulo": "Agrupación Masculina",
+        "cabeza": {
+          "cargo": "Jefe de Agrupación Masculina",
+          "nombre": "Juan Ignacio Marino"
+        },
         "tono": "azul",
         "subgrupos": [
           {
@@ -62,7 +41,88 @@
         ]
       },
       {
-        "titulo": "Agrupación Femenina",
+        "cabeza": {
+          "cargo": "Secretaria",
+          "nombre": "Jacinta Campos"
+        },
+        "tono": "violeta",
+        "subgrupos": []
+      },
+      {
+        "cabeza": {
+          "cargo": "Jefe de Milicianos",
+          "nombre": "Tomás Perelló"
+        },
+        "tono": "rojo",
+        "subgrupos": [
+          {
+            "nombre": "Milicianos",
+            "miembros": [
+              "Simón Soler Villén",
+              "Mercedes Santillán",
+              "Mateo Andrés",
+              "Abril Muñoz"
+            ],
+            "escudo": "assets/escudos/escudo_agrupacion_milicianos.png"
+          }
+        ]
+      },
+      {
+        "cabeza": {
+          "cargo": "Jefa de Formación Doctrinal",
+          "nombre": "María Pía Santillán"
+        },
+        "tono": "verde",
+        "subgrupos": [
+          {
+            "nombre": "Formación",
+            "miembros": [
+              "Mariano Santillán",
+              "Ana Varela",
+              "Abril Barrera",
+              "Francisco Serrano"
+            ]
+          }
+        ]
+      },
+      {
+        "cabeza": {
+          "cargo": "Jefa de Departamentos",
+          "nombre": "Guadalupe Varela"
+        },
+        "tono": "ambar",
+        "subgrupos": [
+          {
+            "nombre": "Comunicaciones",
+            "miembros": [
+              "Sofía Cañada",
+              "Lautaro Dipauli",
+              "Joaquín Uribe",
+              "Jazmín Pavía"
+            ]
+          },
+          {
+            "nombre": "Intendencia",
+            "miembros": [
+              "Juan Pedro Silguero",
+              "Dante Bruno",
+              "Tiago Rodriguez",
+              "Joaquín Romero"
+            ]
+          },
+          {
+            "nombre": "Administración",
+            "miembros": [
+              "Luciano Mateos"
+            ]
+          }
+        ]
+      },
+      {
+        "cabeza": {
+          "cargo": "Jefa de Agrupación Femenina",
+          "nombre": "Ludmila Sanchez"
+        },
         "tono": "rosa",
         "subgrupos": [
           {
@@ -92,64 +152,6 @@
               "Emilia Uriona",
               "Valentina Perelló",
               "Elena Sburlati"
-            ]
-          }
-        ]
-      },
-      {
-        "titulo": "Departamentos",
-        "tono": "ambar",
-        "subgrupos": [
-          {
-            "nombre": "Formación",
-            "miembros": [
-              "María Pía Santillán",
-              "Mariano Santillán",
-              "Ana Varela",
-              "Abril Barrera",
-              "Francisco Serrano"
-            ]
-          },
-          {
-            "nombre": "Comunicaciones",
-            "miembros": [
-              "Sofía Cañada",
-              "Lautaro Dipauli",
-              "Joaquín Uribe",
-              "Jazmín Pavía"
-            ]
-          },
-          {
-            "nombre": "Intendencia",
-            "miembros": [
-              "Juan Pedro Silguero",
-              "Dante Bruno",
-              "Tiago Rodriguez",
-              "Joaquín Romero"
-            ]
-          },
-          {
-            "nombre": "Administración",
-            "miembros": [
-              "Guadalupe Varela",
-              "Luciano Mateos"
-            ]
-          }
-        ]
-      },
-      {
-        "titulo": "Agrupación Milicianos",
-        "tono": "rojo",
-        "subgrupos": [
-          {
-            "nombre": "Milicianos",
-            "escudo": "assets/escudos/escudo_agrupacion_milicianos.png",
-            "miembros": [
-              "Tomás Perelló",
-              "Simón Soler Villén",
-              "Mercedes Santillán",
-              "Mateo Andrés",
-              "Abril Muñoz"
             ]
           }
         ]
