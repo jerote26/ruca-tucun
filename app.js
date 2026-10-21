@@ -508,7 +508,10 @@ function renderJefaturasCarousel() {
   const track = document.getElementById("jefesCarouselTrack");
   if (!track) return;
 
-  track.innerHTML = jefaturasData.map(jefe => {
+  // Orden: del jefe más actual (izquierda) al más antiguo (derecha)
+  const jefesOrdenados = [...jefaturasData].reverse();
+
+  track.innerHTML = jefesOrdenados.map(jefe => {
     const isCurrent = jefe.isCurrent;
     const badgeHtml = jefe.badge ? `
       <span class="text-[10px] font-mono font-extrabold px-2 py-0.5 rounded ${isCurrent ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/40' : 'bg-rucaGold/20 text-rucaGold border border-rucaGold/40'}">
