@@ -1,5 +1,318 @@
 [
   {
+    "id": "2021",
+    "year": 2021,
+    "jefaturaId": "jefe-2020-2021",
+    "titulo": "Cuadro de Mandos 2021",
+    "comandoCentral": [
+      {
+        "cargo": "Jefe de Ruca",
+        "nombre": "Santiago López Bayerque"
+      }
+    ],
+    "columnas": [
+      {
+        "cabeza": {
+          "cargo": "Jefe de Agrupación Masculina",
+          "nombre": "Francisco Molinari"
+        },
+        "tono": "verde",
+        "subgrupos": [
+          {
+            "nombre": "Templarios Mayores",
+            "miembros": [
+              {
+                "nombre": "Jerónimo Brasero",
+                "cargo": "Jefe de Templarios Mayores"
+              },
+              {
+                "nombre": "Luciano Mateos",
+                "cargo": "Subjefe de Templarios Mayores"
+              },
+              {
+                "nombre": "Juan Pedro Silguero",
+                "cargo": "Subjefe de Templarios Mayores"
+              }
+            ],
+            "escudo": "assets/escudos/escudo_seccion_templarios.png"
+          },
+          {
+            "nombre": "Templarios Menores",
+            "miembros": [
+              {
+                "nombre": "Juan Ignacio Schenone",
+                "cargo": "Jefe de Templarios Menores"
+              },
+              {
+                "nombre": "Julián Moreno",
+                "cargo": "Subjefe de Templarios Menores"
+              },
+              {
+                "nombre": "Simón Soler Villén",
+                "cargo": "Subjefe de Templarios Menores"
+              },
+              {
+                "nombre": "Martín Ramos",
+                "cargo": "Subjefe de Templarios Menores"
+              },
+              {
+                "nombre": "Ivo Juric",
+                "cargo": "Subjefe de Templarios Menores"
+              }
+            ],
+            "escudo": "assets/escudos/escudo_seccion_templarios.png"
+          },
+          {
+            "nombre": "Escuderos",
+            "miembros": [
+              {
+                "nombre": "Tomás Perelló",
+                "cargo": "Jefe de Escuderos"
+              },
+              {
+                "nombre": "Dante Bruno",
+                "cargo": "Subjefe de Escuderos"
+              },
+              {
+                "nombre": "Mateo Andrés",
+                "cargo": "Subjefe de Escuderos"
+              },
+              {
+                "nombre": "Juan Ignacio Marino",
+                "cargo": "Subjefe de Escuderos"
+              },
+              {
+                "nombre": "Federico Fernandez",
+                "cargo": "Subjefe de Escuderos"
+              }
+            ],
+            "escudo": "assets/escudos/escudo_seccion_escuderos.png"
+          },
+          {
+            "nombre": "Formación",
+            "miembros": [
+              {
+                "nombre": "Alexei Juric",
+                "cargo": "Delegado de Formación Masculina"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cabeza": {
+          "cargo": "Secretaria",
+          "nombre": "Belén Varela"
+        },
+        "tono": "violeta",
+        "subgrupos": []
+      },
+      {
+        "cabeza": {
+          "cargo": "Jefe de Milicianos",
+          "nombre": "Juan Ignacio Lurbe"
+        },
+        "tono": "rojo",
+        "subgrupos": [
+          {
+            "nombre": "Décima Generación",
+            "miembros": [
+              {
+                "nombre": "Josefina Ravasi",
+                "cargo": "Jefa de la Décima Generación"
+              }
+            ],
+            "escudo": "assets/escudos/escudo_agrupacion_milicianos.png"
+          },
+          {
+            "nombre": "Decimoprimera Generación",
+            "miembros": [
+              {
+                "nombre": "Juan Martín Romero",
+                "cargo": "Jefe de la Decimoprimera Generación"
+              }
+            ],
+            "escudo": "assets/escudos/escudo_agrupacion_milicianos.png"
+          },
+          {
+            "nombre": "Decimosegunda Generación",
+            "miembros": [
+              {
+                "nombre": "Octavio Vittar",
+                "cargo": "Jefe de la Decimosegunda Generación"
+              },
+              {
+                "nombre": "Agustina Papagni",
+                "cargo": "Subjefa de la Decimosegunda Generación"
+              },
+              {
+                "nombre": "Tobías Di Pierri",
+                "cargo": "Subjefe de la Decimosegunda Generación"
+              }
+            ],
+            "escudo": "assets/escudos/escudo_agrupacion_milicianos.png"
+          },
+          {
+            "nombre": "Formación",
+            "miembros": [
+              {
+                "nombre": "Marina Navas",
+                "cargo": "Delegada de Formación de Milicianos"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cabeza": {
+          "cargo": "Jefe de Formación",
+          "nombre": "Alberto Mena"
+        },
+        "tono": "azul",
+        "subgrupos": [
+          {
+            "nombre": "Delegados de Formación",
+            "miembros": [
+              {
+                "nombre": "Marina Navas",
+                "cargo": "Delegada de Formación de Milicianos"
+              },
+              {
+                "nombre": "Jacinta Campos",
+                "cargo": "Delegada de Formación Femenina"
+              },
+              {
+                "nombre": "Alexei Juric",
+                "cargo": "Delegado de Formación Masculina"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cabeza": {
+          "cargo": "",
+          "nombre": "Departamentos"
+        },
+        "tono": "celeste",
+        "subgrupos": [
+          {
+            "nombre": "Comunicaciones",
+            "miembros": [
+              {
+                "nombre": "Sofía Szpyrnal",
+                "cargo": "Jefa de Comunicaciones"
+              },
+              {
+                "nombre": "Luján Lagos",
+                "cargo": "Subjefa de Comunicaciones"
+              }
+            ]
+          },
+          {
+            "nombre": "Administración e Intendencia",
+            "miembros": [
+              {
+                "nombre": "Agustina Cueli",
+                "cargo": "Jefa de Administración e Intendencia"
+              },
+              {
+                "nombre": "Bautista Fernandez",
+                "cargo": "Subjefe de Administración e Intendencia"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cabeza": {
+          "cargo": "Jefa de Agrupación Femenina",
+          "nombre": "María Pía Santillán"
+        },
+        "tono": "ambar",
+        "subgrupos": [
+          {
+            "nombre": "Adalides Mayores",
+            "miembros": [
+              {
+                "nombre": "Lucía Bianchi",
+                "cargo": "Jefa de Adalides Mayores"
+              },
+              {
+                "nombre": "Sofía Cañada",
+                "cargo": "Subjefa de Adalides Mayores"
+              }
+            ],
+            "escudo": "assets/escudos/escudo_seccion_adalides.png"
+          },
+          {
+            "nombre": "Adalides Menores",
+            "miembros": [
+              {
+                "nombre": "Guadalupe Varela",
+                "cargo": "Jefa de Adalides Menores"
+              },
+              {
+                "nombre": "Mercedes Santillán",
+                "cargo": "Subjefa de Adalides Menores"
+              }
+            ],
+            "escudo": "assets/escudos/escudo_seccion_adalides.png"
+          },
+          {
+            "nombre": "Herederas",
+            "miembros": [
+              {
+                "nombre": "Serena Carrera",
+                "cargo": "Jefa de Herederas"
+              },
+              {
+                "nombre": "Ana Varela",
+                "cargo": "Subjefa de Herederas"
+              },
+              {
+                "nombre": "Ludmila Sanchez",
+                "cargo": "Subjefa de Herederas"
+              }
+            ],
+            "escudo": "assets/escudos/escudo_seccion_herederas.png"
+          },
+          {
+            "nombre": "Caperucitas",
+            "miembros": [
+              {
+                "nombre": "Lucía Bocheto",
+                "cargo": "Jefa de Caperucitas"
+              },
+              {
+                "nombre": "Abril Barrera",
+                "cargo": "Subjefa de Caperucitas"
+              },
+              {
+                "nombre": "Abril Muñoz",
+                "cargo": "Subjefa de Caperucitas"
+              },
+              {
+                "nombre": "Sofía Montero",
+                "cargo": "Subjefa de Caperucitas"
+              }
+            ],
+            "escudo": "assets/escudos/escudo_seccion_caperucitas.png"
+          },
+          {
+            "nombre": "Formación",
+            "miembros": [
+              {
+                "nombre": "Jacinta Campos",
+                "cargo": "Delegada de Formación Femenina"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "2022",
     "year": 2022,
     "jefaturaId": "jefe-2022",
