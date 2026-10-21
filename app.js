@@ -592,11 +592,6 @@ function openJefeHierarchyModal(jefeId) {
     }
   }
 
-  const hier = jefe.hierarchy || {};
-  document.getElementById("modalJefaFemeninaName").textContent = hier.jefaFemenina || "Por completar";
-  document.getElementById("modalJefeMasculinaName").textContent = hier.jefeMasculina || "Por completar";
-  document.getElementById("modalJefeMilicianosName").textContent = hier.jefeMilicianos || "Por completar";
-
   const noteBox = document.getElementById("modalJefeNoteBox");
   const noteEl = document.getElementById("modalJefeNote");
   if (jefe.note) {
@@ -608,14 +603,16 @@ function openJefeHierarchyModal(jefeId) {
 
   const linksEl = document.getElementById("modalJefeOrgLinks");
   if (linksEl) {
-    const orgs = organigramasData.filter(o => o.jefaturaId === jefe.id);
-    if (orgs.length) {
-      linksEl.innerHTML = orgs.map(o => `<a href="#organigrama/${o.id}" onclick="closeJefeHierarchyModal()" class="bg-rucaGold/10 border border-rucaGold/40 text-rucaGold hover:bg-rucaGold hover:text-rucaBlack text-xs font-bold px-3 py-2 rounded-lg transition-all">Ver organigrama ${o.year} &rarr;</a>`).join("");
-      linksEl.classList.remove("hidden");
-    } else {
-      linksEl.innerHTML = "";
-      linksEl.classList.add("hidden");
-    }
+    const anios = (jefe.period.match(/\d{4}/g) || []).map(Number);
+    const desde = anios[0], hasta = anios[anios.length - 1];
+    const lista = [];
+    for (let y = desde; y <= hasta; y++) lista.push(y);
+    linksEl.innerHTML = lista.map(y => {
+      const org = organigramasData.find(o => o.year === y);
+      return org
+        ? `<a href="#organigrama/${org.id}" onclick="closeJefeHierarchyModal()" class="text-center bg-rucaGold/10 border border-rucaGold/40 text-rucaGold hover:bg-rucaGold hover:text-rucaBlack text-sm font-bold px-3 py-3 rounded-xl transition-all">Ver organigrama ${y}</a>`
+        : `<span class="text-center bg-rucaDark/60 border border-rucaBorder/70 text-slate-500 text-sm font-semibold px-3 py-3 rounded-xl cursor-default" title="Todavía no está cargado">Organigrama ${y}<small class="block text-[10px] font-normal">Próximamente</small></span>`;
+    }).join("");
   }
 
   modal.classList.remove("hidden");

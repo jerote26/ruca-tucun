@@ -730,7 +730,7 @@
               Línea Histórica de <span class="text-rucaGold">Jefes de Ruca</span>
             </h3>
             <p class="text-slate-400 text-xs sm:text-sm mt-1 max-w-xl leading-relaxed">
-              Hombres que lideraron la Casa de Semilla a lo largo de las décadas. Hacé clic en cualquier tarjeta para ver el <strong>Comando de Ruca completo</strong> (Comando Agrupación Femenina, Agrupación Masculina y Milicianos).
+              Hombres que lideraron la Casa de Semilla a lo largo de las décadas. Hacé clic en cualquier tarjeta para ver el <strong>organigrama de cada año</strong> de su mandato.
             </p>
           </div>
 
@@ -757,7 +757,7 @@
         <!-- INDICADOR INFERIOR DE DESPLAZAMIENTO -->
         <div class="mt-4 flex items-center justify-between text-xs text-slate-400 border-t border-rucaBorder/60 pt-3">
           <span class="flex items-center gap-1.5 text-rucaGold font-semibold">
-            <span>💡</span> Tocá o hacé clic en cualquier período para ver su Comando de Ruca
+            <span>💡</span> Tocá o hacé clic en cualquier período para ver los organigramas de su mandato
           </span>
           <span class="text-[11px] hidden sm:inline text-slate-400">
             Deslizá horizontalmente ‹ ›
@@ -797,67 +797,10 @@
       </div>
 
       <h5 class="text-xs uppercase font-extrabold tracking-wider text-slate-400 mb-3 flex items-center gap-2">
-        <span>⚜️</span> Comando de Ruca (Conducción y Oficiales):
+        <span>⚜️</span> Organigrama por año:
       </h5>
+      <div id="modalJefeOrgLinks" class="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-5"></div>
 
-      <div class="space-y-3 mb-5">
-        
-        <!-- Comando Agrupación Femenina -->
-        <div class="bg-rucaDark/90 rounded-xl p-3 border border-pink-900/40 flex items-center justify-between gap-3">
-          <div class="flex items-center gap-3">
-            <span class="text-2xl">🌸</span>
-            <div>
-              <div class="flex items-center gap-2">
-                <span class="text-[10px] font-bold text-pink-300 uppercase">Comando Agrupación Femenina</span>
-              </div>
-              <p id="modalJefaFemeninaName" class="text-sm font-semibold text-white mt-0.5">Nombre por completar</p>
-              <span class="text-[9px] text-slate-400 block mt-0.5">Caperucitas, Herederas y Adalidas</span>
-            </div>
-          </div>
-          <div class="flex items-center gap-1.5 flex-shrink-0 bg-rucaBlack/50 p-1.5 rounded-lg border border-rucaBorder/50">
-            <img src="assets/escudos/escudo_seccion_caperucitas.png" alt="Caperucitas" class="h-7 w-auto object-contain filter drop-shadow" title="Sección Caperucitas">
-            <img src="assets/escudos/escudo_seccion_herederas.png" alt="Herederas" class="h-7 w-auto object-contain filter drop-shadow" title="Sección Herederas">
-            <img src="assets/escudos/escudo_seccion_adalides.png" alt="Adalides" class="h-7 w-auto object-contain filter drop-shadow" title="Sección Adalides">
-          </div>
-        </div>
-
-        <!-- Comando Agrupación Masculina -->
-        <div class="bg-rucaDark/90 rounded-xl p-3 border border-blue-900/40 flex items-center justify-between gap-3">
-          <div class="flex items-center gap-3">
-            <span class="text-2xl">🛡️</span>
-            <div>
-              <div class="flex items-center gap-2">
-                <span class="text-[10px] font-bold text-blue-300 uppercase">Comando Agrupación Masculina</span>
-              </div>
-              <p id="modalJefeMasculinaName" class="text-sm font-semibold text-white mt-0.5">Nombre por completar</p>
-              <span class="text-[9px] text-slate-400 block mt-0.5">Escuderos y Templarios</span>
-            </div>
-          </div>
-          <div class="flex items-center gap-1.5 flex-shrink-0 bg-rucaBlack/50 p-1.5 rounded-lg border border-rucaBorder/50">
-            <img src="assets/escudos/escudo_seccion_escuderos.png" alt="Escuderos" class="h-7 w-auto object-contain filter drop-shadow" title="Sección Escuderos">
-            <img src="assets/escudos/escudo_seccion_templarios.png" alt="Templarios" class="h-7 w-auto object-contain filter drop-shadow" title="Sección Templarios">
-          </div>
-        </div>
-
-        <!-- Comando Agrupación Milicianos -->
-        <div class="bg-rucaDark/90 rounded-xl p-3 border border-amber-900/40 flex items-center justify-between gap-3">
-          <div class="flex items-center gap-3">
-            <span class="text-2xl">⚔️</span>
-            <div>
-              <span class="text-[10px] font-bold text-amber-300 uppercase block">Comando Agrupación Milicianos</span>
-              <p id="modalJefeMilicianosName" class="text-sm font-semibold text-white mt-0.5">Nombre por completar</p>
-              <span class="text-[9px] text-slate-400 block mt-0.5">Mandos y Cuadros Dirigenciales</span>
-            </div>
-          </div>
-          <div class="flex items-center gap-1.5 flex-shrink-0 bg-rucaBlack/50 p-1.5 rounded-lg border border-rucaBorder/50">
-            <img src="assets/escudos/escudo_agrupacion_milicianos.png" alt="Milicianos" class="h-7 w-auto object-contain filter drop-shadow" title="Agrupación Milicianos">
-            <img src="assets/escudo_ruca_tucun.png" alt="Ruca Tucun" class="h-7 w-auto object-contain filter drop-shadow-[0_0_6px_rgba(250,204,21,0.3)]" title="Insignia Oficial de Mando">
-          </div>
-        </div>
-
-      </div>
-
-      <div id="modalJefeOrgLinks" class="hidden mb-4 flex flex-wrap gap-2"></div>
 
       <div id="modalJefeNoteBox" class="bg-rucaDark/60 p-3 rounded-xl border border-rucaBorder/70 text-xs text-slate-300 italic mb-5">
         <span id="modalJefeNote">Nota histórica del período...</span>
@@ -911,6 +854,6 @@
     </div>
   </footer>
 
-  <script src="app.js?v=6"></script>
+  <script src="app.js?v=7"></script>
 </body>
 </html>
