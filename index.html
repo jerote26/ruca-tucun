@@ -346,6 +346,14 @@
 
 
     <!-- ========================================== -->
+    <!-- ORGANIGRAMA POR AÑO (#organigrama/AAAA)     -->
+    <!-- ========================================== -->
+    <div id="sectionOrganigrama" class="hidden py-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <a href="#info" class="inline-flex items-center gap-1 text-sm text-slate-300 hover:text-rucaGold mb-6">&larr; Volver a Jefaturas</a>
+      <div id="organigramaContent" class="org-wrap"></div>
+    </div>
+
+    <!-- ========================================== -->
     <!-- 2. PESTAÑA: ACTIVIDADES & AGENDA            -->
     <!-- ========================================== -->
     <div id="sectionActividades" class="hidden transition-opacity duration-300 py-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
@@ -849,6 +857,8 @@
 
       </div>
 
+      <div id="modalJefeOrgLinks" class="hidden mb-4 flex flex-wrap gap-2"></div>
+
       <div id="modalJefeNoteBox" class="bg-rucaDark/60 p-3 rounded-xl border border-rucaBorder/70 text-xs text-slate-300 italic mb-5">
         <span id="modalJefeNote">Nota histórica del período...</span>
       </div>
@@ -901,6 +911,6 @@
     </div>
   </footer>
 
-  <script src="app.js?v=5"></script>
+  <script src="app.js?v=6"></script>
 </body>
 </html>

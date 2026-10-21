@@ -8,13 +8,15 @@ const CONFIG = {
   whatsappNumber: "5492236001234",
   catalogPath: `data/ruca_catalog.json?t=${Date.now()}`,
   eventsPath: `data/ruca_events.json?t=${Date.now()}`,
-  jefaturasPath: `data/ruca_jefaturas.json?t=${Date.now()}`
+  jefaturasPath: `data/ruca_jefaturas.json?t=${Date.now()}`,
+  organigramasPath: `data/ruca_organigramas.json?t=${Date.now()}`
 };
 
 // Estado global de la aplicación
 let catalogData = [];
 let eventsData = [];
 let jefaturasData = [];
+let organigramasData = [];
 let currentItem = null;
 let selectedSize = "M";
 let currentCategory = "all";
@@ -26,7 +28,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   await Promise.all([
     loadCatalog(),
     loadEvents(),
-    loadJefaturas()
+    loadJefaturas(),
+    loadOrganigramas()
   ]);
   setupEventListeners();
   handleRouting();
@@ -51,7 +54,8 @@ function switchMainTab(tabName) {
   const sections = {
     tienda: document.getElementById("sectionTienda"),
     actividades: document.getElementById("sectionActividades"),
-    info: document.getElementById("sectionInfo")
+    info: document.getElementById("sectionInfo"),
+    organigrama: document.getElementById("sectionOrganigrama")
   };
 
   const desktopBtns = {
@@ -104,7 +108,7 @@ function switchMainTab(tabName) {
   });
 
   // Actualizar URL sin recargar
-  if (!window.location.hash.startsWith("#prenda/")) {
+  if (!window.location.hash.startsWith("#prenda/") && !window.location.hash.startsWith("#organigrama/")) {
     history.replaceState(null, "", `#${tabName}`);
   }
   window.scrollTo({ top: 0, behavior: "smooth" });
@@ -346,6 +350,10 @@ function handleRouting() {
     const id = hash.replace("#prenda/", "");
     switchMainTab("tienda");
     openDetailView(id);
+  } else if (hash.startsWith("#organigrama/")) {
+    switchMainTab("organigrama");
+    renderOrganigrama(hash.replace("#organigrama/", ""));
+    window.scrollTo({ top: 0 });
   } else if (hash === "#tienda") {
     switchMainTab("tienda");
   } else if (hash === "#actividades") {
@@ -598,7 +606,84 @@ function openJefeHierarchyModal(jefeId) {
     noteBox.classList.add("hidden");
   }
 
+  const linksEl = document.getElementById("modalJefeOrgLinks");
+  if (linksEl) {
+    const orgs = organigramasData.filter(o => o.jefaturaId === jefe.id);
+    if (orgs.length) {
+      linksEl.innerHTML = orgs.map(o => `<a href="#organigrama/${o.id}" onclick="closeJefeHierarchyModal()" class="bg-rucaGold/10 border border-rucaGold/40 text-rucaGold hover:bg-rucaGold hover:text-rucaBlack text-xs font-bold px-3 py-2 rounded-lg transition-all">Ver organigrama ${o.year} &rarr;</a>`).join("");
+      linksEl.classList.remove("hidden");
+    } else {
+      linksEl.innerHTML = "";
+      linksEl.classList.add("hidden");
+    }
+  }
+
   modal.classList.remove("hidden");
+}
+
+async function loadOrganigramas() {
+  try {
+    const res = await fetch(CONFIG.organigramasPath);
+    if (!res.ok) throw new Error("No se pudo cargar los organigramas.");
+    organigramasData = await res.json();
+  } catch (err) {
+    console.error("Error al cargar organigramas:", err);
+  }
+}
+
+function escHtml(t) {
+  return String(t ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+
+function renderOrganigrama(id) {
+  const cont = document.getElementById("organigramaContent");
+  if (!cont) return;
+  const org = organigramasData.find(o => String(o.id) === String(id));
+  if (!org) {
+    cont.innerHTML = `<p class="text-slate-300">No hay organigrama cargado para ese año todavía.</p>`;
+    return;
+  }
+  const jef = jefaturasData.find(j => j.id === org.jefaturaId) || {};
+  const [jefeCargo, ...resto] = org.comandoCentral;
+  const foto = jef.photo && !jef.photo.includes("escudo_ruca_tucun")
+    ? `<div class="org-avatar"><img src="${escHtml(jef.photo)}" alt="${escHtml(jefeCargo.nombre)}"></div>` : "";
+  const cajas = resto.map(c => `<div class="org-box"><div class="org-cargo">${escHtml(c.cargo)}</div><div class="org-nombre">${escHtml(c.nombre)}</div></div>`).join("");
+  const miembroHtml = m => typeof m === "string"
+    ? `<li>${escHtml(m)}</li>`
+    : `<li>${escHtml(m.nombre)}${m.cargo ? `<small>${escHtml(m.cargo)}</small>` : ""}</li>`;
+  const subHtml = sg => `
+        <div class="org-sub">
+          <div class="org-sub-head">${sg.escudo ? `<img src="${escHtml(sg.escudo)}" alt="">` : ""}<span>${escHtml(sg.nombre)}</span></div>
+          <ul>${sg.miembros.map(miembroHtml).join("")}</ul>
+        </div>`;
+  const columnas = (org.columnas || []).map(c => `
+    <div class="org-col org-tone-${escHtml(c.tono)}">
+      <div class="org-box"><div class="org-cargo">${escHtml(c.cabeza.cargo)}</div><div class="org-nombre">${escHtml(c.cabeza.nombre)}</div></div>
+      <section class="org-group">${c.subgrupos.map(subHtml).join("")}</section>
+    </div>`).join("");
+  const grupos = (org.grupos || []).map(g => `
+    <section class="org-group org-tone-${escHtml(g.tono)}">
+      <h3>${escHtml(g.titulo)}</h3>
+      ${g.subgrupos.map(sg => `
+        <div class="org-sub">
+          <div class="org-sub-head">${sg.escudo ? `<img src="${escHtml(sg.escudo)}" alt="">` : ""}<span>${escHtml(sg.nombre)}</span></div>
+          <ul>${sg.miembros.map(m => `<li>${escHtml(m)}</li>`).join("")}</ul>
+        </div>`).join("")}
+    </section>`).join("");
+  cont.innerHTML = `
+    <header class="text-center mb-8">
+      <p class="text-xs font-bold tracking-widest text-rucaGold uppercase">Ruca Tucún${jef.period ? " • " + escHtml(jef.period) : ""}</p>
+      <h1 class="text-3xl sm:text-4xl font-black text-white mt-1">${escHtml(org.titulo)}</h1>
+    </header>
+    <div class="flex flex-col items-center">
+      <div class="org-box org-jefe">${foto}<div class="org-cargo">${escHtml(jefeCargo.cargo)}</div><div class="org-nombre">${escHtml(jefeCargo.nombre)}</div></div>
+      <div class="org-level-line"></div>
+      ${cajas ? `<div class="org-command">${cajas}</div>` : ""}
+      <div class="org-level-line"></div>
+    </div>
+    ${columnas ? `<div class="org-cols">${columnas}</div>` : ""}
+    ${grupos ? `<div class="org-groups">${grupos}</div>` : ""}`;
+  document.title = `${org.titulo} | Ruca Tucún`;
 }
 
 function closeJefeHierarchyModal() {

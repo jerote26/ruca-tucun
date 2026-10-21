@@ -1,0 +1,380 @@
+[
+  {
+    "id": "2025",
+    "year": 2025,
+    "jefaturaId": "jefe-2025-2026",
+    "titulo": "Cuadro de Mandos 2025",
+    "comandoCentral": [
+      {
+        "cargo": "Jefe de Ruca",
+        "nombre": "Juan Ignacio Schenone"
+      },
+      {
+        "cargo": "Secretaria",
+        "nombre": "Jacinta Campos"
+      },
+      {
+        "cargo": "Jefa de Departamentos",
+        "nombre": "Guadalupe Varela"
+      },
+      {
+        "cargo": "Jefa de Formación Doctrinal",
+        "nombre": "María Pía Santillán"
+      },
+      {
+        "cargo": "Jefe de Milicianos",
+        "nombre": "Tomás Perelló"
+      },
+      {
+        "cargo": "Jefe de Masculina",
+        "nombre": "Juan Ignacio Marino"
+      },
+      {
+        "cargo": "Jefa de Femenina",
+        "nombre": "Ludmila Sanchez"
+      }
+    ],
+    "grupos": [
+      {
+        "titulo": "Agrupación Masculina",
+        "tono": "azul",
+        "subgrupos": [
+          {
+            "nombre": "Escuderos",
+            "escudo": "assets/escudos/escudo_seccion_escuderos.png",
+            "miembros": [
+              "Juan Monke",
+              "Ramiro Plaza",
+              "Lorenzo Tempone",
+              "Juan P. Rodriguez Iglesias"
+            ]
+          },
+          {
+            "nombre": "Templarios",
+            "escudo": "assets/escudos/escudo_seccion_templarios.png",
+            "miembros": [
+              "Tiziano Hanaini",
+              "Joaquín Larralde",
+              "Valentín Bonnefón",
+              "Franco Benegas"
+            ]
+          }
+        ]
+      },
+      {
+        "titulo": "Agrupación Femenina",
+        "tono": "rosa",
+        "subgrupos": [
+          {
+            "nombre": "Caperucitas",
+            "escudo": "assets/escudos/escudo_seccion_caperucitas.png",
+            "miembros": [
+              "Oriana Carrizo",
+              "Magdalena Cueli",
+              "Catalina Mascarenhas",
+              "Victoria Carrera",
+              "Cande Sequeira"
+            ]
+          },
+          {
+            "nombre": "Herederas",
+            "escudo": "assets/escudos/escudo_seccion_herederas.png",
+            "miembros": [
+              "Josefina Santillán",
+              "Florencia Marquez",
+              "Pilar Varela"
+            ]
+          },
+          {
+            "nombre": "Adalides",
+            "escudo": "assets/escudos/escudo_seccion_adalides.png",
+            "miembros": [
+              "Emilia Uriona",
+              "Valentina Perelló",
+              "Elena Sburlati"
+            ]
+          }
+        ]
+      },
+      {
+        "titulo": "Departamentos",
+        "tono": "ambar",
+        "subgrupos": [
+          {
+            "nombre": "Formación",
+            "miembros": [
+              "María Pía Santillán",
+              "Mariano Santillán",
+              "Ana Varela",
+              "Abril Barrera",
+              "Francisco Serrano"
+            ]
+          },
+          {
+            "nombre": "Comunicaciones",
+            "miembros": [
+              "Sofía Cañada",
+              "Lautaro Dipauli",
+              "Joaquín Uribe",
+              "Jazmín Pavía"
+            ]
+          },
+          {
+            "nombre": "Intendencia",
+            "miembros": [
+              "Juan Pedro Silguero",
+              "Dante Bruno",
+              "Tiago Rodriguez",
+              "Joaquín Romero"
+            ]
+          },
+          {
+            "nombre": "Administración",
+            "miembros": [
+              "Guadalupe Varela",
+              "Luciano Mateos"
+            ]
+          }
+        ]
+      },
+      {
+        "titulo": "Agrupación Milicianos",
+        "tono": "rojo",
+        "subgrupos": [
+          {
+            "nombre": "Milicianos",
+            "escudo": "assets/escudos/escudo_agrupacion_milicianos.png",
+            "miembros": [
+              "Tomás Perelló",
+              "Simón Soler Villén",
+              "Mercedes Santillán",
+              "Mateo Andrés",
+              "Abril Muñoz"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2022",
+    "year": 2022,
+    "jefaturaId": "jefe-2022",
+    "titulo": "Comando 2022",
+    "comandoCentral": [
+      {
+        "cargo": "Jefe de Ruca",
+        "nombre": "Francisco Molinari"
+      }
+    ],
+    "columnas": [
+      {
+        "cabeza": {
+          "cargo": "Jefe de Agrupación Masculina (AMJM)",
+          "nombre": "Jerónimo Brasero"
+        },
+        "tono": "azul",
+        "subgrupos": [
+          {
+            "nombre": "Escuderos",
+            "escudo": "assets/escudos/escudo_seccion_escuderos.png",
+            "miembros": [
+              {
+                "nombre": "Juan Ignacio Marino",
+                "cargo": "Jefe de Escuderos"
+              },
+              {
+                "nombre": "Federico Fernandez",
+                "cargo": "SubJefe de Escuderos"
+              },
+              {
+                "nombre": "Joaquín Romero",
+                "cargo": "SubJefe de Escuderos"
+              },
+              {
+                "nombre": "Simón Soler Villén",
+                "cargo": "SubJefe de Escuderos"
+              },
+              {
+                "nombre": "Dante Bruno",
+                "cargo": "SubJefe de Escuderos"
+              }
+            ]
+          },
+          {
+            "nombre": "Templarios Menores",
+            "miembros": [
+              {
+                "nombre": "Juan Ignacio Schenone",
+                "cargo": "Jefe de Templarios Menores"
+              },
+              {
+                "nombre": "Julián Moreno",
+                "cargo": "SubJefe de Templarios Menores"
+              },
+              {
+                "nombre": "Martín Ramos",
+                "cargo": "SubJefe de Templarios Menores"
+              },
+              {
+                "nombre": "Agustín Di Costanzo",
+                "cargo": "SubJefe de Templarios Menores"
+              },
+              {
+                "nombre": "Mateo Andrés",
+                "cargo": "SubJefe de Templarios Menores"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cabeza": {
+          "cargo": "Secretario de Ruca",
+          "nombre": "Juan Ignacio Lurbe"
+        },
+        "tono": "ambar",
+        "subgrupos": [
+          {
+            "nombre": "Templarios Mayores",
+            "miembros": [
+              {
+                "nombre": "Tomás Perelló",
+                "cargo": "Jefe de Templarios Mayores"
+              },
+              {
+                "nombre": "Ivo Juric",
+                "cargo": "SubJefe de Templarios Mayores"
+              }
+            ]
+          },
+          {
+            "nombre": "Intendencia y Administración",
+            "miembros": [
+              {
+                "nombre": "Bautista Fernandez",
+                "cargo": "Intendente de Ruca"
+              },
+              {
+                "nombre": "Juan Pedro Silguero",
+                "cargo": "Intendente de Ruca"
+              },
+              {
+                "nombre": "Tobías Di Pierri",
+                "cargo": "Admin de Ruca"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cabeza": {
+          "cargo": "Jefe de Milicianos",
+          "nombre": "Octavio Vittar"
+        },
+        "tono": "rojo",
+        "subgrupos": [
+          {
+            "nombre": "Milicianos",
+            "escudo": "assets/escudos/escudo_agrupacion_milicianos.png",
+            "miembros": [
+              {
+                "nombre": "Pía Santillán",
+                "cargo": "SubJefa de Milicianos"
+              },
+              {
+                "nombre": "Alexei Juric",
+                "cargo": "SubJefe de Milicianos"
+              },
+              {
+                "nombre": "Sofía Szpyrnal",
+                "cargo": "SubJefa de Milicianos"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cabeza": {
+          "cargo": "Jefa de Formación",
+          "nombre": "Marina Navas"
+        },
+        "tono": "verde",
+        "subgrupos": [
+          {
+            "nombre": "Delegadas",
+            "miembros": [
+              {
+                "nombre": "Jacinta Campos",
+                "cargo": "Delegada de Milicianos"
+              },
+              {
+                "nombre": "Abril Barrera",
+                "cargo": "Delegada de Agrupación Femenina"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cabeza": {
+          "cargo": "Jefa de Agrupación Femenina (AMJF)",
+          "nombre": "Guadalupe Varela"
+        },
+        "tono": "rosa",
+        "subgrupos": [
+          {
+            "nombre": "Caperucitas",
+            "escudo": "assets/escudos/escudo_seccion_caperucitas.png",
+            "miembros": [
+              {
+                "nombre": "Abril Muñoz",
+                "cargo": "Jefa de Capes"
+              },
+              {
+                "nombre": "Emilia Uriona",
+                "cargo": "SubJefa de Capes"
+              },
+              {
+                "nombre": "Valentina Perelló",
+                "cargo": "SubJefa de Capes"
+              }
+            ]
+          },
+          {
+            "nombre": "Herederas",
+            "escudo": "assets/escudos/escudo_seccion_herederas.png",
+            "miembros": [
+              {
+                "nombre": "Ludmila Sanchez",
+                "cargo": "Jefa de Herederas"
+              },
+              {
+                "nombre": "Julieta Pluchino",
+                "cargo": "SubJefa de Herederas"
+              }
+            ]
+          },
+          {
+            "nombre": "Adalides",
+            "escudo": "assets/escudos/escudo_seccion_adalides.png",
+            "miembros": [
+              {
+                "nombre": "Sofía Cañada",
+                "cargo": "Jefa de Adalides"
+              },
+              {
+                "nombre": "Anita Varela",
+                "cargo": "SubJefa de Adalides"
+              },
+              {
+                "nombre": "Mercedes Santillán",
+                "cargo": "SubJefa de Adalides"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

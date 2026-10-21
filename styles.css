@@ -110,3 +110,39 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* ===== Organigrama por año ===== */
+.org-wrap { --org-line: #3b4252; }
+.org-level-line { width: 2px; height: 28px; background: var(--org-line); margin: 0 auto; }
+.org-box {
+  background: #12161d; border: 1px solid #2a303c; border-radius: 14px;
+  padding: 10px 14px; text-align: center; min-width: 150px; max-width: 210px;
+}
+.org-box .org-cargo { font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: #9aa4b2; font-weight: 700; }
+.org-box .org-nombre { font-size: 14px; font-weight: 800; color: #f1f5f9; margin-top: 2px; }
+.org-box.org-jefe { border-color: #facc15; box-shadow: 0 0 22px rgba(250,204,21,.18); padding: 16px 22px; max-width: 260px; }
+.org-box.org-jefe .org-nombre { font-size: 18px; color: #facc15; }
+.org-avatar { width: 84px; height: 84px; border-radius: 9999px; overflow: hidden; margin: 0 auto 8px; border: 2px solid #facc15; background:#0b0e13; }
+.org-avatar img { width:100%; height:100%; object-fit:cover; }
+.org-command { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; position: relative; padding-top: 0; }
+.org-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+.org-group { border-radius: 16px; border: 1px solid var(--tone); background: rgba(18,22,29,.7); overflow: hidden; }
+.org-group > h3 { margin: 0; padding: 10px 14px; font-size: 13px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--tone); background: var(--tone-bg); border-bottom: 1px solid var(--tone); text-align: center; }
+.org-sub { padding: 12px 14px; border-top: 1px dashed #2a303c; }
+.org-sub:first-of-type { border-top: 0; }
+.org-sub-head { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+.org-sub-head img { height: 26px; width: auto; object-fit: contain; }
+.org-sub-head span { font-weight: 800; font-size: 13px; color: #f1f5f9; }
+.org-sub ul { list-style: none; margin: 0; padding: 0; }
+.org-sub li { font-size: 13px; color: #cbd5e1; padding: 3px 0; border-bottom: 1px solid rgba(42,48,60,.5); }
+.org-sub li:last-child { border-bottom: 0; }
+.org-tone-azul { --tone:#60a5fa; --tone-bg:rgba(96,165,250,.10); }
+.org-tone-rosa { --tone:#f472b6; --tone-bg:rgba(244,114,182,.10); }
+.org-tone-ambar { --tone:#fbbf24; --tone-bg:rgba(251,191,36,.10); }
+.org-tone-rojo { --tone:#f87171; --tone-bg:rgba(248,113,113,.10); }
+.org-tone-verde { --tone:#4ade80; --tone-bg:rgba(74,222,128,.10); }
+.org-cols { display:grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap:16px; align-items:start; }
+.org-col { display:flex; flex-direction:column; gap:12px; }
+.org-col > .org-box { max-width:none; width:100%; border-color:var(--tone); background:var(--tone-bg); }
+.org-col > .org-box .org-cargo { color:var(--tone); }
+.org-sub li small { display:block; font-size:11px; color:#94a3b8; }
