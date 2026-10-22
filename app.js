@@ -723,7 +723,8 @@ function setupMobileAccordions() {
     const head = document.createElement("button");
     head.type = "button";
     head.className = "acc-head";
-    head.innerHTML = `<span class="acc-icon">${box.dataset.accIcon || ""}</span><span class="acc-title"></span><span class="acc-chev">▾</span>`;
+    const ic = box.dataset.accIcon || "";
+    head.innerHTML = `<span class="acc-icon">${/\.png$/.test(ic) ? `<img src="${ic}" alt="">` : ic}</span><span class="acc-title"></span><span class="acc-chev">▾</span>`;
     head.querySelector(".acc-title").textContent = box.dataset.acc;
     head.setAttribute("aria-expanded", "false");
     head.addEventListener("click", () => {
