@@ -8,6 +8,7 @@ const CONFIG = {
   whatsappNumber: "5492236001234",
   catalogPath: `data/ruca_catalog.json?t=${Date.now()}`,
   eventsPath: `data/ruca_events.json?t=${Date.now()}`,
+  timelinePath: `data/ruca_timeline.json?t=${Date.now()}`,
   jefaturasPath: `data/ruca_jefaturas.json?t=${Date.now()}`,
   organigramasPath: `data/ruca_organigramas.json?t=${Date.now()}`
 };
@@ -17,6 +18,7 @@ let catalogData = [];
 let eventsData = [];
 let jefaturasData = [];
 let organigramasData = [];
+let timelineData = [];
 let currentItem = null;
 let selectedSize = "M";
 let currentCategory = "all";
@@ -29,7 +31,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     loadCatalog(),
     loadEvents(),
     loadJefaturas(),
-    loadOrganigramas()
+    loadOrganigramas(),
+    loadTimeline()
   ]);
   setupEventListeners();
   setupMobileAccordions();
@@ -727,10 +730,14 @@ function setupEventListeners() {
     if (e.key === "Escape") {
       closeDetailView(true);
       closeJefeHierarchyModal();
+      closeTimelineModal();
     }
   });
 
   // Cerrar modal al hacer clic en el fondo oscuro
+  const tlModal = document.getElementById("timelineModal");
+  if (tlModal) tlModal.addEventListener("click", (e) => { if (e.target === tlModal) closeTimelineModal(); });
+
   const hierModal = document.getElementById("jefeHierarchyModal");
   if (hierModal) {
     hierModal.addEventListener("click", (e) => {
@@ -762,4 +769,87 @@ function setupMobileAccordions() {
     box.appendChild(head);
     box.appendChild(body);
   });
+}
+
+
+// ===== Línea de tiempo =====
+async function loadTimeline() {
+  try {
+    const res = await fetch(CONFIG.timelinePath);
+    if (!res.ok) throw new Error("No se pudo cargar la línea de tiempo.");
+    timelineData = await res.json();
+    renderTimeline();
+  } catch (err) {
+    console.error("Error al cargar la línea de tiempo:", err);
+  }
+}
+
+function timelineByYear() {
+  const map = new Map();
+  [...timelineData].sort((x, y) => x.year - y.year).forEach(ev => {
+    if (!map.has(ev.year)) map.set(ev.year, []);
+    map.get(ev.year).push(ev);
+  });
+  return [...map.entries()];
+}
+
+function renderTimeline() {
+  const track = document.getElementById("timelineTrack");
+  if (!track) return;
+  const years = timelineByYear();
+  track.innerHTML = years.map(([year, evs]) => {
+    const thumbs = evs.slice(0, 3).map((ev, i) => {
+      const img = ev.images && ev.images[0];
+      return `<span class="tl-thumb" style="--i:${i}">${img ? `<img src="${escHtml(img)}" alt="" loading="lazy" draggable="false">` : `<img class="tl-thumb-shield" src="assets/escudo_ruca_tucun.png" alt="" draggable="false">`}</span>`;
+    }).join("");
+    const count = evs.length > 1 ? `<span class="tl-count">${evs.length}</span>` : "";
+    return `
+      <button type="button" class="tl-item" onclick="openTimelineModal(${year})" aria-label="Ver ${year}: ${escHtml(evs.map(e => e.title).join(", "))}">
+        <span class="tl-stack">${thumbs}${count}</span>
+        <span class="tl-dot"></span>
+        <span class="tl-year">${year}</span>
+      </button>`;
+  }).join("");
+  setupTimelineDrag(track);
+}
+
+function scrollTimeline(direction) {
+  const track = document.getElementById("timelineTrack");
+  if (!track) return;
+  track.scrollBy({ left: (direction === "left" ? -1 : 1) * Math.max(track.clientWidth * 0.7, 200), behavior: "smooth" });
+}
+
+// Arrastrar con el mouse para mover la línea (en el celular ya funciona con el dedo)
+function setupTimelineDrag(track) {
+  if (track.dataset.drag) return;
+  track.dataset.drag = "1";
+  let down = false, startX = 0, startLeft = 0, moved = false;
+  track.addEventListener("mousedown", (e) => { down = true; moved = false; startX = e.pageX; startLeft = track.scrollLeft; });
+  window.addEventListener("mouseup", () => { down = false; track.classList.remove("tl-dragging"); });
+  window.addEventListener("mousemove", (e) => {
+    if (!down) return;
+    const dx = e.pageX - startX;
+    if (Math.abs(dx) > 5) { moved = true; track.classList.add("tl-dragging"); }
+    track.scrollLeft = startLeft - dx;
+  });
+  track.addEventListener("click", (e) => { if (moved) { e.stopPropagation(); e.preventDefault(); moved = false; } }, true);
+}
+
+function openTimelineModal(year) {
+  const evs = timelineData.filter(e => e.year === year);
+  const modal = document.getElementById("timelineModal");
+  if (!modal || !evs.length) return;
+  document.getElementById("timelineModalYear").textContent = year;
+  document.getElementById("timelineModalBody").innerHTML = evs.map(ev => `
+    <article>
+      <h4 class="text-lg font-extrabold text-white mb-1">${escHtml(ev.title)}</h4>
+      <p class="text-sm text-slate-300 leading-relaxed">${escHtml(ev.text)}</p>
+      ${(ev.images || []).length ? `<div class="grid ${ev.images.length > 1 ? "grid-cols-2" : "grid-cols-1"} gap-2 mt-3">${ev.images.map(src => `<img src="${escHtml(src)}" alt="${escHtml(ev.title)}" loading="lazy" class="w-full rounded-xl border border-rucaBorder object-cover">`).join("")}</div>` : ""}
+    </article>`).join("");
+  modal.classList.remove("hidden");
+}
+
+function closeTimelineModal() {
+  const modal = document.getElementById("timelineModal");
+  if (modal) modal.classList.add("hidden");
 }

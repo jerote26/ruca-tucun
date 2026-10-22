@@ -199,3 +199,29 @@ body {
   /* un solo subgrupo: su escudo va en la caja del jefe y los nombres salen al desplegar */
   .org-single .org-sub-head { display: none; }
 }
+
+/* ===== Línea de tiempo ===== */
+.tl-wrap { position: relative; padding: 0 44px; }
+.tl-track { display: flex; justify-content: safe center; gap: 0; background: linear-gradient(90deg, #23304b, #facc15 50%, #23304b) 0 137px / 100% 3px no-repeat; overflow-x: auto; scroll-behavior: smooth; padding: 18px 0 6px; position: relative; cursor: grab; user-select: none; -webkit-overflow-scrolling: touch;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 28px, #000 calc(100% - 28px), transparent 100%); mask-image: linear-gradient(90deg, transparent 0, #000 28px, #000 calc(100% - 28px), transparent 100%); }
+.tl-track.tl-dragging { cursor: grabbing; scroll-behavior: auto; }
+.tl-item { position: relative; flex: 0 0 auto; width: 118px; display: flex; flex-direction: column; align-items: center; background: none; border: 0; padding: 0; color: inherit; cursor: pointer; }
+/* la línea corre detrás de todos los años */
+.tl-stack { position: relative; width: 86px; height: 96px; margin-bottom: 14px; transition: transform .2s; }
+.tl-item:hover .tl-stack, .tl-item:focus-visible .tl-stack { transform: translateY(-4px); }
+.tl-thumb { position: absolute; left: calc(var(--i) * 10px); bottom: calc(var(--i) * 8px); width: 62px; height: 62px; border-radius: 12px; overflow: hidden; border: 2px solid #facc15; background: #0b1220; box-shadow: 0 4px 12px rgba(0,0,0,.5); transform: rotate(calc(var(--i) * 4deg - 4deg)); z-index: calc(10 - var(--i)); }
+.tl-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.tl-thumb .tl-thumb-shield, .tl-thumb-shield { object-fit: contain; padding: 8px; }
+.tl-count { position: absolute; right: 0; top: 0; z-index: 20; background: #facc15; color: #080c16; font-size: 11px; font-weight: 800; border-radius: 9999px; min-width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; padding: 0 5px; }
+.tl-dot { position: relative; z-index: 2; width: 14px; height: 14px; border-radius: 9999px; background: #facc15; border: 3px solid #080c16; box-shadow: 0 0 0 2px #facc15; }
+.tl-year { margin-top: 10px; font-family: Georgia, serif; font-weight: 800; font-size: 18px; color: #fff; }
+.tl-item:hover .tl-year { color: #facc15; }
+/* puntas de flecha que también son botones */
+.tl-arrow { position: absolute; top: 106px; z-index: 5; width: 36px; height: 36px; border: 0; background: none; cursor: pointer; padding: 0; }
+.tl-arrow::before { content: ""; position: absolute; top: 50%; width: 0; height: 0; border-top: 11px solid transparent; border-bottom: 11px solid transparent; transform: translateY(-50%); transition: transform .15s; }
+.tl-arrow-left { left: 0; } .tl-arrow-right { right: 0; }
+.tl-arrow-left::before { left: 4px; border-right: 18px solid #facc15; }
+.tl-arrow-right::before { right: 4px; border-left: 18px solid #facc15; }
+.tl-arrow:hover::before { transform: translateY(-50%) scale(1.25); }
+.tl-arrow:active::before { transform: translateY(-50%) scale(.95); }
+@media (max-width: 767px) { .tl-wrap { padding: 0 34px; } .tl-item { width: 104px; } .tl-arrow { width: 30px; } }

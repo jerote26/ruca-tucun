@@ -1,0 +1,44 @@
+[
+  {
+    "id": "fasta-1962",
+    "year": 1962,
+    "title": "Nace FASTA",
+    "text": "El 7 de octubre de 1962, fiesta de la Virgen del Rosario, en Leones (Córdoba), nace FASTA por inspiración de fray Aníbal Ernesto Fosbery, O.P., como una agrupación juvenil dominicana.",
+    "images": []
+  },
+  {
+    "id": "ruca-1989",
+    "year": 1989,
+    "title": "Fundación de Ruca Tucun",
+    "text": "El 28 de marzo de 1989 nace Ruca Tucun en Mar del Plata: la Casa de Semilla, bajo el lema \"Mar Adentro\".",
+    "images": []
+  },
+  {
+    "id": "fasta-1997",
+    "year": 1997,
+    "title": "FASTA, asociación de fieles de derecho pontificio",
+    "text": "La Iglesia reconoce a FASTA como asociación internacional de fieles de derecho pontificio.",
+    "images": []
+  },
+  {
+    "id": "ruca-2014",
+    "year": 2014,
+    "title": "Bodas de Plata de la Casa de Semilla",
+    "text": "Se celebran los 25 años de Ruca Tucun.",
+    "images": []
+  },
+  {
+    "id": "ruca-2019",
+    "year": 2019,
+    "title": "30° Aniversario",
+    "text": "Celebración de los 30 años (1989 - 2019) con el despliegue de la bandera comunitaria Mar Adentro 1989.",
+    "images": ["assets/comunidad_mar_adentro_1989.png"]
+  },
+  {
+    "id": "copa-estilo-2026",
+    "year": 2026,
+    "title": "¡Campeones de la Copa Estilo!",
+    "text": "Los Templarios (14 a 18 años) se consagraron campeones y trajeron la copa a la costa, mientras las Adalides (16 a 18 años) disputaron un torneo excepcional.",
+    "images": ["assets/eventos/copa_estilo_campeones_2026.png"]
+  }
+]

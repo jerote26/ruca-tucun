@@ -695,6 +695,29 @@
         </div>
       </div>
 
+      <!-- LÍNEA DE TIEMPO 1989 → HOY -->
+      <div id="timelineSection" class="mb-14">
+        <div class="text-center max-w-2xl mx-auto mb-6">
+          <span class="text-xs font-mono font-bold text-rucaGold bg-rucaGold/10 px-3 py-1 rounded-full border border-rucaGold/30 uppercase tracking-wider mb-2 inline-block">Nuestra historia</span>
+          <h3 class="text-2xl sm:text-3xl font-black text-white">Línea de <span class="text-rucaGold">Tiempo</span></h3>
+          <p class="text-xs sm:text-sm text-slate-300 mt-2">Recorré los hitos de FASTA y de Ruca Tucun. Tocá un año para ver qué pasó.</p>
+        </div>
+        <div class="tl-wrap">
+          <button type="button" class="tl-arrow tl-arrow-left" onclick="scrollTimeline('left')" aria-label="Ir hacia atrás en el tiempo"></button>
+          <div id="timelineTrack" class="tl-track no-scrollbar"></div>
+          <button type="button" class="tl-arrow tl-arrow-right" onclick="scrollTimeline('right')" aria-label="Ir hacia adelante en el tiempo"></button>
+        </div>
+      </div>
+
+      <!-- MODAL LÍNEA DE TIEMPO -->
+      <div id="timelineModal" class="hidden fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="bg-rucaCard border border-rucaGold/50 rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+          <button onclick="closeTimelineModal()" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-rucaDark hover:bg-rucaGold hover:text-rucaBlack text-slate-300 flex items-center justify-center font-bold transition-all" aria-label="Cerrar">✕</button>
+          <div id="timelineModalYear" class="text-4xl font-black text-rucaGold mb-4" style="font-family: Georgia, serif;"></div>
+          <div id="timelineModalBody" class="space-y-6"></div>
+        </div>
+      </div>
+
       <!-- SECCIÓN: LÍNEA HISTÓRICA DE JEFES DE RUCA (CARRUSEL HORIZONTAL CADA 2 AÑOS) -->
       <div class="bg-rucaCard border border-rucaBorder rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
         
@@ -854,6 +877,6 @@
     </div>
   </footer>
 
-  <script src="app.js?v=15"></script>
+  <script src="app.js?v=16"></script>
 </body>
 </html>
