@@ -380,17 +380,9 @@
                 "nombre": "Mateo Andrés",
                 "cargo": "SubJefe de Templarios Menores"
               }
-            ]
-          }
-        ]
-      },
-      {
-        "cabeza": {
-          "cargo": "Secretario de Ruca",
-          "nombre": "Juan Ignacio Lurbe"
-        },
-        "tono": "violeta",
-        "subgrupos": [
+            ],
+            "escudo": "assets/escudos/escudo_seccion_templarios.png"
+          },
           {
             "nombre": "Templarios Mayores",
             "miembros": [
@@ -402,8 +394,18 @@
                 "nombre": "Ivo Juric",
                 "cargo": "SubJefe de Templarios Mayores"
               }
-            ]
-          },
+            ],
+            "escudo": "assets/escudos/escudo_seccion_templarios.png"
+          }
+        ]
+      },
+      {
+        "cabeza": {
+          "cargo": "Secretario de Ruca",
+          "nombre": "Juan Ignacio Lurbe"
+        },
+        "tono": "violeta",
+        "subgrupos": [
           {
             "nombre": "Intendencia y Administración",
             "miembros": [
