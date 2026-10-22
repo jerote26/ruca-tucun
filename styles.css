@@ -150,3 +150,22 @@ body {
 .org-tone-celeste { --tone:#22d3ee; --tone-bg:rgba(34,211,238,.10); }
 .org-col > .org-box.org-secretario { background:transparent; border-style:dashed; padding:7px 12px; }
 .org-col > .org-box.org-secretario .org-nombre { font-size:13px; }
+
+/* ===== Celular: secciones plegables ===== */
+@media (max-width: 767px) {
+  .acc-wrap { background: transparent !important; border: 0 !important; padding: 0 !important; box-shadow: none !important; margin-bottom: 12px !important; }
+  .acc-head { width: 100%; display: flex; align-items: center; gap: 10px; text-align: left; background: #151e32; border: 1px solid #23304b; border-radius: 16px; padding: 14px 16px; color: #fff; font-weight: 800; font-size: 15px; }
+  .acc-head .acc-title { flex: 1; }
+  .acc-head .acc-chev { color: #facc15; transition: transform .2s; }
+  .acc-open > .acc-head { border-color: rgba(250,204,21,.5); }
+  .acc-open > .acc-head .acc-chev { transform: rotate(180deg); }
+  .acc-body { display: none; background: #151e32; border: 1px solid #23304b; border-radius: 16px; padding: 16px; margin-top: 8px; }
+  .acc-open > .acc-body { display: block; }
+  /* títulos repetidos dentro del bloque ya no hacen falta */
+  #sectionInfo { padding-top: 24px; padding-bottom: 24px; }
+}
+@media (max-width: 479px) {
+  .org-cols, .org-groups { grid-template-columns: 1fr; }
+  .org-box { max-width: none; }
+  .org-box.org-jefe { max-width: 320px; }
+}

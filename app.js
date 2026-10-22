@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     loadOrganigramas()
   ]);
   setupEventListeners();
+  setupMobileAccordions();
   handleRouting();
 });
 
@@ -157,7 +158,7 @@ function renderCatalog(items) {
     const formattedPrice = item.price.toLocaleString("es-AR");
 
     card.innerHTML = `
-      <div class="relative h-64 bg-rucaDark overflow-hidden cursor-pointer" onclick="openDetailView('${item.id}')">
+      <div class="relative h-40 sm:h-64 bg-rucaDark overflow-hidden cursor-pointer" onclick="openDetailView('${item.id}')">
         <img src="${mainImg}" alt="${item.title}" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
         <span class="absolute top-3 left-3 bg-rucaBlack/85 backdrop-blur-md text-rucaGold text-[10px] font-bold px-2 py-0.5 rounded border border-rucaGold/30 uppercase tracking-wider">
           ${item.category}
@@ -169,26 +170,26 @@ function renderCatalog(items) {
         ` : ''}
       </div>
 
-      <div class="p-5 flex-grow flex flex-col justify-between">
+      <div class="p-3 sm:p-5 flex-grow flex flex-col justify-between">
         <div>
-          <div class="flex items-center justify-between text-[11px] text-rucaGray font-mono mb-1">
+          <div class="hidden sm:flex items-center justify-between text-[11px] text-rucaGray font-mono mb-1">
             <span>CÓD: ${item.id}</span>
           </div>
-          <h3 class="font-extrabold text-white text-base leading-snug hover:text-rucaGold transition-colors cursor-pointer line-clamp-2" onclick="openDetailView('${item.id}')">
+          <h3 class="font-extrabold text-white text-[13px] sm:text-base leading-snug hover:text-rucaGold transition-colors cursor-pointer line-clamp-2" onclick="openDetailView('${item.id}')">
             ${item.title}
           </h3>
-          <p class="text-slate-300 text-xs mt-2 line-clamp-2 leading-relaxed">
+          <p class="hidden sm:block text-slate-300 text-xs mt-2 line-clamp-2 leading-relaxed">
             ${item.shortDescription}
           </p>
         </div>
 
-        <div class="mt-4 pt-3 border-t border-rucaBorder flex items-center justify-between gap-2">
+        <div class="mt-2 sm:mt-4 pt-2 sm:pt-3 border-t border-rucaBorder flex flex-col sm:flex-row sm:items-center justify-between gap-2">
           <div>
-            <span class="text-[9px] text-rucaGray uppercase font-bold block">Precio</span>
-            <span class="text-base sm:text-lg font-black text-rucaGold">$ ${formattedPrice} <span class="text-[10px] text-slate-400 font-normal">ARS</span></span>
+            <span class="hidden sm:block text-[9px] text-rucaGray uppercase font-bold">Precio</span>
+            <span class="text-sm sm:text-lg font-black text-rucaGold">$ ${formattedPrice} <span class="hidden sm:inline text-[10px] text-slate-400 font-normal">ARS</span></span>
           </div>
           <div class="flex items-center gap-1.5">
-            <button onclick="openDetailView('${item.id}')" class="px-3 py-1.5 bg-rucaDark hover:bg-rucaGold hover:text-rucaBlack text-white font-bold text-xs rounded-xl border border-rucaBorder transition-all">
+            <button onclick="openDetailView('${item.id}')" class="flex-1 sm:flex-none px-3 py-2 sm:py-1.5 bg-rucaDark hover:bg-rucaGold hover:text-rucaBlack text-white font-bold text-xs rounded-xl border border-rucaBorder transition-all">
               Ver Detalle
             </button>
             <a href="${waUrl}" target="_blank" rel="noopener noreferrer" 
@@ -709,4 +710,28 @@ function setupEventListeners() {
       if (e.target === hierModal) closeJefeHierarchyModal();
     });
   }
+}
+
+
+// Secciones plegables en el celular (pestaña Información)
+function setupMobileAccordions() {
+  if (!window.matchMedia("(max-width: 767px)").matches) return;
+  document.querySelectorAll("[data-acc]").forEach((box, idx) => {
+    const body = document.createElement("div");
+    body.className = "acc-body";
+    while (box.firstChild) body.appendChild(box.firstChild);
+    const head = document.createElement("button");
+    head.type = "button";
+    head.className = "acc-head";
+    head.innerHTML = `<span class="acc-icon">${box.dataset.accIcon || ""}</span><span class="acc-title"></span><span class="acc-chev">▾</span>`;
+    head.querySelector(".acc-title").textContent = box.dataset.acc;
+    head.setAttribute("aria-expanded", "false");
+    head.addEventListener("click", () => {
+      const open = box.classList.toggle("acc-open");
+      head.setAttribute("aria-expanded", String(open));
+    });
+    box.classList.add("acc-wrap");
+    box.appendChild(head);
+    box.appendChild(body);
+  });
 }
