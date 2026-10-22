@@ -174,3 +174,28 @@ body {
   .acc-icon { width: 24px; height: 24px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
   .acc-icon img { max-width: 100%; max-height: 100%; object-fit: contain; }
 }
+
+/* ===== Organigrama: botones de despliegue ===== */
+.org-sub-head { background: none; border: 0; padding: 0; width: 100%; text-align: left; color: inherit; font: inherit; cursor: default; }
+.org-chev { display: none; color: var(--tone, #facc15); transition: transform .2s; margin-left: auto; }
+.org-head-escudo { display: none; }
+.org-head { display: flex; align-items: center; gap: 10px; justify-content: center; }
+.org-head-text { text-align: center; }
+@media (max-width: 767px) {
+  .org-expandable > .org-head { cursor: pointer; justify-content: flex-start; }
+  .org-expandable > .org-head .org-head-text { flex: 1; text-align: left; }
+  .org-expandable > .org-head .org-chev { display: inline; }
+  .org-head-escudo { display: block; height: 38px; width: auto; object-fit: contain; flex-shrink: 0; }
+  .org-expandable:not(.org-open) > .org-colbody { display: none; }
+  .org-open > .org-head .org-chev { transform: rotate(180deg); }
+  .org-open > .org-head { box-shadow: 0 0 0 1px var(--tone); }
+  .org-col { gap: 8px; }
+  /* varios subgrupos: cada uno es un botón; los nombres se ocultan hasta tocarlo */
+  .org-col:not(.org-single) .org-sub-head { cursor: pointer; margin-bottom: 0; padding: 6px 0; }
+  .org-col:not(.org-single) .org-sub-head .org-chev { display: inline; }
+  .org-col:not(.org-single) .org-sub:not(.org-sub-open) > ul { display: none; }
+  .org-col:not(.org-single) .org-sub-open > .org-sub-head .org-chev { transform: rotate(180deg); }
+  .org-col:not(.org-single) .org-sub-open > .org-sub-head { margin-bottom: 8px; }
+  /* un solo subgrupo: su escudo va en la caja del jefe y los nombres salen al desplegar */
+  .org-single .org-sub-head { display: none; }
+}

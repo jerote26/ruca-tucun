@@ -633,6 +633,23 @@ function escHtml(t) {
   return String(t ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 }
 
+function setupOrganigramaToggles() {
+  const cont = document.getElementById("organigramaContent");
+  if (!cont || cont.dataset.toggles) return;
+  cont.dataset.toggles = "1";
+  const esCelular = () => window.matchMedia("(max-width: 767px)").matches;
+  cont.addEventListener("click", (e) => {
+    if (!esCelular()) return;
+    const sub = e.target.closest(".org-sub-head");
+    if (sub) { sub.parentElement.classList.toggle("org-sub-open"); return; }
+    const head = e.target.closest(".org-head");
+    if (head && head.parentElement.classList.contains("org-expandable")) head.parentElement.classList.toggle("org-open");
+  });
+  cont.addEventListener("keydown", (e) => {
+    if ((e.key === "Enter" || e.key === " ") && e.target.classList.contains("org-head")) { e.preventDefault(); e.target.click(); }
+  });
+}
+
 function renderOrganigrama(id) {
   const cont = document.getElementById("organigramaContent");
   if (!cont) return;
@@ -651,15 +668,24 @@ function renderOrganigrama(id) {
     : `<li>${escHtml(m.nombre)}${m.cargo ? `<small>${escHtml(m.cargo)}</small>` : ""}</li>`;
   const subHtml = sg => `
         <div class="org-sub">
-          <div class="org-sub-head">${sg.escudo ? `<img src="${escHtml(sg.escudo)}" alt="">` : ""}<span>${escHtml(sg.nombre)}</span></div>
+          <button type="button" class="org-sub-head">${sg.escudo ? `<img src="${escHtml(sg.escudo)}" alt="">` : ""}<span>${escHtml(sg.nombre)}</span><span class="org-chev">▾</span></button>
           <ul>${sg.miembros.map(miembroHtml).join("")}</ul>
         </div>`;
-  const columnas = (org.columnas || []).map(c => `
-    <div class="org-col org-tone-${escHtml(c.tono)}">
-      <div class="org-box">${c.cabeza.cargo ? `<div class="org-cargo">${escHtml(c.cabeza.cargo)}</div>` : ""}<div class="org-nombre">${escHtml(c.cabeza.nombre)}</div></div>
+  const columnas = (org.columnas || []).map(c => {
+    const unico = c.subgrupos.length === 1;
+    const escudoUnico = unico && c.subgrupos[0].escudo ? `<img class="org-head-escudo" src="${escHtml(c.subgrupos[0].escudo)}" alt="">` : "";
+    const tieneCuerpo = c.subgrupos.length > 0;
+    return `
+    <div class="org-col org-tone-${escHtml(c.tono)}${unico ? " org-single" : ""}${tieneCuerpo ? " org-expandable" : ""}">
+      <div class="org-box org-head"${tieneCuerpo ? ' role="button" tabindex="0"' : ""}>
+        ${escudoUnico}
+        <div class="org-head-text">${c.cabeza.cargo ? `<div class="org-cargo">${escHtml(c.cabeza.cargo)}</div>` : ""}<div class="org-nombre">${escHtml(c.cabeza.nombre)}</div></div>
+        ${tieneCuerpo ? '<span class="org-chev">▾</span>' : ""}
+      </div>
       ${c.secretario ? `<div class="org-box org-secretario"><div class="org-cargo">${escHtml(c.secretario.cargo)}</div><div class="org-nombre">${escHtml(c.secretario.nombre)}</div></div>` : ""}
-      ${c.subgrupos.length ? `<section class="org-group">${c.subgrupos.map(subHtml).join("")}</section>` : ""}
-    </div>`).join("");
+      ${tieneCuerpo ? `<section class="org-group org-colbody">${c.subgrupos.map(subHtml).join("")}</section>` : ""}
+    </div>`;
+  }).join("");
   const grupos = (org.grupos || []).map(g => `
     <section class="org-group org-tone-${escHtml(g.tono)}">
       <h3>${escHtml(g.titulo)}</h3>
@@ -669,6 +695,7 @@ function renderOrganigrama(id) {
           <ul>${sg.miembros.map(m => `<li>${escHtml(m)}</li>`).join("")}</ul>
         </div>`).join("")}
     </section>`).join("");
+  setupOrganigramaToggles();
   cont.innerHTML = `
     <header class="text-center mb-8">
       <p class="text-xs font-bold tracking-widest text-rucaGold uppercase">Ruca Tucún${jef.period ? " • " + escHtml(jef.period) : ""}</p>
