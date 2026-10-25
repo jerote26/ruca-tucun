@@ -927,6 +927,796 @@
      "r": "No hizo falta decir nada."
     }
    ]
+  },
+  {
+   "id": "cumple",
+   "titulo": "Cumpleaños sorpresa",
+   "edad": [
+    9,
+    15
+   ],
+   "texto": "Es el cumple de un compañero y alguien propone una sorpresa en plena formación.",
+   "opciones": [
+    {
+     "label": "Te sumás a organizar todo",
+     "n": 5,
+     "r": "La sorpresa salió perfecta. El cumpleañero no sabía dónde meterse."
+    },
+    {
+     "label": "Avisás que mejor no, que hay que respetar la formación",
+     "n": -1,
+     "r": "Fue lo correcto, pero te miraron con cara de «aguafiestas»."
+    },
+    {
+     "label": "Le cantás a los gritos antes de tiempo",
+     "riesgo": {
+      "p": 0.4,
+      "bien": {
+       "n": 6,
+       "r": "Arruinaste el secreto, pero fue tan gracioso que todos se rieron."
+      },
+      "mal": {
+       "n": -4,
+       "r": "Arruinaste la sorpresa y el cumpleañero se hizo el distraído."
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "sapo",
+   "titulo": "Un bicho en la carpa",
+   "edad": [
+    9,
+    13
+   ],
+   "texto": "De noche aparece un bicho enorme (o eso parecía) en la carpa.",
+   "opciones": [
+    {
+     "label": "Lo sacás con una pala y mucha dignidad",
+     "n": 5,
+     "r": "Fuiste el héroe de la noche."
+    },
+    {
+     "label": "Gritás más fuerte que el bicho",
+     "n": -3,
+     "r": "Despertaste a todo el campamento."
+    },
+    {
+     "label": "Hacés como que dormís",
+     "n": -1,
+     "r": "Alguien lo sacó. Nadie dijo nada. Pero se sabe."
+    }
+   ]
+  },
+  {
+   "id": "linterna",
+   "titulo": "Las pilas de la linterna",
+   "edad": [
+    9,
+    15
+   ],
+   "texto": "Hay juego nocturno y tu linterna se queda sin pilas.",
+   "opciones": [
+    {
+     "label": "Pedís prestada y cuidás la de otro",
+     "n": 3,
+     "r": "Compartieron la luz y el susto."
+    },
+    {
+     "label": "Seguís a oscuras confiando en tu instinto",
+     "n": 0.0,
+     "r": "Te chocaste con un árbol. Un árbol bastante educado."
+    },
+    {
+     "label": "Te quedás con los jefes cerca de la fogata",
+     "n": 2,
+     "r": "Zafaste, aunque perdiste emoción."
+    }
+   ]
+  },
+  {
+   "id": "mochila",
+   "titulo": "La mochila de 25 kilos",
+   "edad": [
+    9,
+    15
+   ],
+   "texto": "Armás la mochila para el campamento y todo parece indispensable.",
+   "opciones": [
+    {
+     "label": "Llevás lo justo y bien ordenado",
+     "n": 5,
+     "r": "Ni una cosa de más. Los jefes te felicitan."
+    },
+    {
+     "label": "Llevás tres buzos, cinco remeras y una almohada gigante",
+     "n": -3,
+     "r": "No te podías ni parar. Pero abrigaste a medio campamento."
+    },
+    {
+     "label": "Te olvidás las medias",
+     "riesgo": {
+      "p": 0.45,
+      "bien": {
+       "n": 4,
+       "r": "Un compañero te prestó y se hicieron amigos."
+      },
+      "mal": {
+       "n": -4,
+       "r": "Camino con los pies mojados. No es lo que querías."
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "foto",
+   "titulo": "La foto grupal",
+   "edad": [
+    11,
+    25
+   ],
+   "texto": "Se saca la foto grupal del campamento y a vos te toca el borde.",
+   "opciones": [
+    {
+     "label": "Te acomodás con una sonrisa",
+     "n": 3,
+     "r": "Saliste bien en la foto oficial. Rarísimo."
+    },
+    {
+     "label": "Hacés la cara más graciosa posible",
+     "n": 4,
+     "r": "Quedó como la foto más compartida del campamento."
+    },
+    {
+     "label": "Te movés justo cuando disparan",
+     "n": -3,
+     "r": "Saliste como un fantasma. Te lo recuerdan cada año."
+    }
+   ]
+  },
+  {
+   "id": "tormenta",
+   "titulo": "La tormenta en el campamento",
+   "edad": [
+    11,
+    21
+   ],
+   "texto": "Se larga una tormenta y se vuela la carpa comedor.",
+   "opciones": [
+    {
+     "label": "Ayudás a poner todo a salvo",
+     "n": 7,
+     "r": "Salvaste las provisiones. Aplauso general.",
+     "lider": 1
+    },
+    {
+     "label": "Te refugiás y mirás desde lejos",
+     "n": -3,
+     "r": "Todos terminaron empapados menos vos... y no quedó bien."
+    },
+    {
+     "label": "Cantás para levantar los ánimos bajo la lluvia",
+     "n": 5,
+     "r": "Terminó en un recital improvisado y empapado."
+    }
+   ]
+  },
+  {
+   "id": "comida",
+   "titulo": "Cocinar para cuarenta",
+   "edad": [
+    13,
+    25
+   ],
+   "texto": "Te toca cocinar el almuerzo para todo el grupo.",
+   "opciones": [
+    {
+     "label": "Hacés guiso, que nunca falla",
+     "n": 5,
+     "r": "Un clásico que unió a la mesa."
+    },
+    {
+     "label": "Probás una receta nueva y arriesgada",
+     "n": -2,
+     "r": "El resultado fue... memorable. Nadie repitió."
+    },
+    {
+     "label": "Pedís ayuda y repartís tareas",
+     "n": 6,
+     "r": "Entre todos salió riquísimo.",
+     "lider": 1
+    }
+   ]
+  },
+  {
+   "id": "guitarra",
+   "titulo": "La guitarra desafinada",
+   "edad": [
+    13,
+    25
+   ],
+   "texto": "En el fogón alguien te pasa la guitarra… que está completamente desafinada.",
+   "opciones": [
+    {
+     "label": "La afinás con paciencia",
+     "n": 4,
+     "r": "Sonó mejor de lo que esperabas."
+    },
+    {
+     "label": "Tocás igual con convicción",
+     "n": -1,
+     "r": "Fue una interpretación muy personal."
+    },
+    {
+     "label": "Se la pasás a quien sabe",
+     "n": 2,
+     "r": "Todos salieron ganando."
+    }
+   ]
+  },
+  {
+   "id": "peregrina",
+   "titulo": "La peregrinación",
+   "edad": [
+    13,
+    25
+   ],
+   "texto": "Se organiza una caminata de fe hasta el santuario.",
+   "opciones": [
+    {
+     "label": "Vas rezando y ayudando a los más cansados",
+     "n": 7,
+     "r": "Llegaste con el corazón lleno y los pies destrozados.",
+     "lider": 1
+    },
+    {
+     "label": "Vas con auriculares aislado",
+     "n": -3,
+     "r": "Te perdiste de la mitad de lo importante."
+    },
+    {
+     "label": "Vas contando chistes para el grupo",
+     "n": 5,
+     "r": "Hicieron el camino riendo. No lo olvidan."
+    }
+   ]
+  },
+  {
+   "id": "rosario",
+   "titulo": "El rosario",
+   "edad": [
+    9,
+    25
+   ],
+   "texto": "Se reza el rosario y a vos te toca guiar un misterio.",
+   "opciones": [
+    {
+     "label": "Lo guiás con voz clara",
+     "n": 5,
+     "r": "Salió serio y claro. Todos acompañaron."
+    },
+    {
+     "label": "Te perdés y repetís el mismo misterio",
+     "n": -2,
+     "r": "Alguien tosió para disimular la risa."
+    },
+    {
+     "label": "Lo guiás de memoria",
+     "riesgo": {
+      "p": 0.5,
+      "bien": {
+       "n": 6,
+       "r": "Te salió sin errores. Orgullo propio."
+      },
+      "mal": {
+       "n": -3,
+       "r": "Te trabaste a la mitad."
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "tarde",
+   "titulo": "Llegás tarde",
+   "edad": [
+    13,
+    25
+   ],
+   "texto": "Es sábado y estás llegando tarde.",
+   "opciones": [
+    {
+     "label": "Corrés y llegás sin aliento",
+     "n": 1,
+     "r": "Llegaste. Con la lengua afuera, pero llegaste."
+    },
+    {
+     "label": "Inventás una excusa épica",
+     "n": -2,
+     "r": "Nadie la creyó. Pero fue tan creativa que te perdonaron."
+    },
+    {
+     "label": "Pedís disculpas y te ponés a ayudar",
+     "n": 4,
+     "r": "Te ganaste el respeto de todos."
+    }
+   ]
+  },
+  {
+   "id": "teatro",
+   "titulo": "La obra de teatro",
+   "edad": [
+    13,
+    21
+   ],
+   "texto": "Preparan una obra para la fiesta y te piden un papel.",
+   "opciones": [
+    {
+     "label": "Aceptás el papel principal",
+     "n": 4,
+     "r": "Te salió mejor de lo que pensabas. Se escuchó un «¡bravo!»."
+    },
+    {
+     "label": "Pedís ser parte de la escenografía",
+     "n": 4,
+     "r": "Sin vos el decorado no existía."
+    },
+    {
+     "label": "Te ofrecés a improvisar",
+     "riesgo": {
+      "p": 0.5,
+      "bien": {
+       "n": 7,
+       "r": "El público estalló de risa."
+      },
+      "mal": {
+       "n": -4,
+       "r": "Te olvidaste el guion y el público ni se enteró... pero vos sí."
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "jefe-nuevo",
+   "titulo": "Llega un jefe nuevo",
+   "edad": [
+    19,
+    25
+   ],
+   "texto": "Cambia la conducción y el nuevo jefe tiene otro estilo.",
+   "opciones": [
+    {
+     "label": "Te adaptás y lo ayudás a arrancar",
+     "n": 6,
+     "r": "Tu actitud abrió puertas.",
+     "lider": 1
+    },
+    {
+     "label": "Te quejás en voz baja con tus amigos",
+     "n": -4,
+     "r": "El chisme llegó antes que vos."
+    },
+    {
+     "label": "Le proponés ideas con respeto",
+     "n": 7,
+     "r": "Te escuchó y varias se aplicaron.",
+     "lider": 1
+    }
+   ]
+  },
+  {
+   "id": "tienda",
+   "titulo": "Atender la tienda del Ruca",
+   "edad": [
+    17,
+    25
+   ],
+   "texto": "Hay que atender a los que vienen a comprar prendas del Ruca.",
+   "opciones": [
+    {
+     "label": "Atendés con paciencia y ordenás todo",
+     "n": 5,
+     "r": "Todos salieron conformes y el depósito quedó impecable."
+    },
+    {
+     "label": "Te confundís con los talles",
+     "n": -3,
+     "r": "Alguien se llevó un talle XL cuando pidió S. Hay anécdota."
+    },
+    {
+     "label": "Armás una lista de pedidos prolija",
+     "n": 6,
+     "r": "Nunca estuvo tan organizada. Ahorraste tiempo a todos."
+    }
+   ]
+  },
+  {
+   "id": "olla",
+   "titulo": "La olla desbordada",
+   "edad": [
+    19,
+    25
+   ],
+   "texto": "La olla de fideos para cincuenta personas empieza a desbordar.",
+   "opciones": [
+    {
+     "label": "Reaccionás rápido y bajás el fuego",
+     "n": 5,
+     "r": "Salvaste el almuerzo."
+    },
+    {
+     "label": "Gritás pidiendo ayuda",
+     "n": 1,
+     "r": "Vino medio campamento a mirar. Alguien sacó fotos."
+    },
+    {
+     "label": "Intentás levantarla vos solo",
+     "riesgo": {
+      "p": 0.4,
+      "bien": {
+       "n": 7,
+       "r": "La salvaste en una proeza heroica."
+      },
+      "mal": {
+       "n": -6,
+       "r": "Casi sale volando el almuerzo. Y vos con él."
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "charla",
+   "titulo": "La charla para los más chicos",
+   "edad": [
+    19,
+    25
+   ],
+   "texto": "Te piden dar una charla corta a los más chicos.",
+   "opciones": [
+    {
+     "label": "La preparás con ejemplos y humor",
+     "n": 7,
+     "r": "Los chicos todavía repiten tus chistes.",
+     "lider": 1
+    },
+    {
+     "label": "Improvisás lo que sabés",
+     "n": 0,
+     "r": "Salió regular. Pero salió."
+    },
+    {
+     "label": "Pedís que te ayude otro miliciano",
+     "n": 4,
+     "r": "Entre dos salió cálida y divertida."
+    }
+   ]
+  },
+  {
+   "id": "guitarreada",
+   "titulo": "La guitarreada",
+   "edad": [
+    19,
+    25
+   ],
+   "texto": "Se arma una guitarreada espontánea con milicianos de distintas épocas.",
+   "opciones": [
+    {
+     "label": "Cantás con todos y con ganas",
+     "n": 5,
+     "r": "Hubo coros en tres tonos distintos. Fue perfecto."
+    },
+    {
+     "label": "Preferís escuchar desde la sombra",
+     "n": 1,
+     "r": "Una linda tarde para vos."
+    },
+    {
+     "label": "Proponés cantar la canción del Ruca",
+     "n": 7,
+     "r": "Se emocionaron hasta los más duros.",
+     "lider": 1
+    }
+   ]
+  },
+  {
+   "id": "campamento-anual",
+   "titulo": "Campamento anual",
+   "edad": [
+    17,
+    25
+   ],
+   "texto": "Se acerca el campamento anual y hay muchos pendientes.",
+   "opciones": [
+    {
+     "label": "Te anotás para varias tareas",
+     "n": 6,
+     "r": "Terminaste agotado y feliz.",
+     "lider": 1
+    },
+    {
+     "label": "Te anotás solo para la que te gusta",
+     "n": 3,
+     "r": "Hiciste bien tu parte."
+    },
+    {
+     "label": "Esperás a ver qué queda",
+     "n": -2,
+     "r": "Te quedó la tarea de lavar ollas."
+    }
+   ]
+  },
+  {
+   "id": "amistad",
+   "titulo": "Una pelea entre amigos",
+   "edad": [
+    15,
+    25
+   ],
+   "texto": "Dos amigos tuyos del Ruca se pelearon por un tema chico.",
+   "opciones": [
+    {
+     "label": "Los juntás y hablan",
+     "n": 8,
+     "r": "Se reconciliaron. Gracias a vos.",
+     "lider": 1
+    },
+    {
+     "label": "Te hacés el distraído",
+     "n": -2,
+     "r": "La cosa se enfrió sola, pero nadie lo olvidó."
+    },
+    {
+     "label": "Tomás partido por uno",
+     "n": -5,
+     "r": "Ahora los dos están enojados. Y uno con vos."
+    }
+   ]
+  },
+  {
+   "id": "com-ig",
+   "titulo": "Comunicaciones: el posteo del sábado",
+   "edad": [
+    19,
+    25
+   ],
+   "texto": "Tenés que publicar el resumen de la actividad en las redes.",
+   "opciones": [
+    {
+     "label": "Elegís fotos lindas y escribís con cariño",
+     "n": 7,
+     "r": "El posteo tuvo récord de reacciones.",
+     "lider": 1
+    },
+    {
+     "label": "Publicás sin revisar las fotos",
+     "n": -4,
+     "r": "Había una foto donde un jefe aparecía bostezando. Se viralizó en el grupo."
+    },
+    {
+     "label": "Hacés un video con música de moda",
+     "riesgo": {
+      "p": 0.5,
+      "bien": {
+       "n": 8,
+       "r": "Fue tendencia en el Ruca. Todos te pidieron más."
+      },
+      "mal": {
+       "n": -3,
+       "r": "La música tenía copyright. Te lo bajaron."
+      }
+     }
+    }
+   ],
+   "solo": "comunicaciones"
+  },
+  {
+   "id": "adm-cuentas",
+   "titulo": "Administración: las cuentas",
+   "edad": [
+    19,
+    25
+   ],
+   "texto": "Hay que cerrar las cuentas del campamento y los números no cierran.",
+   "opciones": [
+    {
+     "label": "Revisás factura por factura",
+     "n": 7,
+     "r": "Encontraste el error: un fideo de más. Todo cuadra.",
+     "lider": 1
+    },
+    {
+     "label": "Redondeás los números",
+     "n": -4,
+     "r": "El tesorero casi se desmaya."
+    },
+    {
+     "label": "Pedís ayuda a otro miliciano",
+     "n": 4,
+     "r": "Entre dos lo resolvieron en media hora."
+    }
+   ],
+   "solo": "administracion"
+  },
+  {
+   "id": "int-inventario",
+   "titulo": "Intendencia: inventario",
+   "edad": [
+    19,
+    25
+   ],
+   "texto": "Te piden el inventario de carpas y ollas del depósito.",
+   "opciones": [
+    {
+     "label": "Contás todo y armás una planilla",
+     "n": 7,
+     "r": "Por fin sabemos cuántas ollas hay: 37.",
+     "lider": 1
+    },
+    {
+     "label": "Decís «más o menos hay lo mismo que el año pasado»",
+     "n": -3,
+     "r": "Faltaban tres carpas. Misterio."
+    },
+    {
+     "label": "Salís a comprar lo que falta",
+     "riesgo": {
+      "p": 0.5,
+      "bien": {
+       "n": 6,
+       "r": "Llegaste justo a tiempo con todo."
+      },
+      "mal": {
+       "n": -4,
+       "r": "Compraste la carpa equivocada."
+      }
+     }
+    }
+   ],
+   "solo": "intendencia"
+  },
+  {
+   "id": "sec-acta",
+   "titulo": "Secretaría: el acta",
+   "edad": [
+    19,
+    25
+   ],
+   "texto": "Tenés que redactar el acta de una reunión muy larga.",
+   "opciones": [
+    {
+     "label": "Anotás todo con claridad",
+     "n": 7,
+     "r": "Un acta perfecta que se usó de ejemplo.",
+     "lider": 1
+    },
+    {
+     "label": "Te distraés y perdés una parte importante",
+     "n": -4,
+     "r": "Hubo que rehacer la reunión."
+    },
+    {
+     "label": "Pasás los puntos en limpio y los enviás rápido",
+     "n": 5,
+     "r": "Todos agradecieron la rapidez."
+    }
+   ],
+   "solo": "secretaria"
+  },
+  {
+   "id": "for-formacion",
+   "titulo": "Formación: la charla de doctrina",
+   "edad": [
+    19,
+    25
+   ],
+   "texto": "Preparás una charla de formación para los milicianos.",
+   "opciones": [
+    {
+     "label": "La armás con ejemplos y preguntas",
+     "n": 8,
+     "r": "Hubo debate real y mate de por medio.",
+     "lider": 1
+    },
+    {
+     "label": "Leés un texto largo sin parar",
+     "n": -4,
+     "r": "Alguien se durmió. No fue una sola persona."
+    },
+    {
+     "label": "Invitás a un invitado especial",
+     "n": 6,
+     "r": "Fue una de las charlas más recordadas."
+    }
+   ],
+   "solo": "formacion"
+  },
+  {
+   "id": "agr-masc",
+   "titulo": "Agrupación Masculina: el campeonato",
+   "edad": [
+    19,
+    25
+   ],
+   "texto": "Organizás un torneo entre secciones de la agrupación.",
+   "opciones": [
+    {
+     "label": "Armás un fixture claro y justo",
+     "n": 7,
+     "r": "Todos jugaron y nadie protestó. Milagro.",
+     "lider": 1
+    },
+    {
+     "label": "Dejás que se organicen solos",
+     "n": -3,
+     "r": "Se armó un desorden épico."
+    },
+    {
+     "label": "Sumás premios simbólicos y mucha onda",
+     "n": 6,
+     "r": "Fue la mejor tarde del año."
+    }
+   ],
+   "solo": "masculina"
+  },
+  {
+   "id": "agr-fem",
+   "titulo": "Agrupación Femenina: la jornada",
+   "edad": [
+    19,
+    25
+   ],
+   "texto": "Organizás una jornada especial con la agrupación.",
+   "opciones": [
+    {
+     "label": "Planificás cada actividad con detalle",
+     "n": 7,
+     "r": "Todo salió sobre ruedas. Muchas ganas de repetirlo.",
+     "lider": 1
+    },
+    {
+     "label": "Improvisás sobre la marcha",
+     "n": -2,
+     "r": "Con mucho humor, se arregló todo."
+    },
+    {
+     "label": "Sumás a todas en la organización",
+     "n": 6,
+     "r": "Hubo ideas geniales de todas."
+    }
+   ],
+   "solo": "femenina"
+  },
+  {
+   "id": "agr-mil",
+   "titulo": "Agrupación Milicianos: la reunión",
+   "edad": [
+    19,
+    25
+   ],
+   "texto": "Convocás a todos los milicianos para definir un proyecto.",
+   "opciones": [
+    {
+     "label": "Escuchás a todos y priorizás ideas",
+     "n": 7,
+     "r": "Salió un plan en el que todos se vieron reflejados.",
+     "lider": 1
+    },
+    {
+     "label": "Imponés tu idea sin escuchar",
+     "n": -5,
+     "r": "Nadie se sintió parte. La próxima, menos gente."
+    },
+    {
+     "label": "Hacés una votación a mano alzada",
+     "n": 5,
+     "r": "Rápido, justo y con aplausos."
+    }
+   ],
+   "solo": "milicianos"
   }
  ]
 }

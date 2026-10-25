@@ -890,37 +890,47 @@ function jgSeccion(edad, f) {
   return edad <= 13 ? "Escuderos" : edad <= 16 ? "Templarios Menores" : "Templarios Mayores";
 }
 
-// Escalera de cargos (edad mínima de la etapa en que pueden ofrecértelo)
+// Cargos de sección (se ofrecen en una ventana de edad limitada y vencen)
 function jgEscalera(f) {
   return f ? [
     { n: "Subjefa de Caperucitas", edad: 11 },
     { n: "Subjefa de Herederas", edad: 13 },
     { n: "Jefa de Herederas", edad: 15 },
-    { n: "Jefa de Adalides", edad: 17 },
-    { n: "Jefa de la Agrupación Femenina", edad: 21, cc: true },
-    { n: "Jefa de Ruca", edad: 23, ruca: true }
+    { n: "Jefa de Adalides", edad: 17 }
   ] : [
     { n: "Subjefe de Escuderos", edad: 11 },
     { n: "Jefe de Escuderos", edad: 13 },
     { n: "Subjefe de Templarios", edad: 15 },
-    { n: "Jefe de Templarios", edad: 17 },
-    { n: "Jefe de la Agrupación Masculina", edad: 21, cc: true },
-    { n: "Jefe de Ruca", edad: 23, ruca: true }
+    { n: "Jefe de Templarios", edad: 17 }
+  ];
+}
+
+// Cargos de Milicianos (a partir de los 19): departamentos y agrupaciones
+function jgCargosAdultos(f) {
+  return [
+    { n: f ? "Jefa del Departamento de Comunicaciones" : "Jefe del Departamento de Comunicaciones", k: "comunicaciones" },
+    { n: f ? "Jefa del Departamento de Administración" : "Jefe del Departamento de Administración", k: "administracion" },
+    { n: f ? "Jefa del Departamento de Intendencia" : "Jefe del Departamento de Intendencia", k: "intendencia" },
+    { n: f ? "Jefa de Formación" : "Jefe de Formación", k: "formacion" },
+    { n: f ? "Secretaria de Ruca" : "Secretario de Ruca", k: "secretaria" },
+    f ? { n: "Jefa de la Agrupación Femenina", k: "femenina" } : { n: "Jefe de la Agrupación Masculina", k: "masculina" },
+    { n: f ? "Jefa de la Agrupación Milicianos" : "Jefe de la Agrupación Milicianos", k: "milicianos" }
   ];
 }
 
 function jgRol() {
+  if (jg.ruca) return jg.f ? "Jefa de Ruca" : "Jefe de Ruca";
+  if (jg.edad >= 19) return jg.cc || null;
   return jg.rung >= 0 ? jgEscalera(jg.f)[jg.rung].n : null;
 }
 
 function jgFinal() {
   const f = jg.f, e = jg.estilo;
-  const rol = jgRol();
-  const esc = jgEscalera(f);
-  if (jg.rung === esc.length - 1) return { icon: "👑", titulo: f ? "Jefa de Ruca" : "Jefe de Ruca", texto: "Llegaste a lo más alto, paso a paso, desde Caperucita o Escudero. La comunidad entera confía en vos." };
-  if (jg.rung === esc.length - 2) return { icon: "🛡️", titulo: rol, texto: "Llegaste al Comando Central. Para ser Jefe de Ruca faltó un último empujón (o un poco de suerte)." };
-  if (e >= 85) return { icon: "🏆", titulo: "Leyenda del Ruca", texto: "Las anécdotas tuyas se cuentan en cada fogón." + (rol ? " Cargo más alto: " + rol + "." : "") };
-  if (jg.rung >= 1) return { icon: "⚜️", titulo: rol, texto: "Fuiste ejemplo para los más chicos y dejaste huella en tu sección." };
+  const sec = jg.rung >= 0 ? jgEscalera(f)[jg.rung].n : null;
+  if (jg.ruca) return { icon: "👑", titulo: f ? "Jefa de Ruca" : "Jefe de Ruca", texto: "Llegaste a lo más alto, paso a paso, desde Caperucita o Escudero. La comunidad entera confía en vos." };
+  if (jg.cc) return { icon: "🛡️", titulo: jg.cc, texto: "Formás parte del Comando Central." + (e >= 85 ? " Y tu Estilo es de leyenda." : " Para ser Jefe de Ruca faltó un último empujón (o un poco de suerte).") + (sec ? " Antes habías sido " + sec + "." : "") };
+  if (e >= 85) return { icon: "🏆", titulo: "Leyenda del Ruca", texto: "Las anécdotas tuyas se cuentan en cada fogón." + (sec ? " Fuiste " + sec + "." : "") };
+  if (jg.rung >= 1) return { icon: "⚜️", titulo: "Miliciano con trayectoria".replace("Miliciano", f ? "Miliciana" : "Miliciano"), texto: "En su momento fuiste " + sec + ". Hoy seguís sumando como miliciano raso, con experiencia de sobra." };
   if (e >= 60) return { icon: "🔥", titulo: f ? "Miliciana de todos los sábados" : "Miliciano de todos los sábados", texto: "Siempre presente, siempre con una sonrisa. El Ruca no sería lo mismo sin vos." };
   if (e >= 40) return { icon: "🤝", titulo: f ? "Miliciana querida" : "Miliciano querido", texto: "Pasaste por el Ruca dejando buenos recuerdos y alguna que otra anécdota." };
   if (e >= 20) return { icon: "🌧️", titulo: "Bajo perfil", texto: "Tuviste tus tropiezos, pero seguís siendo parte de la familia. Siempre hay revancha." };
@@ -980,7 +990,7 @@ function jgValidar() {
 function jgEmpezar() {
   const nombre = document.getElementById("jgNombre").value.trim().slice(0, 18);
   if (nombre.length < 2 || !jgGenero) return;
-  jg = { nombre, f: jgGenero === "f", edad: juegoData.etapas[0], estilo: 30, lider: 0, rung: -1, usados: [], hist: [], etapaIdx: 0, cola: [] };
+  jg = { nombre, f: jgGenero === "f", edad: juegoData.etapas[0], estilo: 30, lider: 0, rung: -1, cc: null, ccKey: null, ruca: false, usados: [], hist: [], etapaIdx: 0, cola: [] };
   jgPrepararEtapa();
   jgMostrarEvento();
 }
@@ -991,29 +1001,44 @@ function jgShuffle(arr) {
   return a;
 }
 
-// ¿Te ofrecen el próximo cargo? Depende de cosas que el jugador no ve del todo.
+// ¿Te ofrecen un cargo? Depende de cosas que el jugador no ve del todo.
 function jgOferta() {
-  const esc = jgEscalera(jg.f);
-  const nx = jg.rung + 1;
-  if (nx >= esc.length) return null;
-  const r = esc[nx];
-  if (jg.edad < r.edad) return null;
-  if (r.ruca && jg.edad > 25) return null;
-  const p = Math.max(0.1, Math.min(0.9, (jg.estilo - 20) / 90 + jg.lider * 0.03 + (jg.edad > r.edad ? 0.1 : 0)));
-  if (Math.random() > p) return null;
-  const textos = r.ruca
-    ? "Hay elecciones para Jefe de Ruca y varios te proponen como candidato."
-    : r.cc
-    ? "Se arma el Comando Central y te piensan para conducir la agrupación."
-    : "Los jefes se juntan y te proponen para un nuevo cargo.";
-  return { oferta: true, rol: r.n, ruca: !!r.ruca, titulo: "Te proponen: " + r.n, texto: textos };
+  const f = jg.f;
+  const base = (jg.estilo - 20) / 90 + jg.lider * 0.03;
+  if (jg.edad < 19) {
+    const esc = jgEscalera(f);
+    const nx = jg.rung + 1;
+    if (nx >= esc.length) return null;
+    const r = esc[nx];
+    if (jg.edad < r.edad || jg.edad > r.edad + 2) return null; // si no, venció
+    if (Math.random() > Math.max(0.1, Math.min(0.9, base + (jg.edad > r.edad ? 0.1 : 0)))) return null;
+    return { oferta: true, tipo: "sec", rol: r.n, titulo: "Te proponen: " + r.n, texto: "Los jefes se juntan y te proponen para un nuevo cargo en tu sección." };
+  }
+  if (!jg.cc) {
+    if (jg.edad < 21 && Math.random() > 0.35) return null;
+    if (Math.random() > Math.max(0.1, Math.min(0.85, base - 0.05))) return null;
+    const lista = jgCargosAdultos(f);
+    const c = lista[Math.floor(Math.random() * lista.length)];
+    return { oferta: true, tipo: "adulto", rol: c.n, k: c.k, titulo: "Te proponen: " + c.n, texto: "Como miliciano, te piensan para sumarte al Comando Central con un cargo de responsabilidad." };
+  }
+  if (!jg.ruca && jg.edad >= 23) {
+    if (Math.random() > Math.max(0.15, Math.min(0.8, base))) return null;
+    return { oferta: true, tipo: "ruca", rol: jg.f ? "Jefa de Ruca" : "Jefe de Ruca", ruca: true, titulo: "Elecciones para Jefe de Ruca", texto: "Hay elecciones y varios te proponen como candidato a Jefe de Ruca." };
+  }
+  return null;
 }
 
 function jgPrepararEtapa() {
   const edad = jg.edad;
-  let pool = jgShuffle(juegoData.eventos.filter(e => !jg.usados.includes(e.id) && e.edad[0] <= edad + 1 && e.edad[1] >= edad));
+  const elegibles = juegoData.eventos.filter(e => !jg.usados.includes(e.id) && e.edad[0] <= edad + 1 && e.edad[1] >= edad && (!e.solo || e.solo === jg.ccKey));
+  const propios = jgShuffle(elegibles.filter(e => e.solo));
+  const comunes = jgShuffle(elegibles.filter(e => !e.solo));
   const n = jg.edad === juegoData.etapas[0] ? 1 : 2;
-  jg.cola = pool.slice(0, n);
+  // Si ocupás un cargo de Comando Central, a veces te toca algo propio del cargo.
+  let sel = [];
+  if (propios.length && Math.random() < 0.6) sel.push(propios[0]);
+  sel = sel.concat(comunes).slice(0, n);
+  jg.cola = sel;
   jg.cola.forEach(e => jg.usados.push(e.id));
   const of = jgOferta();
   if (of) jg.cola = [of].concat(jg.cola.slice(0, 1));
@@ -1096,10 +1121,9 @@ function jgElegirOferta(k) {
       jg.hist.push({ t: ev.titulo, n: d });
       return jgPintar("Cediste el lugar. Un gesto de humildad que muchos recuerdan. Tal vez haya otra oportunidad.", d);
     }
-    const base = (jg.estilo - 30) / 100 + jg.lider * 0.025 + (k === 0 ? 0.12 : 0) + (Math.random() * 0.5 - 0.2);
-    const gana = base > 0.35;
-    if (gana) {
-      jg.rung++;
+    const base = (jg.estilo - 30) / 100 + jg.lider * 0.025 + (k === 0 ? 0.12 : 0) + (Math.random() * 0.6 - 0.25);
+    if (base > 0.72) {
+      jg.ruca = true;
       const d = jgAplicar(8);
       jg.hist.push({ t: ev.titulo, n: d });
       return jgPintar("¡Ganaste la elección! Sos " + (f ? "la nueva Jefa de Ruca." : "el nuevo Jefe de Ruca."), d, "🏛️ Elecciones");
@@ -1113,8 +1137,8 @@ function jgElegirOferta(k) {
     jg.hist.push({ t: ev.titulo, n: d });
     return jgPintar("Dijiste que no por ahora. Tal vez más adelante vuelvan a proponértelo (o tal vez no).", d);
   }
-  jg.rung++;
-  const rol = jgRol();
+  if (ev.tipo === "adulto") { jg.cc = ev.rol; jg.ccKey = ev.k; } else { jg.rung++; }
+  const rol = ev.rol;
   const buen = Math.random() < Math.max(0.2, Math.min(0.85, 0.3 + jg.estilo / 160 + (k === 0 ? 0.1 : -0.05)));
   const d = jgAplicar(buen ? 6 + Math.floor(Math.random() * 4) : -(2 + Math.floor(Math.random() * 4)));
   jg.lider += buen ? 2 : 1;
