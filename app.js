@@ -10,6 +10,7 @@ const CONFIG = {
   eventsPath: `data/ruca_events.json?t=${Date.now()}`,
   timelinePath: `data/ruca_timeline.json?t=${Date.now()}`,
   jefaturasPath: `data/ruca_jefaturas.json?t=${Date.now()}`,
+  juegoPath: `data/ruca_juego.json?t=${Date.now()}`,
   organigramasPath: `data/ruca_organigramas.json?t=${Date.now()}`
 };
 
@@ -32,7 +33,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     loadEvents(),
     loadJefaturas(),
     loadOrganigramas(),
-    loadTimeline()
+    loadTimeline(),
+    loadJuego()
   ]);
   setupEventListeners();
   setupMobileAccordions();
@@ -59,19 +61,22 @@ function switchMainTab(tabName) {
     tienda: document.getElementById("sectionTienda"),
     actividades: document.getElementById("sectionActividades"),
     info: document.getElementById("sectionInfo"),
-    organigrama: document.getElementById("sectionOrganigrama")
+    organigrama: document.getElementById("sectionOrganigrama"),
+    juga: document.getElementById("sectionJuga")
   };
 
   const desktopBtns = {
     tienda: document.getElementById("tabBtnTienda"),
     actividades: document.getElementById("tabBtnActividades"),
-    info: document.getElementById("tabBtnInfo")
+    info: document.getElementById("tabBtnInfo"),
+    juga: document.getElementById("tabBtnJuga")
   };
 
   const mobileBtns = {
     tienda: document.getElementById("mobileTabBtnTienda"),
     actividades: document.getElementById("mobileTabBtnActividades"),
-    info: document.getElementById("mobileTabBtnInfo")
+    info: document.getElementById("mobileTabBtnInfo"),
+    juga: document.getElementById("mobileTabBtnJuga")
   };
 
   // Mostrar la sección correspondiente
@@ -364,6 +369,8 @@ function handleRouting() {
     switchMainTab("actividades");
   } else if (hash === "#info") {
     switchMainTab("info");
+  } else if (hash === "#juga") {
+    switchMainTab("juga");
   } else {
     // Por defecto al entrar a la web: Información & Origen
     switchMainTab("info");
@@ -852,4 +859,318 @@ function openTimelineModal(year) {
 function closeTimelineModal() {
   const modal = document.getElementById("timelineModal");
   if (modal) modal.classList.add("hidden");
+}
+
+
+/* =====================================================
+   JUGÁ · Trayectoria de un miliciano
+   ===================================================== */
+let juegoData = null;
+let jg = null; // estado de la partida
+
+async function loadJuego() {
+  try {
+    const res = await fetch(CONFIG.juegoPath);
+    if (!res.ok) throw new Error("juego");
+    juegoData = await res.json();
+    renderJuegoInicio();
+  } catch (e) {
+    console.error("Error cargando el juego:", e);
+  }
+}
+
+function jgTxt(s, f) {
+  const m = { o: f ? "a" : "o", a: f ? "a" : "", un: f ? "una" : "un", el: f ? "la" : "el", Maestro: f ? "Maestra" : "Maestro" };
+  return String(s).replace(/\{(\w+)\}/g, (_, k) => (k in m ? m[k] : ""));
+}
+
+function jgSeccion(edad, f) {
+  if (edad >= 19) return f ? "Milicianas" : "Milicianos";
+  if (f) return edad <= 12 ? "Caperucitas" : edad <= 15 ? "Herederas" : "Adalides";
+  return edad <= 13 ? "Escuderos" : edad <= 16 ? "Templarios Menores" : "Templarios Mayores";
+}
+
+// Escalera de cargos (edad mínima de la etapa en que pueden ofrecértelo)
+function jgEscalera(f) {
+  return f ? [
+    { n: "Subjefa de Caperucitas", edad: 11 },
+    { n: "Subjefa de Herederas", edad: 13 },
+    { n: "Jefa de Herederas", edad: 15 },
+    { n: "Jefa de Adalides", edad: 17 },
+    { n: "Jefa de la Agrupación Femenina", edad: 21, cc: true },
+    { n: "Jefa de Ruca", edad: 23, ruca: true }
+  ] : [
+    { n: "Subjefe de Escuderos", edad: 11 },
+    { n: "Jefe de Escuderos", edad: 13 },
+    { n: "Subjefe de Templarios", edad: 15 },
+    { n: "Jefe de Templarios", edad: 17 },
+    { n: "Jefe de la Agrupación Masculina", edad: 21, cc: true },
+    { n: "Jefe de Ruca", edad: 23, ruca: true }
+  ];
+}
+
+function jgRol() {
+  return jg.rung >= 0 ? jgEscalera(jg.f)[jg.rung].n : null;
+}
+
+function jgFinal() {
+  const f = jg.f, e = jg.estilo;
+  const rol = jgRol();
+  const esc = jgEscalera(f);
+  if (jg.rung === esc.length - 1) return { icon: "👑", titulo: f ? "Jefa de Ruca" : "Jefe de Ruca", texto: "Llegaste a lo más alto, paso a paso, desde Caperucita o Escudero. La comunidad entera confía en vos." };
+  if (jg.rung === esc.length - 2) return { icon: "🛡️", titulo: rol, texto: "Llegaste al Comando Central. Para ser Jefe de Ruca faltó un último empujón (o un poco de suerte)." };
+  if (e >= 85) return { icon: "🏆", titulo: "Leyenda del Ruca", texto: "Las anécdotas tuyas se cuentan en cada fogón." + (rol ? " Cargo más alto: " + rol + "." : "") };
+  if (jg.rung >= 1) return { icon: "⚜️", titulo: rol, texto: "Fuiste ejemplo para los más chicos y dejaste huella en tu sección." };
+  if (e >= 60) return { icon: "🔥", titulo: f ? "Miliciana de todos los sábados" : "Miliciano de todos los sábados", texto: "Siempre presente, siempre con una sonrisa. El Ruca no sería lo mismo sin vos." };
+  if (e >= 40) return { icon: "🤝", titulo: f ? "Miliciana querida" : "Miliciano querido", texto: "Pasaste por el Ruca dejando buenos recuerdos y alguna que otra anécdota." };
+  if (e >= 20) return { icon: "🌧️", titulo: "Bajo perfil", texto: "Tuviste tus tropiezos, pero seguís siendo parte de la familia. Siempre hay revancha." };
+  return { icon: "🥾", titulo: f ? "La que se perdió la mitad" : "El que se perdió la mitad", texto: "El Estilo se te escapó un poco. Pero el Ruca siempre te recibe de vuelta." };
+}
+
+function jgBar(v) {
+  const c = v >= 60 ? "#facc15" : v >= 30 ? "#eab308" : "#ef4444";
+  return `<div class="jg-bar"><div class="jg-bar-fill" style="width:${v}%;background:${c}"></div></div>`;
+}
+
+function jgHeader() {
+  const rol = jgRol();
+  return `<div class="jg-top">
+    <div><div class="jg-name">${escHtml(jg.nombre)}</div>
+    <div class="jg-sub">${jg.edad} años · ${jgSeccion(jg.edad, jg.f)}</div>
+    ${rol ? `<div class="jg-rol">⚜️ ${escHtml(rol)}</div>` : ""}</div>
+    <div class="jg-estilo"><span>Estilo</span><b>${jg.estilo}</b></div>
+  </div>${jgBar(jg.estilo)}`;
+}
+
+function renderJuegoInicio() {
+  const el = document.getElementById("jugaContent");
+  if (!el) return;
+  jg = null;
+  jgGenero = null;
+  el.innerHTML = `
+    <div class="jg-card jg-center">
+      <div class="jg-hero">🎮</div>
+      <h2 class="jg-title">Trayectoria de un miliciano</h2>
+      <p class="jg-lead">Entrás al Ruca a los 9 años. Cada dos años tomás decisiones, pasás de sección, te ofrecen cargos y sumás (o perdés) <b>Estilo</b>. ¿Llegás a Jefe de Ruca?</p>
+      <label class="jg-label" for="jgNombre">¿Cómo te llamás?</label>
+      <input id="jgNombre" class="jg-input" maxlength="18" placeholder="Tu nombre o apodo" autocomplete="off">
+      <div class="jg-label">Elegí tu camino</div>
+      <div class="jg-choice">
+        <button class="jg-opt" data-g="m" onclick="jgElegirGenero('m')">⚔️ Escuderos<br><small>Escuderos → Templarios → Milicianos</small></button>
+        <button class="jg-opt" data-g="f" onclick="jgElegirGenero('f')">🌹 Caperucitas<br><small>Caperucitas → Herederas → Adalides → Milicianas</small></button>
+      </div>
+      <button id="jgStart" class="jg-btn" onclick="jgEmpezar()" disabled>Empezar</button>
+      <p class="jg-note">Es un juego de humor entre amigos. Los personajes y situaciones son ficticios. ~2 minutos.</p>
+    </div>`;
+  document.getElementById("jgNombre").addEventListener("input", jgValidar);
+}
+
+let jgGenero = null;
+function jgElegirGenero(g) {
+  jgGenero = g;
+  document.querySelectorAll(".jg-opt").forEach(b => b.classList.toggle("jg-sel", b.dataset.g === g));
+  jgValidar();
+}
+function jgValidar() {
+  const n = (document.getElementById("jgNombre") || {}).value || "";
+  const b = document.getElementById("jgStart");
+  if (b) b.disabled = !(n.trim().length >= 2 && jgGenero);
+}
+
+function jgEmpezar() {
+  const nombre = document.getElementById("jgNombre").value.trim().slice(0, 18);
+  if (nombre.length < 2 || !jgGenero) return;
+  jg = { nombre, f: jgGenero === "f", edad: juegoData.etapas[0], estilo: 30, lider: 0, rung: -1, usados: [], hist: [], etapaIdx: 0, cola: [] };
+  jgPrepararEtapa();
+  jgMostrarEvento();
+}
+
+function jgShuffle(arr) {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; }
+  return a;
+}
+
+// ¿Te ofrecen el próximo cargo? Depende de cosas que el jugador no ve del todo.
+function jgOferta() {
+  const esc = jgEscalera(jg.f);
+  const nx = jg.rung + 1;
+  if (nx >= esc.length) return null;
+  const r = esc[nx];
+  if (jg.edad < r.edad) return null;
+  if (r.ruca && jg.edad > 25) return null;
+  const p = Math.max(0.1, Math.min(0.9, (jg.estilo - 20) / 90 + jg.lider * 0.03 + (jg.edad > r.edad ? 0.1 : 0)));
+  if (Math.random() > p) return null;
+  const textos = r.ruca
+    ? "Hay elecciones para Jefe de Ruca y varios te proponen como candidato."
+    : r.cc
+    ? "Se arma el Comando Central y te piensan para conducir la agrupación."
+    : "Los jefes se juntan y te proponen para un nuevo cargo.";
+  return { oferta: true, rol: r.n, ruca: !!r.ruca, titulo: "Te proponen: " + r.n, texto: textos };
+}
+
+function jgPrepararEtapa() {
+  const edad = jg.edad;
+  let pool = jgShuffle(juegoData.eventos.filter(e => !jg.usados.includes(e.id) && e.edad[0] <= edad + 1 && e.edad[1] >= edad));
+  const n = jg.edad === juegoData.etapas[0] ? 1 : 2;
+  jg.cola = pool.slice(0, n);
+  jg.cola.forEach(e => jg.usados.push(e.id));
+  const of = jgOferta();
+  if (of) jg.cola = [of].concat(jg.cola.slice(0, 1));
+}
+
+function jgMostrarEvento() {
+  const el = document.getElementById("jugaContent");
+  if (!jg.cola.length) return jgSiguienteEtapa();
+  const ev = jg.cola[0];
+  const f = jg.f;
+  let opts;
+  if (ev.oferta) {
+    jg.orden = jgShuffle([0, 1, 2]);
+    const L = ev.ruca
+      ? ["Te postulás con propuestas claras", "Te postulás y apostás al carisma", "Le cedés el lugar a otro"]
+      : ["Aceptás con ganas", "Aceptás, pero con dudas", "Decís que no por ahora"];
+    opts = jg.orden.map(k => `<button class="jg-choice-btn" onclick="jgElegirOferta(${k})">${escHtml(L[k])}</button>`).join("");
+  } else {
+    jg.orden = jgShuffle(ev.opciones.map((_, i) => i));
+    opts = jg.orden.map(k => `<button class="jg-choice-btn" onclick="jgElegir(${k})">${escHtml(jgTxt(ev.opciones[k].label, f))}</button>`).join("");
+  }
+  el.innerHTML = `<div class="jg-card">${jgHeader()}
+    <div class="jg-ev"><div class="jg-ev-title">${escHtml(ev.titulo)}</div><p>${escHtml(jgTxt(ev.texto, f))}</p></div>
+    <div class="jg-opts">${opts}</div></div>`;
+}
+
+const JG_TW_BIEN = ["Salió mucho mejor de lo que esperabas. A veces se da.", "Nadie lo esperaba, pero te salió redondo.", "Un golpe de suerte inesperado cambió todo para bien.", "Terminó siendo la mejor anécdota del mes."];
+const JG_TW_MAL = ["Esta vez no salió como pensabas. Ya habrá revancha.", "Algo falló en el camino y la cosa se complicó.", "Parecía buena idea... hasta que dejó de serlo.", "Por algún motivo el resultado fue otro. Cosas del Ruca."];
+
+function jgPintar(texto, delta, suerte, extra) {
+  const el = document.getElementById("jugaContent");
+  el.innerHTML = `<div class="jg-card">${jgHeader()}
+    <div class="jg-res">
+      ${suerte ? `<div class="jg-suerte">${suerte}</div>` : ""}
+      <p>${escHtml(texto)}</p>
+      <div class="jg-delta ${delta >= 0 ? "jg-up" : "jg-down"}">${delta >= 0 ? "+" : ""}${delta} Estilo</div>
+    </div>
+    ${extra || ""}
+    <button class="jg-btn" onclick="jgContinuar()">Continuar</button></div>`;
+}
+
+function jgAplicar(n) {
+  const antes = jg.estilo;
+  jg.estilo = Math.max(0, Math.min(100, jg.estilo + n));
+  return jg.estilo - antes;
+}
+
+function jgElegir(i) {
+  const ev = jg.cola[0];
+  const op = ev.opciones[i];
+  const f = jg.f;
+  let n, r, suerte = null;
+  if (op.riesgo) {
+    const ok = Math.random() < op.riesgo.p;
+    const x = ok ? op.riesgo.bien : op.riesgo.mal;
+    n = x.n; r = jgTxt(x.r, f); suerte = ok ? "🍀 ¡Salió bien!" : "💥 Salió mal...";
+  } else {
+    n = op.n; r = jgTxt(op.r, f);
+    // El resultado nunca es 100% seguro: variación y giros inesperados.
+    const t = Math.random();
+    if (t < 0.25) {
+      if (n >= 3) { n = -(1 + Math.floor(Math.random() * 4)); r = JG_TW_MAL[Math.floor(Math.random() * JG_TW_MAL.length)]; suerte = "🌀 Giro inesperado"; }
+      else if (n <= 0) { n = 3 + Math.floor(Math.random() * 5); r = JG_TW_BIEN[Math.floor(Math.random() * JG_TW_BIEN.length)]; suerte = "🌀 Giro inesperado"; }
+      else { n = n + Math.floor(Math.random() * 7) - 3; }
+    } else { n = n + Math.floor(Math.random() * 5) - 2; }
+  }
+  if (op.lider && n > 0) jg.lider += op.lider;
+  const d = jgAplicar(n);
+  jg.hist.push({ t: ev.titulo, n: d });
+  jgPintar(r, d, suerte);
+}
+
+function jgElegirOferta(k) {
+  const ev = jg.cola[0];
+  const f = jg.f;
+  // k: 0 = con ganas / propuestas claras, 1 = con dudas / carisma, 2 = no / ceder
+  if (ev.ruca) {
+    if (k === 2) {
+      const d = jgAplicar(3);
+      jg.hist.push({ t: ev.titulo, n: d });
+      return jgPintar("Cediste el lugar. Un gesto de humildad que muchos recuerdan. Tal vez haya otra oportunidad.", d);
+    }
+    const base = (jg.estilo - 30) / 100 + jg.lider * 0.025 + (k === 0 ? 0.12 : 0) + (Math.random() * 0.5 - 0.2);
+    const gana = base > 0.35;
+    if (gana) {
+      jg.rung++;
+      const d = jgAplicar(8);
+      jg.hist.push({ t: ev.titulo, n: d });
+      return jgPintar("¡Ganaste la elección! Sos " + (f ? "la nueva Jefa de Ruca." : "el nuevo Jefe de Ruca."), d, "🏛️ Elecciones");
+    }
+    const d = jgAplicar(-3);
+    jg.hist.push({ t: ev.titulo, n: d });
+    return jgPintar("Esta vez no alcanzaron los votos. Quedaste con la frente alta, pero el Ruca eligió a otra persona.", d, "🏛️ Elecciones");
+  }
+  if (k === 2) {
+    const d = jgAplicar(Math.random() < 0.5 ? 2 : -2);
+    jg.hist.push({ t: ev.titulo, n: d });
+    return jgPintar("Dijiste que no por ahora. Tal vez más adelante vuelvan a proponértelo (o tal vez no).", d);
+  }
+  jg.rung++;
+  const rol = jgRol();
+  const buen = Math.random() < Math.max(0.2, Math.min(0.85, 0.3 + jg.estilo / 160 + (k === 0 ? 0.1 : -0.05)));
+  const d = jgAplicar(buen ? 6 + Math.floor(Math.random() * 4) : -(2 + Math.floor(Math.random() * 4)));
+  jg.lider += buen ? 2 : 1;
+  jg.hist.push({ t: "Cargo: " + rol, n: d });
+  jgPintar(buen ? "Asumiste como " + rol + " y arrancaste con todo. Los demás lo notan." : "Asumiste como " + rol + ", pero el arranque fue más difícil de lo pensado. Se aprende en el camino.", d, "⚜️ Nuevo cargo: " + rol);
+}
+
+function jgContinuar() {
+  jg.cola.shift();
+  jgMostrarEvento();
+}
+
+function jgSiguienteEtapa() {
+  jg.etapaIdx++;
+  if (jg.etapaIdx >= juegoData.etapas.length) return jgTerminar();
+  const antesSec = jgSeccion(jg.edad, jg.f);
+  jg.edad = juegoData.etapas[jg.etapaIdx];
+  const sec = jgSeccion(jg.edad, jg.f);
+  jgPrepararEtapa();
+  if (sec !== antesSec) {
+    const el = document.getElementById("jugaContent");
+    el.innerHTML = `<div class="jg-card jg-center">${jgHeader()}
+      <div class="jg-hero">⬆️</div><h3 class="jg-title">¡Cambio de sección!</h3>
+      <p class="jg-lead">Cumplís ${jg.edad} y pasás a <b>${sec}</b>.</p>
+      <button class="jg-btn" onclick="jgMostrarEvento()">Seguir</button></div>`;
+  } else {
+    jgMostrarEvento();
+  }
+}
+
+function jgTerminar() {
+  const fin = jgFinal();
+  jg.fin = fin;
+  const rol = jgRol();
+  const best = jg.hist.slice().sort((a, b) => b.n - a.n)[0];
+  const worst = jg.hist.slice().sort((a, b) => a.n - b.n)[0];
+  const el = document.getElementById("jugaContent");
+  el.innerHTML = `<div class="jg-card jg-center jg-final">
+    <div class="jg-hero">${fin.icon}</div>
+    <div class="jg-sub">${escHtml(jg.nombre)} · 25 años</div>
+    <h2 class="jg-title">${escHtml(fin.titulo)}</h2>
+    <div class="jg-big">${jg.estilo}<small>/100 de Estilo</small></div>
+    ${jgBar(jg.estilo)}
+    <p class="jg-lead">${escHtml(fin.texto)}</p>
+    <div class="jg-stats">
+      <div>⭐ Mejor momento<br><b>${escHtml(best.t)}</b></div>
+      <div>😅 Peor momento<br><b>${escHtml(worst.t)}</b></div>
+    </div>
+    <button class="jg-btn" onclick="jgCompartir()">Compartir por WhatsApp</button>
+    <button class="jg-btn jg-btn2" onclick="renderJuegoInicio()">Jugar de nuevo</button>
+  </div>`;
+}
+
+function jgCompartir() {
+  const f = jg.fin;
+  const url = "https://ruca-tucun.vercel.app/#juga";
+  const msg = `Terminé la Trayectoria de un miliciano en el Ruca Tucún: ${f.icon} ${f.titulo} con ${jg.estilo}/100 de Estilo. ¿Podés superarme? ${url}`;
+  window.open("https://wa.me/?text=" + encodeURIComponent(msg), "_blank", "noopener");
 }

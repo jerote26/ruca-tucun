@@ -127,6 +127,10 @@
                 class="nav-tab-btn px-4 py-2 rounded-xl text-sm font-medium text-slate-300 hover:text-white flex items-center gap-2 transition-all">
           <span>🛍️</span> Tienda
         </button>
+        <button id="tabBtnJuga" onclick="switchMainTab('juga')" 
+                class="nav-tab-btn px-4 py-2 rounded-xl text-sm font-medium text-slate-300 hover:text-white flex items-center gap-2 transition-all">
+          <span>🎮</span> Jugá
+        </button>
       </nav>
 
       <!-- BOTÓN WHATSAPP CONTACTO -->
@@ -338,6 +342,13 @@
     <div id="sectionOrganigrama" class="hidden py-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <a href="#info" class="inline-flex items-center gap-1 text-sm text-slate-300 hover:text-rucaGold mb-6">&larr; Volver a Jefaturas</a>
       <div id="organigramaContent" class="org-wrap"></div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- PESTAÑA: JUGÁ (Trayectoria de un miliciano) -->
+    <!-- ========================================== -->
+    <div id="sectionJuga" class="hidden transition-opacity duration-300 py-10 px-4 sm:px-6 lg:px-8 max-w-2xl mx-auto">
+      <div id="jugaContent" class="juga-wrap"></div>
     </div>
 
     <!-- ========================================== -->
@@ -833,7 +844,7 @@
   </div>
 
   <!-- BARRA DE NAVEGACIÓN INFERIOR (SOLO CELULAR) -->
-  <nav id="mobileBottomNav" class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-rucaBlack/95 backdrop-blur-md border-t border-rucaBorder grid grid-cols-3" style="padding-bottom: env(safe-area-inset-bottom);" aria-label="Navegación principal">
+  <nav id="mobileBottomNav" class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-rucaBlack/95 backdrop-blur-md border-t border-rucaBorder grid grid-cols-4" style="padding-bottom: env(safe-area-inset-bottom);" aria-label="Navegación principal">
     <button onclick="switchMainTab('info')" id="mobileTabBtnInfo" class="flex flex-col items-center gap-0.5 py-2 text-[11px] font-bold text-rucaGold">
       <span class="text-xl leading-none">⚜️</span><span>Información</span>
     </button>
@@ -842,6 +853,9 @@
     </button>
     <button onclick="switchMainTab('tienda')" id="mobileTabBtnTienda" class="flex flex-col items-center gap-0.5 py-2 text-[11px] font-medium text-slate-300">
       <span class="text-xl leading-none">🛍️</span><span>Tienda</span>
+    </button>
+    <button onclick="switchMainTab('juga')" id="mobileTabBtnJuga" class="flex flex-col items-center gap-0.5 py-2 text-[11px] font-medium text-slate-300">
+      <span class="text-xl leading-none">🎮</span><span>Jugá</span>
     </button>
   </nav>
 
@@ -877,6 +891,6 @@
     </div>
   </footer>
 
-  <script src="app.js?v=16"></script>
+  <script src="app.js?v=17"></script>
 </body>
 </html>
