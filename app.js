@@ -949,7 +949,7 @@ function jgHeader() {
     <div class="jg-sub">${jg.edad} años · ${jgSeccion(jg.edad, jg.f)}</div>
     ${rol ? `<div class="jg-rol">⚜️ ${escHtml(rol)}</div>` : ""}</div>
     <div class="jg-estilo"><span>Estilo</span><b>${jg.estilo}</b></div>
-  </div>${jgBar(jg.estilo)}`;
+  </div>${jgBar(jg.estilo)}${jg.premios.length ? `<div class="jg-estante">${jgEstante(22)}</div>` : ""}`;
 }
 
 function renderJuegoInicio() {
@@ -957,6 +957,7 @@ function renderJuegoInicio() {
   if (!el) return;
   jg = null;
   jgGenero = null;
+  jgPaso = 2;
   el.innerHTML = `
     <div class="jg-card jg-center">
       <div class="jg-hero">🎮</div>
@@ -969,6 +970,11 @@ function renderJuegoInicio() {
         <button class="jg-opt" data-g="m" onclick="jgElegirGenero('m')">⚔️ Escuderos<br><small>Escuderos → Templarios → Milicianos</small></button>
         <button class="jg-opt" data-g="f" onclick="jgElegirGenero('f')">🌹 Caperucitas<br><small>Caperucitas → Herederas → Adalides → Milicianas</small></button>
       </div>
+      <div class="jg-label">Ritmo del juego</div>
+      <div class="jg-choice">
+        <button class="jg-opt jg-sel" data-p="2" onclick="jgElegirPaso(2)">⏩ De a 2 años<br><small>Más rápido (~2 min)</small></button>
+        <button class="jg-opt" data-p="1" onclick="jgElegirPaso(1)">🐢 Año por año<br><small>Más largo, más decisiones</small></button>
+      </div>
       <button id="jgStart" class="jg-btn" onclick="jgEmpezar()" disabled>Empezar</button>
       <p class="jg-note">Es un juego de humor entre amigos. Los personajes y situaciones son ficticios. ~2 minutos.</p>
     </div>`;
@@ -976,9 +982,14 @@ function renderJuegoInicio() {
 }
 
 let jgGenero = null;
+let jgPaso = 2;
+function jgElegirPaso(p) {
+  jgPaso = p;
+  document.querySelectorAll(".jg-opt[data-p]").forEach(b => b.classList.toggle("jg-sel", Number(b.dataset.p) === p));
+}
 function jgElegirGenero(g) {
   jgGenero = g;
-  document.querySelectorAll(".jg-opt").forEach(b => b.classList.toggle("jg-sel", b.dataset.g === g));
+  document.querySelectorAll(".jg-opt[data-g]").forEach(b => b.classList.toggle("jg-sel", b.dataset.g === g));
   jgValidar();
 }
 function jgValidar() {
@@ -990,7 +1001,8 @@ function jgValidar() {
 function jgEmpezar() {
   const nombre = document.getElementById("jgNombre").value.trim().slice(0, 18);
   if (nombre.length < 2 || !jgGenero) return;
-  jg = { nombre, f: jgGenero === "f", edad: juegoData.etapas[0], estilo: 30, lider: 0, rung: -1, cc: null, ccKey: null, ruca: false, usados: [], hist: [], etapaIdx: 0, cola: [] };
+  const etapas = []; for (let x = 9; x <= 25; x += jgPaso) etapas.push(x);
+  jg = { nombre, f: jgGenero === "f", paso: jgPaso, etapas, tal: {}, premios: [], edad: 9, estilo: 30, lider: 0, rung: -1, cc: null, ccKey: null, ruca: false, usados: [], hist: [], etapaIdx: 0, cola: [] };
   jgPrepararEtapa();
   jgMostrarEvento();
 }
@@ -1004,7 +1016,9 @@ function jgShuffle(arr) {
 // ¿Te ofrecen un cargo? Depende de cosas que el jugador no ve del todo.
 function jgOferta() {
   const f = jg.f;
-  const base = (jg.estilo - 20) / 90 + jg.lider * 0.03;
+  const esc1 = jg.paso === 1 ? 0.6 : 1;
+  const maxTal = Math.max(0, ...Object.values(jg.tal));
+  const base = ((jg.estilo - 20) / 90 + jg.lider * 0.03 + Math.min(0.2, maxTal * 0.05)) * esc1;
   if (jg.edad < 19) {
     const esc = jgEscalera(f);
     const nx = jg.rung + 1;
@@ -1015,10 +1029,15 @@ function jgOferta() {
     return { oferta: true, tipo: "sec", rol: r.n, titulo: "Te proponen: " + r.n, texto: "Los jefes se juntan y te proponen para un nuevo cargo en tu sección." };
   }
   if (!jg.cc) {
+    if (jg.rung < 0) return null; // sin haber pasado por una jefatura de sección no hay Comando Central
     if (jg.edad < 21 && Math.random() > 0.35) return null;
     if (Math.random() > Math.max(0.1, Math.min(0.85, base - 0.05))) return null;
     const lista = jgCargosAdultos(f);
-    const c = lista[Math.floor(Math.random() * lista.length)];
+    // El cargo que te ofrecen depende de tus talentos (lo que mostraste que sabés hacer).
+    const w = lista.map(c => 0.3 + (c.k === "masculina" || c.k === "femenina" || c.k === "milicianos" ? (jg.tal.lider || 0) * 0.5 + jg.lider * 0.05 : (jg.tal[c.k] || 0) * 1.5));
+    let tot = w.reduce((s, x) => s + x, 0), r = Math.random() * tot, idx = 0;
+    while (idx < w.length - 1 && r > w[idx]) { r -= w[idx]; idx++; }
+    const c = lista[idx];
     return { oferta: true, tipo: "adulto", rol: c.n, k: c.k, titulo: "Te proponen: " + c.n, texto: "Como miliciano, te piensan para sumarte al Comando Central con un cargo de responsabilidad." };
   }
   if (!jg.ruca && jg.edad >= 23) {
@@ -1030,10 +1049,10 @@ function jgOferta() {
 
 function jgPrepararEtapa() {
   const edad = jg.edad;
-  const elegibles = juegoData.eventos.filter(e => !jg.usados.includes(e.id) && e.edad[0] <= edad + 1 && e.edad[1] >= edad && (!e.solo || e.solo === jg.ccKey));
+  const elegibles = juegoData.eventos.filter(e => !jg.usados.includes(e.id) && e.edad[0] <= edad + jg.paso - 1 && e.edad[1] >= edad && (!e.solo || e.solo === jg.ccKey));
   const propios = jgShuffle(elegibles.filter(e => e.solo));
   const comunes = jgShuffle(elegibles.filter(e => !e.solo));
-  const n = jg.edad === juegoData.etapas[0] ? 1 : 2;
+  const n = jg.edad === 9 || jg.paso === 1 ? 1 : 2;
   // Si ocupás un cargo de Comando Central, a veces te toca algo propio del cargo.
   let sel = [];
   if (propios.length && Math.random() < 0.6) sel.push(propios[0]);
@@ -1046,7 +1065,7 @@ function jgPrepararEtapa() {
 
 function jgMostrarEvento() {
   const el = document.getElementById("jugaContent");
-  if (!jg.cola.length) return jgSiguienteEtapa();
+  if (!jg.cola.length) return jgFinEtapa();
   const ev = jg.cola[0];
   const f = jg.f;
   let opts;
@@ -1106,6 +1125,7 @@ function jgElegir(i) {
     } else { n = n + Math.floor(Math.random() * 5) - 2; }
   }
   if (op.lider && n > 0) jg.lider += op.lider;
+  if (ev.talento && op.t && n > 0) { jg.tal[ev.talento] = (jg.tal[ev.talento] || 0) + 1; r += " Se nota que tenés talento para esto."; }
   const d = jgAplicar(n);
   jg.hist.push({ t: ev.titulo, n: d });
   jgPintar(r, d, suerte);
@@ -1153,9 +1173,9 @@ function jgContinuar() {
 
 function jgSiguienteEtapa() {
   jg.etapaIdx++;
-  if (jg.etapaIdx >= juegoData.etapas.length) return jgTerminar();
+  if (jg.etapaIdx >= jg.etapas.length) return jgTerminar();
   const antesSec = jgSeccion(jg.edad, jg.f);
-  jg.edad = juegoData.etapas[jg.etapaIdx];
+  jg.edad = jg.etapas[jg.etapaIdx];
   const sec = jgSeccion(jg.edad, jg.f);
   jgPrepararEtapa();
   if (sec !== antesSec) {
@@ -1183,6 +1203,7 @@ function jgTerminar() {
     <div class="jg-big">${jg.estilo}<small>/100 de Estilo</small></div>
     ${jgBar(jg.estilo)}
     <p class="jg-lead">${escHtml(fin.texto)}</p>
+    ${jg.premios.length ? `<div class="jg-label" style="text-align:center">Tu vitrina (${jg.premios.length})</div><div class="jg-vitrina">${jg.premios.map(p => `<div class="jg-vit">${jgTrofeoSvg(p.tipo, p.tier, 36)}<small>${escHtml(p.n)}<br>${p.edad} años</small></div>`).join("")}</div>` : ""}
     <div class="jg-stats">
       <div>⭐ Mejor momento<br><b>${escHtml(best.t)}</b></div>
       <div>😅 Peor momento<br><b>${escHtml(worst.t)}</b></div>
@@ -1195,6 +1216,73 @@ function jgTerminar() {
 function jgCompartir() {
   const f = jg.fin;
   const url = "https://ruca-tucun.vercel.app/#juga";
-  const msg = `Terminé la Trayectoria de un miliciano en el Ruca Tucún: ${f.icon} ${f.titulo} con ${jg.estilo}/100 de Estilo. ¿Podés superarme? ${url}`;
+  const msg = `Terminé la Trayectoria de un miliciano en el Ruca Tucún: ${f.icon} ${f.titulo} con ${jg.estilo}/100 de Estilo y ${jg.premios.length} trofeos. ¿Podés superarme? ${url}`;
   window.open("https://wa.me/?text=" + encodeURIComponent(msg), "_blank", "noopener");
+}
+
+
+/* ---------- Premios y trofeos ---------- */
+const JG_COLOR = { oro: "#facc15", plata: "#cbd5e1", bronce: "#d08a4e" };
+
+function jgSingular(sec, f) {
+  const m = { Escuderos: "Escudero", Caperucitas: "Caperucita", Herederas: "Heredera", Adalides: "Adalid", "Templarios Menores": "Templario Menor", "Templarios Mayores": "Templario Mayor", Milicianos: "Miliciano", Milicianas: "Miliciana" };
+  return m[sec] || sec;
+}
+
+function jgTrofeoSvg(tipo, tier, px) {
+  const c = JG_COLOR[tier] || JG_COLOR.oro;
+  const dk = "#080c16";
+  const s = px || 28;
+  let g = "";
+  if (tipo === "copa" || tipo === "copa2") {
+    g = `<path d="M9 4h14v7a7 7 0 0 1-14 0z" fill="${c}"/><path d="M9 6H4v2a5 5 0 0 0 5 5M23 6h5v2a5 5 0 0 1-5 5" stroke="${c}" fill="none" stroke-width="2"/><rect x="14" y="17" width="4" height="5" fill="${c}"/><rect x="10" y="22" width="12" height="4" rx="1" fill="${c}"/>` + (tipo === "copa2" ? `<path d="M16 6l1.2 2.6 2.8.3-2.1 1.9.6 2.8-2.5-1.4-2.5 1.4.6-2.8L12 8.9l2.8-.3z" fill="${dk}"/>` : "");
+  } else if (tipo === "medalla") {
+    g = `<path d="M10 3l6 9 6-9" fill="none" stroke="${c}" stroke-width="3"/><circle cx="16" cy="20" r="8" fill="${c}"/><path d="M16 14.5l1.7 3.5 3.8.5-2.8 2.6.7 3.8-3.4-1.9-3.4 1.9.7-3.8-2.8-2.6 3.8-.5z" fill="${dk}"/>`;
+  } else if (tipo === "escudo") {
+    g = `<path d="M16 3l11 4v8c0 7-5 11-11 14C10 26 5 22 5 15V7z" fill="${c}"/><path d="M16 9l1.8 3.8 4.2.5-3.1 2.9.8 4.2-3.7-2.1-3.7 2.1.8-4.2-3.1-2.9 4.2-.5z" fill="${dk}"/>`;
+  } else if (tipo === "carpa") {
+    g = `<path d="M2 27L16 5l14 22z" fill="${c}"/><path d="M16 12l6 15H10z" fill="${dk}"/><rect x="1" y="26" width="30" height="2" fill="${c}"/>`;
+  } else {
+    g = `<path d="M16 3l3.5 8 8.5.8-6.4 5.6 2 8.4L16 21l-7.6 4.8 2-8.4L4 11.8l8.5-.8z" fill="${c}"/>`;
+  }
+  return `<svg class="jg-tro" width="${s}" height="${s}" viewBox="0 0 32 32" aria-hidden="true">${g}</svg>`;
+}
+
+function jgPremios() {
+  const f = jg.f, e = jg.estilo, edad = jg.edad;
+  const sec = jgSeccion(edad, f);
+  const idx = jg.etapaIdx;
+  const sig = jg.etapas[idx + 1];
+  const finSec = !sig || jgSeccion(sig, f) !== sec;
+  const score = e + (Math.random() * 26 - 13);
+  const out = [];
+  const ya = (n, anios) => jg.premios.some(p => p.n === n && edad - p.edad < anios);
+  if (finSec) {
+    const sing = jgSingular(sec, f);
+    if (score >= 78) out.push({ n: "Mejor " + sing, tier: "oro", tipo: "copa" });
+    else if (score >= 64) out.push({ n: "1ª mención de " + sec, tier: "plata", tipo: "medalla" });
+    else if (score >= 52) out.push({ n: "2ª mención de " + sec, tier: "bronce", tipo: "medalla" });
+  }
+  const k = jg.paso === 1 ? 0.5 : 1;
+  if (edad < 19 && edad >= 11 && Math.random() < 0.22 * k && score >= 52 && !ya("Mejor escuadra", 3)) out.push({ n: "Mejor escuadra", tier: "oro", tipo: "escudo" });
+  if (edad >= 11 && Math.random() < 0.25 * k && e >= 40 && !ya("Campamento Mar Adentro", 3)) out.push({ n: "Campamento Mar Adentro", tier: "bronce", tipo: "carpa" });
+  if (edad >= 13 && edad <= 21 && Math.random() < 0.12 * jg.paso && score >= 60 && !ya("Copa Estilo", 4)) out.push({ n: "Copa Estilo", tier: "oro", tipo: "copa2" });
+  out.forEach(p => { p.edad = edad; jg.premios.push(p); });
+  return out;
+}
+
+function jgFinEtapa() {
+  const ps = jgPremios();
+  if (!ps.length) return jgSiguienteEtapa();
+  const el = document.getElementById("jugaContent");
+  const lista = ps.map(p => `<div class="jg-prem">${jgTrofeoSvg(p.tipo, p.tier, 84)}<div class="jg-prem-n">${escHtml(p.n)}</div></div>`).join("");
+  el.innerHTML = `<div class="jg-card jg-center">${jgHeader()}
+    <div class="jg-suerte">🏅 ¡Premio${ps.length > 1 ? "s" : ""} a los ${jg.edad} años!</div>
+    <div class="jg-prems">${lista}</div>
+    <button class="jg-btn" onclick="jgSiguienteEtapa()">Continuar</button></div>`;
+}
+
+function jgEstante(px) {
+  if (!jg.premios.length) return "";
+  return jg.premios.map(p => `<span class="jg-tro-w" title="${escHtml(p.n)} (${p.edad} años)">${jgTrofeoSvg(p.tipo, p.tier, px)}</span>`).join("");
 }

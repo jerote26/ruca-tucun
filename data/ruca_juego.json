@@ -1717,6 +1717,317 @@
     }
    ],
    "solo": "milicianos"
+  },
+  {
+   "id": "t-imagen",
+   "titulo": "Te piden la imagen del sábado",
+   "edad": [
+    13,
+    25
+   ],
+   "texto": "Los jefes necesitan alguien que haga la imagen para anunciar la actividad del sábado que viene.",
+   "talento": "comunicaciones",
+   "opciones": [
+    {
+     "label": "Decís que sí y la diseñás",
+     "n": 7,
+     "r": "Quedó prolija y la compartieron por todos lados.",
+     "t": 1
+    },
+    {
+     "label": "Decís que no, que no sabés de eso",
+     "n": 0,
+     "r": "Lo dijiste con honestidad. Se la pidieron a otro."
+    },
+    {
+     "label": "Le decís a un amigo que la haga",
+     "n": 2,
+     "r": "Salió bien, pero el crédito no fue tuyo."
+    }
+   ]
+  },
+  {
+   "id": "t-video",
+   "titulo": "El video del campamento",
+   "edad": [
+    15,
+    25
+   ],
+   "texto": "Alguien tiene que editar un videíto con las fotos del campamento.",
+   "talento": "comunicaciones",
+   "opciones": [
+    {
+     "label": "Te ofrecés a editarlo",
+     "n": 7,
+     "r": "El video arrancó lágrimas y risas. Fue lo más visto del grupo.",
+     "t": 1
+    },
+    {
+     "label": "Mirás cómo lo hacen otros",
+     "n": 1,
+     "r": "Aprendiste algo, pero no sumaste."
+    },
+    {
+     "label": "Decís que no tenés tiempo",
+     "n": -1,
+     "r": "Lo editaron con una app de emergencia. Quedó raro."
+    }
+   ]
+  },
+  {
+   "id": "t-cuentas",
+   "titulo": "La plata de la merienda",
+   "edad": [
+    13,
+    25
+   ],
+   "texto": "Hay que juntar la plata de la merienda y llevar las cuentas.",
+   "talento": "administracion",
+   "opciones": [
+    {
+     "label": "Te ofrecés a llevar las cuentas",
+     "n": 7,
+     "r": "Anotaste cada peso. Nunca faltó un centavo.",
+     "t": 1
+    },
+    {
+     "label": "Decís que no, que no te gustan los números",
+     "n": 0,
+     "r": "Se ocupó otro. No pasó nada."
+    },
+    {
+     "label": "Ayudás pero sin responsabilidad",
+     "n": 2,
+     "r": "Sumaste una mano. Nada más."
+    }
+   ]
+  },
+  {
+   "id": "t-planilla",
+   "titulo": "La planilla del campamento",
+   "edad": [
+    15,
+    25
+   ],
+   "texto": "Necesitan una planilla con quién va, quién paga y quién no.",
+   "talento": "administracion",
+   "opciones": [
+    {
+     "label": "Armás una planilla ordenada",
+     "n": 7,
+     "r": "Todos sabían exactamente quién debía qué. Un lujo.",
+     "t": 1
+    },
+    {
+     "label": "Le decís a otro que la arme",
+     "n": 0,
+     "r": "Salió bien... para el otro."
+    },
+    {
+     "label": "La armás a las apuradas",
+     "n": -3,
+     "r": "Tenía tres errores. Hubo que rehacerla.",
+     "t": 1
+    }
+   ]
+  },
+  {
+   "id": "t-deposito",
+   "titulo": "Ordenar el depósito",
+   "edad": [
+    13,
+    25
+   ],
+   "texto": "El depósito de carpas y ollas es un caos. Alguien tiene que ordenarlo.",
+   "talento": "intendencia",
+   "opciones": [
+    {
+     "label": "Te ofrecés a ordenar todo",
+     "n": 7,
+     "r": "Etiquetaste cada caja. Por fin se encontraba todo.",
+     "t": 1
+    },
+    {
+     "label": "Ayudás un rato y te vas",
+     "n": 2,
+     "r": "Ordenaste una parte. Mejor que nada."
+    },
+    {
+     "label": "Hacés como que no viste",
+     "n": -2,
+     "r": "Nadie dijo nada, pero el caos siguió."
+    }
+   ]
+  },
+  {
+   "id": "t-camion",
+   "titulo": "Cargar el camión",
+   "edad": [
+    15,
+    25
+   ],
+   "texto": "Hay que cargar el camión para el campamento y entra todo justo.",
+   "talento": "intendencia",
+   "opciones": [
+    {
+     "label": "Calculás cómo acomodar todo",
+     "n": 7,
+     "r": "Entró hasta lo que parecía imposible.",
+     "t": 1
+    },
+    {
+     "label": "Cargás sin pensar",
+     "n": -3,
+     "r": "Se cayó una carpa en la ruta. Se recuperó, pero con humor negro.",
+     "t": 1
+    },
+    {
+     "label": "Dirigís desde afuera",
+     "n": 1,
+     "r": "Funcionó, pero nadie cargó tanto como vos decías."
+    }
+   ]
+  },
+  {
+   "id": "t-tema",
+   "titulo": "Preparar un tema de formación",
+   "edad": [
+    15,
+    25
+   ],
+   "texto": "Te piden preparar un tema para los más chicos.",
+   "talento": "formacion",
+   "opciones": [
+    {
+     "label": "Estudiás y lo preparás con ejemplos",
+     "n": 7,
+     "r": "Se hizo un silencio atento. Salió genial.",
+     "t": 1
+    },
+    {
+     "label": "Decís que no estás preparado",
+     "n": 0,
+     "r": "Lo dijeron con respeto. Se lo pidieron a otro."
+    },
+    {
+     "label": "Lo improvisás",
+     "n": -2,
+     "r": "Hablaste mucho y dijiste poco. Se nota."
+    }
+   ]
+  },
+  {
+   "id": "t-catequesis",
+   "titulo": "Ayudar a un compañero con la fe",
+   "edad": [
+    13,
+    25
+   ],
+   "texto": "Un amigo te cuenta que le cuesta entender un punto de la formación.",
+   "talento": "formacion",
+   "opciones": [
+    {
+     "label": "Lo escuchás y le explicás con paciencia",
+     "n": 7,
+     "r": "Terminó entendiendo y agradeciéndote. Gran momento.",
+     "t": 1
+    },
+    {
+     "label": "Le decís que lo hable con un jefe",
+     "n": 2,
+     "r": "Fue lo correcto, aunque no sumaste vos."
+    },
+    {
+     "label": "Cambiás de tema",
+     "n": -2,
+     "r": "Se quedó con la duda. Y con la sensación."
+    }
+   ]
+  },
+  {
+   "id": "t-acta",
+   "titulo": "Anotar lo de la reunión",
+   "edad": [
+    13,
+    25
+   ],
+   "texto": "Se hace una reunión larga y nadie quiere anotar los puntos.",
+   "talento": "secretaria",
+   "opciones": [
+    {
+     "label": "Te ofrecés a tomar nota",
+     "n": 7,
+     "r": "Los puntos quedaron claros y ordenados.",
+     "t": 1
+    },
+    {
+     "label": "Anotás lo que podés",
+     "n": 1,
+     "r": "Algo es algo."
+    },
+    {
+     "label": "Te ponés a mirar el celular",
+     "n": -3,
+     "r": "Nadie recordaba qué se había decidido."
+    }
+   ]
+  },
+  {
+   "id": "t-mail",
+   "titulo": "El mail a las familias",
+   "edad": [
+    15,
+    25
+   ],
+   "texto": "Hay que mandar un aviso a las familias con horarios y detalles.",
+   "talento": "secretaria",
+   "opciones": [
+    {
+     "label": "Lo escribís claro y lo mandás a tiempo",
+     "n": 7,
+     "r": "Todas las familias entendieron al primer intento.",
+     "t": 1
+    },
+    {
+     "label": "Lo mandás sin revisar",
+     "n": -3,
+     "r": "Tenía un horario mal. Hubo que aclararlo."
+    },
+    {
+     "label": "Le pasás el borrador a otro",
+     "n": 2,
+     "r": "Entre dos salió bien."
+    }
+   ]
+  },
+  {
+   "id": "t-lider",
+   "titulo": "Organizar a todos",
+   "edad": [
+    15,
+    25
+   ],
+   "texto": "Hay un lío con la organización de una actividad y nadie toma la decisión.",
+   "talento": "lider",
+   "opciones": [
+    {
+     "label": "Tomás la voz y ordenás a todos",
+     "n": 7,
+     "r": "Se calmaron y salió genial. Nadie sabía bien cómo.",
+     "t": 1
+    },
+    {
+     "label": "Esperás a que otro lo resuelva",
+     "n": -1,
+     "r": "Alguien lo resolvió. Perdiste una oportunidad."
+    },
+    {
+     "label": "Proponés una votación rápida",
+     "n": 5,
+     "r": "Fue justo y rápido. Gran decisión.",
+     "t": 1
+    }
+   ]
   }
  ]
 }
