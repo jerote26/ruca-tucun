@@ -893,15 +893,15 @@ function jgSeccion(edad, f) {
 // Cargos de sección (se ofrecen en una ventana de edad limitada y vencen)
 function jgEscalera(f) {
   return f ? [
-    { n: "Subjefa de Caperucitas", edad: 11 },
-    { n: "Subjefa de Herederas", edad: 13 },
-    { n: "Jefa de Herederas", edad: 15 },
-    { n: "Jefa de Adalides", edad: 17 }
+    { n: "Subjefa de Caperucitas", edad: 16 },
+    { n: "Jefa de Caperucitas", edad: 17 },
+    { n: "Subjefa de Herederas", edad: 18 },
+    { n: "Jefa de Herederas", edad: 19 }
   ] : [
-    { n: "Subjefe de Escuderos", edad: 11 },
-    { n: "Jefe de Escuderos", edad: 13 },
-    { n: "Subjefe de Templarios", edad: 15 },
-    { n: "Jefe de Templarios", edad: 17 }
+    { n: "Subjefe de Escuderos", edad: 16 },
+    { n: "Jefe de Escuderos", edad: 17 },
+    { n: "Subjefe de Templarios", edad: 18 },
+    { n: "Jefe de Templarios", edad: 19 }
   ];
 }
 
@@ -920,7 +920,7 @@ function jgCargosAdultos(f) {
 
 function jgRol() {
   if (jg.ruca) return jg.f ? "Jefa de Ruca" : "Jefe de Ruca";
-  if (jg.edad >= 19) return jg.cc || null;
+  if (jg.cc) return jg.cc;
   return jg.rung >= 0 ? jgEscalera(jg.f)[jg.rung].n : null;
 }
 
@@ -1019,20 +1019,24 @@ function jgOferta() {
   const esc1 = jg.paso === 1 ? 0.6 : 1;
   const maxTal = Math.max(0, ...Object.values(jg.tal));
   const base = ((jg.estilo - 20) / 90 + jg.lider * 0.03 + Math.min(0.2, maxTal * 0.05)) * esc1;
-  if (jg.edad < 19) {
-    const esc = jgEscalera(f);
-    const nx = jg.rung + 1;
-    if (nx >= esc.length) return null;
+  const esc = jgEscalera(f);
+  const nx = jg.rung + 1;
+  if (nx < esc.length && !jg.cc) {
     const r = esc[nx];
-    if (jg.edad < r.edad || jg.edad > r.edad + 2) return null; // si no, venció
-    if (Math.random() > Math.max(0.1, Math.min(0.9, base + (jg.edad > r.edad ? 0.1 : 0)))) return null;
-    return { oferta: true, tipo: "sec", rol: r.n, titulo: "Te proponen: " + r.n, texto: "Los jefes se juntan y te proponen para un nuevo cargo en tu sección." };
+    // Los cargos de sección se dan a partir de los 16-17 años y vencen si no los tomás a tiempo.
+    if (jg.edad >= r.edad && jg.edad <= r.edad + 4 && Math.random() < Math.max(0.1, Math.min(0.9, base + (jg.edad > r.edad ? 0.1 : 0)))) {
+      const sec = r.n.replace(/^(Subjef[ea]|Jef[ea]) de /, "");
+      return { oferta: true, tipo: "sec", rol: r.n, titulo: "Te proponen: " + r.n, texto: "Los jefes ven tu compromiso y te proponen como " + r.n + " (" + sec + "). Es un paso grande." };
+    }
   }
+  if (jg.edad < 19) return null;
   if (!jg.cc) {
     if (jg.rung < 0) return null; // sin haber pasado por una jefatura de sección no hay Comando Central
     if (jg.edad < 21 && Math.random() > 0.35) return null;
     if (Math.random() > Math.max(0.1, Math.min(0.85, base - 0.05))) return null;
-    const lista = jgCargosAdultos(f);
+    let lista = jgCargosAdultos(f);
+    // Las jefaturas de agrupación piden haber sido ya jefe de una sección.
+    if (jg.rung < 1) lista = lista.filter(c => !["masculina", "femenina", "milicianos"].includes(c.k));
     // El cargo que te ofrecen depende de tus talentos (lo que mostraste que sabés hacer).
     const w = lista.map(c => 0.3 + (c.k === "masculina" || c.k === "femenina" || c.k === "milicianos" ? (jg.tal.lider || 0) * 0.5 + jg.lider * 0.05 : (jg.tal[c.k] || 0) * 1.5));
     let tot = w.reduce((s, x) => s + x, 0), r = Math.random() * tot, idx = 0;
@@ -1142,7 +1146,7 @@ function jgElegirOferta(k) {
       return jgPintar("Cediste el lugar. Un gesto de humildad que muchos recuerdan. Tal vez haya otra oportunidad.", d);
     }
     const base = (jg.estilo - 30) / 100 + jg.lider * 0.025 + (k === 0 ? 0.12 : 0) + (Math.random() * 0.6 - 0.25);
-    if (base > 0.72) {
+    if (base > 0.82) {
       jg.ruca = true;
       const d = jgAplicar(8);
       jg.hist.push({ t: ev.titulo, n: d });
